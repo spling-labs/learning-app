@@ -150,3 +150,31 @@ export const question: Array<Question> = [
         ]
     }
 ];
+
+interface UserQuestion {
+    question: string,
+    answer: string,
+    type: any,
+    placeholder : string
+}
+
+export const userQuestion: Array<UserQuestion> = [
+    {
+        question: 'how_are_you_old',
+        answer: '',
+        type: 'number-pad',
+        placeholder: 'Age'
+    },
+    {
+        question: 'what_is_your_name',
+        answer: '',
+        type: 'default',
+        placeholder: 'Name'
+    },
+    {
+        question: 'what_is_your_email',
+        answer: '',
+        type: 'email-address',
+        placeholder: 'Email'
+    }
+];

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, StyleSheet, StatusBar, Image } from "react-native";
+import { View, StyleSheet, StatusBar, Image, ImageBackground } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -26,7 +26,13 @@ export default function StartLearning(props: any) {
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.screenBackground} />
+            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />
+            <ImageBackground
+                style={styles.imageBackground}
+                resizeMode="stretch"
+                source={IMAGES.background}>
+
+            </ImageBackground>
             <View style={styles.container} />
             <View style={[styles.container, { justifyContent: 'center' }]}>
                 <Text
@@ -46,7 +52,7 @@ export default function StartLearning(props: any) {
                     title={getTranslation('start_learning')}
                     size={SCALE_SIZE(16)}
                     color={COLORS.white}
-                    family={FONT.semiBold}
+                    family={FONT.bold}
                     onPress={() => {
                         props.navigation.navigate(SCREENS.Learning.name)
                     }}
@@ -60,7 +66,7 @@ export default function StartLearning(props: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1.0,
-        backgroundColor: COLORS.screenBackground,
+        backgroundColor:COLORS.slider_unfill
     },
     question: {
         marginTop: SCALE_SIZE(16),
@@ -80,4 +86,11 @@ const styles = StyleSheet.create({
         borderBottomWidth: 4,
         borderBottomColor: COLORS.drop_shadow
     },
+    imageBackground: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        aspectRatio: 1.1
+    }
 })

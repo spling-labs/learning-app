@@ -7,6 +7,9 @@ import { COLORS, IMAGES } from "../assets";
 //TYPES
 import { LocalizationContextType, learningQuestion } from "../types";
 
+//SCREENS
+import { SCREENS } from ".";
+
 //CONSTANTS
 import { SCALE_SIZE } from "../constants/uttils";
 import { FONT } from "../constants/font";
@@ -109,10 +112,10 @@ export default function Learning(props: any) {
                 title={getTranslation('Continue')}
                 size={SCALE_SIZE(16)}
                 color={COLORS.white}
-                family={FONT.semiBold}
+                family={FONT.bold}
                 onPress={() => {
                     if (selectedQuestionIndex + 1 == learningQuestion.length) {
-
+                        props.navigation.navigate(SCREENS.CongratulationScreen.name)
                     }
                     else {
                         setSelectedQuetionIndex(selectedQuestionIndex + 1)

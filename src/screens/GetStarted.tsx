@@ -56,7 +56,7 @@ export default function GetStarted(props: any) {
                     title={getTranslation('get_started')}
                     size={SCALE_SIZE(16)}
                     color={COLORS.primary}
-                    family={FONT.semiBold}
+                    family={FONT.bold}
                     onPress={()=>{
                         props.navigation.navigate(SCREENS.ChooseTopic.name)
                     }}
@@ -67,7 +67,7 @@ export default function GetStarted(props: any) {
                     title={getTranslation('have_account')}
                     size={SCALE_SIZE(16)}
                     color={COLORS.white}
-                    family={FONT.semiBold}
+                    family={FONT.bold}
                 />
             </View>
         </View>

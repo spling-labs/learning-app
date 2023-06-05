@@ -106,7 +106,7 @@ export default function ChooseTopic(props: any) {
                 title={getTranslation('Continue')}
                 size={SCALE_SIZE(16)}
                 color={COLORS.white}
-                family={FONT.semiBold}
+                family={FONT.bold}
                 onPress={() => {
                     if (selectedQuestionIndex + 1 == question.length) {
                         props.navigation.navigate(SCREENS.Success.name)

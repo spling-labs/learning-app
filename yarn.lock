@@ -6055,6 +6055,11 @@
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
 
+"react-native-simple-toast@^2.0.0":
+  "integrity" "sha512-x++CvxTLSTv+o5zaC8lv5W37VH0qMDs31wQPV1DH8OMHo1EJ3cMY0Nwblha1lwA9PK1ASuGLvHmumoVFQvnLkg=="
+  "resolved" "https://registry.npmjs.org/react-native-simple-toast/-/react-native-simple-toast-2.0.0.tgz"
+  "version" "2.0.0"
+
 "react-native-static-safe-area-insets@^2.2.0":
   "integrity" "sha512-TLTW2e2kRK3COSK8gMZzwp4wHguFCtcO18itDLn5av/xQblXt9ylu84o+qD9aKJCBfvtNzGOvqqTKqC5GJRZ/g=="
   "resolved" "https://registry.npmjs.org/react-native-static-safe-area-insets/-/react-native-static-safe-area-insets-2.2.0.tgz"
