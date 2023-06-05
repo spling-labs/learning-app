@@ -37,5 +37,12 @@
     "check_your_inbox": "Check Your Inbox",
     "message": "Congratulation! You\nare verified",
     "message_description": "Your email address has been\nsuccessfully verified.",
-    "go_to_course_modules": "Go to Course Modules"
+    "go_to_course_modules": "Go to Course Modules",
+    "Home": "Home",
+    "Courses": "Courses",
+    "Leaderboard": "Leaderboard",
+    "Community": "Community",
+    "Profile": "Profile",
+    "Go Pro": "Go Pro",
+    "Rust": "Rust"
 }

@@ -9,6 +9,12 @@ import CreateProfile from "./CreateProfile";
 import UserInformation from "./UserInformation";
 import VerifyEmail from "./VerifyEmail";
 import SignUpSuccess from "./SignUpSuccess";
+import BottomBar from "./Bottombar";
+import Home from "./Home";
+import Courses from "./Courses";
+import Leaderboard from "./Leaderboard";
+import Community from "./Community";
+import Profile from "./Profile";
 
 export const SCREENS = {
     Splash: {
@@ -54,5 +60,29 @@ export const SCREENS = {
     SignUpSuccess: {
         name: "SignUpSuccess",
         component: SignUpSuccess
+    },
+    BottomBar: {
+        name: "BottomBar",
+        component: BottomBar
+    },
+    Home: {
+        name: "Home",
+        component: Home
+    },
+    Courses: {
+        name: "Courses",
+        component: Courses
+    },
+    Leaderboard: {
+        name: "Leaderboard",
+        component: Leaderboard
+    },
+    Community: {
+        name: "Community",
+        component: Community
+    },
+    Profile: {
+        name: "Profile",
+        component: Profile
     }
 }

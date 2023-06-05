@@ -155,7 +155,7 @@ interface UserQuestion {
     question: string,
     answer: string,
     type: any,
-    placeholder : string
+    placeholder: string
 }
 
 export const userQuestion: Array<UserQuestion> = [
@@ -177,4 +177,39 @@ export const userQuestion: Array<UserQuestion> = [
         type: 'email-address',
         placeholder: 'Email'
     }
+];
+
+interface Languages {
+    title: string,
+    image: number,
+    isLock: boolean
+}
+
+export const language: Array<Languages> = [
+    {
+        title: 'Introduction',
+        image: IMAGES.languageIcon,
+        isLock: false
+    },
+    {
+        title: 'File Handling',
+        image: IMAGES.languageIcon,
+        isLock: true
+    },
+    {
+        title: 'Python',
+        image: IMAGES.languageIcon,
+        isLock: true
+    },
+    {
+        title: 'Java',
+        image: IMAGES.languageIcon,
+        isLock: true
+    },
+    {
+        title: 'Machine Learning',
+        image: IMAGES.languageIcon,
+        isLock: true
+    }
+
 ];

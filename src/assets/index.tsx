@@ -20,7 +20,8 @@ export const COLORS = {
     color_398DCC: "#398DCC",
     color_F3F3F3: '#F3F3F3',
     color_EEEDED: '#EEEDED',
-    color_FAFAFA: '#FAFAFA'
+    color_FAFAFA: '#FAFAFA',
+    devider: '#FFE6D9'
 
 
 }
@@ -47,6 +48,21 @@ export const IMAGES = {
     solflare: require('./images/solflare.png'),
     grow: require('./images/grow.png'),
     email: require('./images/email.png'),
-    congrates: require('./images/congrates.png')
+    congrates: require('./images/congrates.png'),
+    home: require('./images/home_unfill.png'),
+    homeFill: require('./images/home_fill.png'),
+    courses: require('./images/course_unfill.png'),
+    coursesFill: require('./images/courses_fill.png'),
+    leaderboard: require('./images/leaderboard_unfill.png'),
+    leaderboardFill: require('./images/leaderboard_fill.png'),
+    comment: require('./images/comment_unfill.png'),
+    commentFill: require('./images/comment_fill.png'),
+    profile: require('./images/profile_unfill.png'),
+    profileFill: require('./images/profile_fill.png'),
+    backgroundHome: require('./images/home_bg.png'),
+    noti: require('./images/noti.png'),
+    dropdown: require('./images/dropdown.png'),
+    languageIcon: require('./images/language_icon.png'),
+    lock: require('./images/lock.png')
 
 }
