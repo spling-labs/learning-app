@@ -213,3 +213,83 @@ export const language: Array<Languages> = [
     }
 
 ];
+
+interface Lactures {
+    title: string,
+    lactures: any,
+    isLock: boolean,
+    snell: string
+}
+
+export const lactures: Array<Lactures> = [
+    {
+        title: 'Getting Started',
+        lactures:[{
+            question : 'Who Is This Course For?',
+            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+        },
+        {
+            question : 'What Is Rust?',
+            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+        },
+        {
+            question : 'Why Rust?',
+            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+        },
+        {
+            question : 'The Basic Program',
+            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+        },       
+    ],
+        isLock: false,
+        snell : '12'
+    },
+    {
+        title: 'Basic Structure',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Variables',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Data Types',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Operators',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Conditional Expressions',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Loops',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Functions',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    },
+    {
+        title: 'Strings',
+        lactures:[],
+        isLock: true,
+        snell : '12'
+    }
+];

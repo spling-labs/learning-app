@@ -36,7 +36,11 @@ export default function Learning(props: any) {
                 <TouchableOpacity style={styles.back} onPress={() => { props.navigation.goBack() }}>
                     <Image style={styles.back} resizeMode='contain' source={IMAGES.cancel} />
                 </TouchableOpacity>
-                <ProgressSlider style={styles.progressSlider} fillCount={selectedQuestionIndex + 1} totalCount={learningQuestion.length} />
+                <ProgressSlider
+                    type={1}
+                    style={styles.progressSlider}
+                    fillCount={selectedQuestionIndex + 1}
+                    totalCount={learningQuestion.length} />
                 <TouchableOpacity style={styles.back} onPress={() => { props.navigation.goBack() }}>
                     <Image style={styles.back} resizeMode='contain' source={IMAGES.mask} />
                 </TouchableOpacity>

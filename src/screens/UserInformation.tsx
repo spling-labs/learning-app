@@ -40,7 +40,11 @@ export default function UserInformation(props: any) {
                     <Image style={styles.back} resizeMode='contain' source={IMAGES.cancel} />
                 </TouchableOpacity>
             </View>
-            <ProgressSlider style={styles.progressSlider} fillCount={selectedQuestionIndex + 1} totalCount={userQuestion.length} />
+            <ProgressSlider
+                type={1}
+                style={styles.progressSlider}
+                fillCount={selectedQuestionIndex + 1}
+                totalCount={userQuestion.length} />
             <Text
                 style={styles.questionText}
                 color={COLORS.contentTwo}
@@ -81,12 +85,12 @@ export default function UserInformation(props: any) {
                     if (selectedQuestionIndex + 1 == userQuestion.length) {
                         if (userQuestion[selectedQuestionIndex].answer != '') {
                             props.navigation.navigate(SCREENS.VerifyEmail.name)
-                        }else {
+                        } else {
                             Toast.show('Please enter your answer', Toast.LONG);
 
                         }
                     }
-                    else {                    
+                    else {
                         if (userQuestion[selectedQuestionIndex].answer != '') {
                             setSelectedQuetionIndex(selectedQuestionIndex + 1)
                         } else {

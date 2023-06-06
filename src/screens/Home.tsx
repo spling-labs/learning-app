@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, Platform, Alert, SafeAreaView, ImageBackground } from "react-native";
+import { View, StyleSheet, StatusBar, Image, SafeAreaView, ImageBackground, ScrollView } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
 
 //TYPES
-import { LocalizationContextType } from "../types";
+import { LocalizationContextType, language } from "../types";
 
 //SCREENS
 import { SCREENS } from ".";
@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button } from "../components";
+import { Text, HomeItems } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -72,7 +72,40 @@ export default function Home(props: any) {
                         <Image style={[styles.imgDropDown, { marginTop: SCALE_SIZE(0) }]} resizeMode="contain" source={IMAGES.noti} />
                     </View>
                 </View>
-                <View style={styles.devider}/>
+                <View style={styles.devider} />
+                <View style={styles.rustView}>
+                    <Text
+                        style={{ alignSelf: 'center' }}
+                        color={COLORS.black}
+                        fontFamily={FONT.black}
+                        size={SCALE_SIZE(16)}>
+                        {getTranslation('Rust')}
+                    </Text>
+                    <Text
+                        style={{ alignSelf: 'center' }}
+                        color={COLORS.contentTwo}
+                        fontFamily={FONT.medium}
+                        size={SCALE_SIZE(12)}>
+                        {'05 Sections | 0% Done'}
+                    </Text>
+                </View>
+                <ScrollView style={[styles.container]}
+                    showsVerticalScrollIndicator={false}>
+                    <>
+                        {language.map((item: any, index: any) => {
+                            return (
+                                <HomeItems
+                                    key={index}
+                                    item={item}
+                                    index={index}
+                                    onPress={(item: any) => {
+                                        props.navigation.navigate(SCREENS.Lession.name)
+                                    }} />
+                            )
+                        })}
+                        <View style={{ height: 16 }} />
+                    </>
+                </ScrollView>
             </ImageBackground>
         </SafeAreaView>
     )
@@ -114,8 +147,18 @@ const styles = StyleSheet.create({
         width: SCALE_SIZE(16)
     },
     devider: {
-        marginTop:SCALE_SIZE(4),
+        marginTop: SCALE_SIZE(4),
         height: SCALE_SIZE(5),
         backgroundColor: COLORS.devider
-    }
+    },
+    rustView: {
+        marginHorizontal: SCALE_SIZE(48),
+        paddingVertical: SCALE_SIZE(8),
+        backgroundColor: COLORS.white,
+        borderRadius: SCALE_SIZE(32),
+        marginTop: SCALE_SIZE(16),
+        borderWidth: 2,
+        borderColor: '#EBEBEB',
+        marginBottom: SCALE_SIZE(16),
+    },
 })

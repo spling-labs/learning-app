@@ -44,5 +44,9 @@
     "Community": "Community",
     "Profile": "Profile",
     "Go Pro": "Go Pro",
-    "Rust": "Rust"
+    "Rust": "Rust",
+    "welcome": "Welcome ",
+    "are_you_ready_for_battle": ", Are you\nready for battle?",
+    "Lesson": "Lesson: ",
+    "new_next": "Next: "
 }

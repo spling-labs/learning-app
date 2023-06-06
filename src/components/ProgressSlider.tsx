@@ -13,13 +13,16 @@ export default function ProgressSlider(props: any) {
     const totalCount = props.totalCount
 
     const progress = (fillCount * 100) / totalCount
-    console.log(progress)
+
     return (
-        <View style={[styles.container, props.style]}>
+        <View style={[styles.container, props.style, { backgroundColor: props.type == 1 ? COLORS.slider_unfill : COLORS.contentThree }]}>
             <View style={[styles.fillProgress, {
-                width: `${progress}%`
+                width: `${progress}%`,
+                backgroundColor: props.type == 1 ? COLORS.primary : COLORS.green,
             }]}>
-                <Image style={styles.stripImage} resizeMode='contain' source={IMAGES.strip} />
+                {props.type == 1 &&
+                    <Image style={styles.stripImage} resizeMode='contain' source={IMAGES.strip} />
+                }
             </View>
         </View>
     )
@@ -27,7 +30,6 @@ export default function ProgressSlider(props: any) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: COLORS.slider_unfill,
         borderRadius: SCALE_SIZE(8),
         height: SCALE_SIZE(16),
         flexDirection: 'row'
@@ -35,11 +37,10 @@ const styles = StyleSheet.create({
     fillProgress: {
         borderRadius: SCALE_SIZE(8),
         height: SCALE_SIZE(16),
-        backgroundColor: COLORS.primary,
-        justifyContent:'center'
+        justifyContent: 'center'
     },
-    stripImage:{
-        width:'90%',
-        alignSelf:'center'
+    stripImage: {
+        width: '90%',
+        alignSelf: 'center'
     }
 })

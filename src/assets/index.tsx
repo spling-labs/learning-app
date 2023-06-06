@@ -21,9 +21,9 @@ export const COLORS = {
     color_F3F3F3: '#F3F3F3',
     color_EEEDED: '#EEEDED',
     color_FAFAFA: '#FAFAFA',
-    devider: '#FFE6D9'
-
-
+    devider: '#FFE6D9',
+    color_F6F6F6: '#F6F6F6',
+    green: '#77C93C'
 }
 
 export const IMAGES = {
@@ -63,6 +63,9 @@ export const IMAGES = {
     noti: require('./images/noti.png'),
     dropdown: require('./images/dropdown.png'),
     languageIcon: require('./images/language_icon.png'),
-    lock: require('./images/lock.png')
+    lock: require('./images/lock.png'),
+    lactureImage: require('./images/lacture_image.png'),
+    lactureLock: require('./images/lession_lock.png'),
+    frame: require('./images/frame_new.png')
 
 }

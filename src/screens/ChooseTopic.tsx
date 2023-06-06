@@ -27,7 +27,7 @@ export default function ChooseTopic(props: any) {
     const [selectedQuestionIndex, setSelectedQuetionIndex] = useState<number>(0)
     const [selectedQuestionBoxes, setSelectedQuestionBoxes] = useState<number>(0)
     const [selectedQuestionOptions, setSelectedQuestionOptions] = useState<number>(0)
-    
+
     const selectedQuestion = question[selectedQuestionIndex]
 
     return (
@@ -37,7 +37,11 @@ export default function ChooseTopic(props: any) {
                 <TouchableOpacity style={style.back} onPress={() => { props.navigation.goBack() }}>
                     <Image style={style.back} resizeMode='contain' source={IMAGES.back} />
                 </TouchableOpacity>
-                <ProgressSlider style={style.progressSlider} fillCount={selectedQuestionIndex + 1} totalCount={question.length} />
+                <ProgressSlider
+                    type={1}
+                    style={style.progressSlider}
+                    fillCount={selectedQuestionIndex + 1}
+                    totalCount={question.length} />
             </View>
             <ScrollView
                 style={[style.container]}
