@@ -45,8 +45,14 @@
     "Profile": "Profile",
     "Go Pro": "Go Pro",
     "Rust": "Rust",
-    "welcome": "Welcome ",
-    "are_you_ready_for_battle": ", Are you\nready for battle?",
-    "Lesson": "Lesson: ",
-    "new_next": "Next: "
+    "othermeet": "Collaborate with other’s meets",
+    "post": "Post",
+    "recent": "Recent",
+    "popular": "Popular",
+    "bookmark": "Bookmark",
+    "no_interested": "No interested in this topic",
+    "report": "Report",
+    "block_this": "Block this person",
+    "short_by": "Short by",
+    "actions": "Actions"
 }
