@@ -21,8 +21,15 @@ export const COLORS = {
     color_F3F3F3: '#F3F3F3',
     color_EEEDED: '#EEEDED',
     color_FAFAFA: '#FAFAFA',
-    devider: '#FFE6D9'
-
+    devider: '#FFE6D9',
+    communityTextColor: '#1A1D28',
+    communitytagColor: '#797B82',
+    communitysnellColor: '#F7CA45',
+    communitylevelColor: '#77C93C',
+    communityHrColor: '#5C6064',
+    dialog_transparent: 'rgba(59, 66, 74, 0.33)',
+    dialog_line_coloe: '#D9D9D9',
+    dialog_item_background: '#F6F6F6',
 
 }
 
@@ -63,6 +70,25 @@ export const IMAGES = {
     noti: require('./images/noti.png'),
     dropdown: require('./images/dropdown.png'),
     languageIcon: require('./images/language_icon.png'),
-    lock: require('./images/lock.png')
+    lock: require('./images/lock.png'),
+    search: require('./images/search.png'),
+    shortby: require('./images/shortby.png'),
+    communityimage: require('./images/communityimage.png'),
+    share: require('./images/share.png'),
+    favourite: require('./images/favourite.png'),
+    message: require('./images/message.png'),
+    favouritefill: require('./images/favouritefill.png'),
+    messagefill: require('./images/messagefill.png'),
+    user1: require('./images/user1.png'),
+    user2: require('./images/user2.png'),
+    threedots: require('./images/threedots.png'),
+    editpost: require('./images/editpost.png'),
+    close: require('./images/close.png'),
+    recent: require('./images/recent.png'),
+    popular: require('./images/popular.png'),
+    bookmark: require('./images/bookmark.png'),
+    nointerested: require('./images/nointerested.png'),
+    report: require('./images/report.png'),
+    blockimahe: require('./images/blockimahe.png')
 
 }

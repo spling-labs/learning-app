@@ -213,3 +213,43 @@ export const language: Array<Languages> = [
     }
 
 ];
+
+interface userCommunityList {
+    userImage: string,
+    userName: string,
+    userSnell: any,
+    title: string,
+    discription: string,
+    usertag: string,
+    likeCount: string,
+    msgCount: string,
+    cummunitcationImage: any
+
+}
+
+export const userCommunityList: Array<userCommunityList> = [
+    {
+        userImage: IMAGES.user2,
+        userName: 'Jonathan Troth',
+        userSnell: '32,00 Snell',
+        title: 'Uploading asset getting erro',
+        discription: 'Display & Video 360 API - while uploading asset getting error Invalid Upload Request. Please check your URL and ensure it includes the /upload prefix.',
+        usertag: '#finance #crypto #economy',
+        likeCount: '0',
+        msgCount: '0',
+        cummunitcationImage: ""
+    },
+    {
+        userImage: IMAGES.user1,
+        userName: 'Allen Berry',
+        userSnell: '32,00 Snell',
+        title: 'Uploading asset getting erro',
+        discription: 'Display & Video 360 API - while uploading asset getting error Invalid Upload Request. Please check your URL and ensure it includes the /upload prefix.',
+        usertag: '#finance #crypto #economy',
+        likeCount: '12.8k',
+        msgCount: '120.8k',
+        cummunitcationImage: IMAGES.communityimage
+
+    },
+];
+
