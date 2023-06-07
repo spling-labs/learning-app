@@ -9,6 +9,9 @@ import Header from "./Header";
 import LactureItems from "./LactureItems";
 import StartLearningModel from "./StartLearningModel";
 import Question from "./Question";
+import CommunityListItem from "./CommunityListItem";
+import BottomSheetDialog from "./BottomSheetDialog";
+import Bubble from "./Bubble";
 
 export {
     Button,
@@ -21,5 +24,8 @@ export {
     Header,
     LactureItems,
     StartLearningModel,
-    Question
+    Question,
+    CommunityListItem,
+    BottomSheetDialog,
+    Bubble
 }

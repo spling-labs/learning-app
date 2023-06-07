@@ -60,6 +60,7 @@ export default function SignUpSuccess(props: any) {
                         color={COLORS.white}
                         family={FONT.bold}
                         onPress={() => {
+                            props.navigation.navigate(SCREENS.BottomBar.name)
                         }}
                     />
                 </View>

@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button, ProgressSlider, QuestionOptions } from "../components";
+import { Text, Button, ProgressSlider, QuestionOptions, Bubble } from "../components";
 
 export default function Learning(props: any) {
 
@@ -74,6 +74,7 @@ export default function Learning(props: any) {
                         return (
                             <QuestionOptions
                                 title={item.title}
+                                color={selectedQuestionOption == index ? COLORS.primary : COLORS.questionColor}
                                 style={[selectedQuestionOption == index ? styles.selected : styles.unselected, { marginTop: index == 0 ? SCALE_SIZE(24) : SCALE_SIZE(16) }]}
                                 key={index}
                                 onPress={() => {
@@ -104,11 +105,8 @@ export default function Learning(props: any) {
                     </Text>
                 </Text>
             </ScrollView>
-            <View style={{ flexDirection: 'row', marginBottom: SCALE_SIZE(24) }}>
-                <Image style={styles.logoImage} resizeMode='contain' source={IMAGES.learning} />
-                {/* <View style={styles.awesomeView}>
-
-                </View> */}
+            <View style={{ flexDirection: 'row', marginTop:SCALE_SIZE(24) }}>
+              <Bubble title={getTranslation('awesome_doing_greate')}/>
             </View>
             <Button
                 style={styles.btnContinue}

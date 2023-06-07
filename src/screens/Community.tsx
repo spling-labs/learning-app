@@ -18,13 +18,10 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button } from "../components";
+import { Text, Button, CommunityListItem, BottomSheetDialog } from "../components";
+
+//PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
-import CommunityListItem from "../components/CommunityListItem";
-import BottomSheetDialog from "../components/BottomSheetDialog";
-
-const { width, height } = Dimensions.get("window");
-
 
 export default function Community(props: any) {
 
@@ -58,7 +55,7 @@ export default function Community(props: any) {
                         color={COLORS.contentTwo}
                         fontFamily={FONT.regular}
                         size={SCALE_SIZE(16)}>
-                        {getTranslation('othermeet')}
+                        {getTranslation('otther_meet_msg')}
                     </Text>
                 </View>
                 <View style={styles.headerImageStyle}>
@@ -117,7 +114,7 @@ const styles = StyleSheet.create({
     headerRowStyle: {
         flexDirection: 'row',
         marginHorizontal: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(16),
+        paddingVertical: SCALE_SIZE(16),
         justifyContent: 'space-between',
     },
     headerIcon: {
@@ -130,7 +127,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     viewStyle: {
-        marginTop: SCALE_SIZE(16),
         marginBottom: SCALE_SIZE(16),
         height: SCALE_SIZE(3),
         width: '100%',

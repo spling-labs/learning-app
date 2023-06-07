@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button, ProgressSlider, QuestionOptions } from "../components";
+import { Text, Button, ProgressSlider, QuestionOptions, Bubble } from "../components";
 
 export default function ChooseTopic(props: any) {
 
@@ -29,6 +29,18 @@ export default function ChooseTopic(props: any) {
     const [selectedQuestionOptions, setSelectedQuestionOptions] = useState<number>(0)
 
     const selectedQuestion = question[selectedQuestionIndex]
+
+    function getMessages() {
+        if (selectedQuestionIndex == 0) {
+            return getTranslation('first_messages')
+        }
+        else if (selectedQuestionIndex == 1) {
+            return getTranslation('second_message')
+        }
+        else {
+            return getTranslation('third_message')
+        }
+    }
 
     return (
         <View style={style.container}>
@@ -75,7 +87,7 @@ export default function ChooseTopic(props: any) {
                                             <Image resizeMode='contain' style={style.image} source={item.image} />
                                             <Text
                                                 style={style.txtTitle}
-                                                color={selectedQuestionBoxes == index ? COLORS.primary : COLORS.black}
+                                                color={selectedQuestionBoxes == index ? COLORS.primary : COLORS.questionColor}
                                                 fontFamily={FONT.black}
                                                 size={SCALE_SIZE(16)}>
                                                 {item.title}
@@ -92,7 +104,9 @@ export default function ChooseTopic(props: any) {
                             selectedQuestion?.options.map((item: any, index: any) => {
                                 return (
                                     <QuestionOptions
-                                        title={item.title}
+                                        title={item.title}   
+                                        rightText={item.rightText}                                     
+                                        color={selectedQuestionOptions == index ? COLORS.primary : COLORS.questionColor}
                                         style={[selectedQuestionOptions == index ? style.selected : style.unselected, { marginTop: index == 0 ? SCALE_SIZE(24) : SCALE_SIZE(16) }]}
                                         key={index}
                                         onPress={() => {
@@ -103,7 +117,8 @@ export default function ChooseTopic(props: any) {
                         }
                     </>
                 }
-            </ScrollView >
+            </ScrollView>
+            <Bubble title={getMessages()} />
             <Button
                 style={style.btnContinue}
                 backgroundColor={COLORS.primary}

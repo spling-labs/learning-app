@@ -32,6 +32,7 @@ export const COLORS = {
     dialog_transparent: 'rgba(59, 66, 74, 0.33)',
     dialog_line_coloe: '#D9D9D9',
     dialog_item_background: '#F6F6F6',
+    desColor:'#FDD5C2'
 
 }
 
@@ -94,6 +95,8 @@ export const IMAGES = {
     bookmark: require('./images/bookmark.png'),
     nointerested: require('./images/nointerested.png'),
     report: require('./images/report.png'),
-    blockimahe: require('./images/blockimahe.png')
+    blockimahe: require('./images/blockimahe.png'),
+    backgroundWelcome: require('./images/welcome_bg.png'),
+    successBackground: require('./images/success_bg.png')
 
 }

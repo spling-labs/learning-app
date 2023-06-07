@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, Dimensions } from "react-native";
+import { View, StyleSheet, StatusBar, Image, Dimensions, ImageBackground } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -25,7 +25,7 @@ export default function Success(props: any) {
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     return (
-        <>
+        <ImageBackground style={styles.container} source={IMAGES.successBackground} resizeMode='cover'>
             <View style={styles.container}>
                 <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.white} />
                 <Image style={styles.image} resizeMode='contain' source={IMAGES.success} />
@@ -57,7 +57,7 @@ export default function Success(props: any) {
                     props.navigation.navigate(SCREENS.StartLearning.name)
                 }}
             />
-        </>
+        </ImageBackground>
     )
 
 }
@@ -65,7 +65,6 @@ export default function Success(props: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1.0,
-        backgroundColor: COLORS.white,
     },
     image: {
         marginTop: SCALE_SIZE(56),

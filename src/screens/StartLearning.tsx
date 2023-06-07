@@ -25,14 +25,8 @@ export default function StartLearning(props: any) {
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     return (
-        <View style={styles.container}>
-            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />
-            <ImageBackground
-                style={styles.imageBackground}
-                resizeMode="stretch"
-                source={IMAGES.background}>
-
-            </ImageBackground>
+        <ImageBackground style={styles.container} resizeMode='stretch' source={IMAGES.bgCreateProfile}>
+            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />           
             <View style={styles.container} />
             <View style={[styles.container, { justifyContent: 'center' }]}>
                 <Text
@@ -58,7 +52,7 @@ export default function StartLearning(props: any) {
                     }}
                 />
             </View>
-        </View>
+        </ImageBackground>
     )
 
 }
@@ -66,7 +60,6 @@ export default function StartLearning(props: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1.0,
-        backgroundColor:COLORS.slider_unfill
     },
     question: {
         marginTop: SCALE_SIZE(16),
