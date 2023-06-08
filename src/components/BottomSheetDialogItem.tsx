@@ -16,7 +16,13 @@ export default function BottomSheetDialogItem(props: any) {
     return (
         <View style={style.container}>
             <View style={style.ViewStyle}>
-                <Image style={style.selectionStyle} resizeMode="contain" source={props.item.userImage} />
+                {
+                    props.item.userSelect == 'select' ?
+                        <Image style={style.selectionStyle} resizeMode="contain" source={props.item.checkImage} />
+                        :
+                        <View />
+
+                }
                 <Image style={style.IconStyle} resizeMode="contain" source={props.item.userImage} />
                 <Text
                     style={style.textStyle}
@@ -39,7 +45,7 @@ const style = StyleSheet.create({
     },
     ViewStyle: {
         flexDirection: 'row',
-        backgroundColor: COLORS.dialog_item_background,
+        backgroundColor: COLORS.color_F6F6F6,
         borderWidth: SCALE_SIZE(1),
         borderColor: COLORS.contentThree,
         height: SCALE_SIZE(56),

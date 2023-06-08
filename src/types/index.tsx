@@ -437,3 +437,272 @@ export const userCommunityList: Array<userCommunityList> = [
     },
 ];
 
+interface accountSetting {
+    Image: any,
+    Title: string
+
+}
+
+export const accountList: Array<accountSetting> = [
+    {
+        Image: IMAGES.ic_pro,
+        Title: 'get_pro',
+    },
+    {
+        Image: IMAGES.ic_profile,
+        Title: 'edit_profile'
+
+    },
+    {
+        Image: IMAGES.ic_appearance,
+        Title: 'appearance'
+
+    },
+    {
+        Image: IMAGES.ic_goal,
+        Title: 'set_goal'
+
+    },
+    {
+        Image: IMAGES.ic_language,
+        Title: 'language_change'
+
+    },
+];
+
+export const notificationList: Array<accountSetting> = [
+    {
+        Image: IMAGES.ic_reminder,
+        Title: 'daily_reminder',
+    },
+    {
+        Image: IMAGES.ic_notification,
+        Title: 'push_notification'
+
+    }
+];
+
+export const shareList: Array<accountSetting> = [
+    {
+        Image: IMAGES.ic_rate_us,
+        Title: 'rate_us',
+    },
+    {
+        Image: IMAGES.ic_share,
+        Title: 'share_this_app'
+
+    }
+];
+
+export const contactList: Array<accountSetting> = [
+    {
+        Image: IMAGES.ic_help,
+        Title: 'help',
+    },
+    {
+        Image: IMAGES.ic_terms_condition,
+        Title: 'terms_and_conditions'
+
+    },
+    {
+        Image: IMAGES.ic_privacy_policy,
+        Title: 'privacy_policy'
+
+    }
+];
+
+export const dangerList: Array<accountSetting> = [
+    {
+        Image: IMAGES.ic_logout,
+        Title: 'log_out',
+    },
+    {
+        Image: IMAGES.ic_delete,
+        Title: 'delete_account'
+
+    }
+];
+
+interface subcriptionList {
+    title: string,
+    disc: string
+
+}
+
+export const subcriptionList: Array<subcriptionList> = [
+    {
+        title: 'Instant VIP Support',
+        disc: 'Facing problem on practice or learning? Just knock us. We should support you ASAP.',
+    },
+    {
+        title: 'Full access to All premium content',
+        disc: 'Only visible to premium users'
+    },
+    {
+        title: 'Remove all Ads',
+        disc: 'No more extra ads showing when you on focus mode. No distruction'
+    },
+    {
+        title: 'Remove all Ads',
+        disc: 'No more extra ads showing when you on focus mode. No distruction'
+    },
+    {
+        title: 'Remove all Ads',
+        disc: 'No more extra ads showing when you on focus mode. No distruction'
+    }
+];
+
+interface inProList {
+    title: string,
+    perComplete: string
+
+}
+
+export const inProList: Array<inProList> = [
+    {
+        title: 'Basic Rust',
+        perComplete: '30% Done',
+    },
+    {
+        title: 'Basic Rust',
+        perComplete: '30% Done'
+    },
+    {
+        title: 'Basic Rust',
+        perComplete: '30% Done'
+    }
+];
+
+interface leaderBordList {
+    id: string,
+    userName: string,
+    programName: string,
+    snellItem: string,
+    NFT: string
+
+}
+
+export const leaderBordList: Array<leaderBordList> = [
+    {
+        id: '1',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '2',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '3',
+        userName: 'Faruk Ahmed',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '4',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '5',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '6',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '7',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+    {
+        id: '8',
+        userName: 'John Maxwell',
+        programName: 'Programming Ninja',
+        snellItem: '12,090 Snell',
+        NFT: 'NFT 120'
+    },
+];
+
+
+interface availableCourseList {
+    new: string,
+    userName: string,
+    programName: string,
+    snellItem: string,
+
+}
+
+export const availableCourseList: Array<availableCourseList> = [
+    {
+        new: '',
+        userName: 'Rust',
+        programName: 'Best for beginners label students',
+        snellItem: '66 Lessons'
+    },
+    {
+        new: 'New',
+        userName: 'Rust for Begginers',
+        programName: 'Best for beginners label students',
+        snellItem: '66 Lessons'
+    },
+    {
+        new: 'New',
+        userName: 'Solana',
+        programName: 'Best for beginners label students',
+        snellItem: '66 Lessons',
+    },
+    {
+        new: '',
+        userName: 'Solana Basic Course',
+        programName: 'Best for beginners label students',
+        snellItem: '66 Lessons'
+    },
+    {
+        new: '',
+        userName: 'Solana Mid-label Course',
+        programName: 'Best for beginners label students',
+        snellItem: '66 Lessons'
+    }
+];
+
+interface availableList {
+    title: string,
+
+}
+
+export const availableList: Array<availableList> = [
+    {
+        title: 'Solve problems in Rust'
+    },
+    {
+        title: "Effectively leverage Rust's memory safety guarantees"
+    },
+    {
+        title: 'Write applications and libraries'
+    },
+    {
+        title: 'Test and document your code'
+    }
+];
+
+
+
+

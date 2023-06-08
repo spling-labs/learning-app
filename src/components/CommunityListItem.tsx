@@ -17,7 +17,7 @@ export default function CommunityListItem(props: any) {
         <View style={style.container}>
             <View style={[style.flexRowStyle, { justifyContent: 'space-between' }]}>
                 <View style={style.flexRowStyle}>
-                    <Image style={style.userImageStyle} resizeMode="contain" source={props.item.userImage} />
+                    <Image style={style.userImageStyle} resizeMode="contain" source={IMAGES.profile} />
                     <View style={{ marginLeft: SCALE_SIZE(8) }}>
                         <View style={style.flexRowStyle}>
                             <Text color={COLORS.communityTextColor} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{props.item.userName}</Text>
@@ -33,6 +33,7 @@ export default function CommunityListItem(props: any) {
                 <TouchableOpacity
                     onPress={() => {
                         props.modalVisible(true)
+                        props.modalActionVisible('short_by')
                     }}>
                     <Image style={style.dotsImageStyle} resizeMode="contain" source={IMAGES.threedots} />
                 </TouchableOpacity>
@@ -99,10 +100,9 @@ const style = StyleSheet.create({
         marginTop: SCALE_SIZE(8)
     },
     userImageStyle: {
-        height: SCALE_SIZE(48),
-        width: SCALE_SIZE(48),
+        height: SCALE_SIZE(40),
+        width: SCALE_SIZE(40),
         alignSelf: 'center',
-        marginTop: SCALE_SIZE(6)
     },
     favouriteImageStyle: {
         height: SCALE_SIZE(24),

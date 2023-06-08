@@ -1,5 +1,5 @@
-import React, { useEffect, useContext, useState } from "react";
-import { View, StyleSheet, StatusBar, Image, FlatList, TouchableOpacity, Modal, Dimensions } from "react-native";
+import React, { useContext, useState } from "react";
+import { View, StyleSheet, StatusBar, Image, FlatList, TouchableOpacity } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -23,10 +23,12 @@ import { Text, Button, CommunityListItem, BottomSheetDialog } from "../component
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
 
+
 export default function Community(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalActionVisible, setModalActionVisible] = useState('');
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
@@ -60,7 +62,13 @@ export default function Community(props: any) {
                 </View>
                 <View style={styles.headerImageStyle}>
                     <Image style={styles.headerIcon} resizeMode="contain" source={IMAGES.search} />
-                    <Image style={styles.headerIcon} resizeMode="contain" source={IMAGES.shortby} />
+                    <TouchableOpacity
+                        onPress={() => {
+                            setModalVisible(true)
+                            setModalActionVisible('actions')
+                        }}>
+                        <Image style={styles.headerIcon} resizeMode="contain" source={IMAGES.shortby} />
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.viewStyle} />
@@ -71,7 +79,7 @@ export default function Community(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <CommunityListItem props={props} item={item} modalVisible={setModalVisible} />
+                            return <CommunityListItem props={props} item={item} modalVisible={setModalVisible} modalActionVisible={setModalActionVisible} />
                         }}
                     />
                 </View>
@@ -95,7 +103,7 @@ export default function Community(props: any) {
 
             </TouchableOpacity>
 
-            <BottomSheetDialog item={modalVisible} modalVisible={setModalVisible} />
+            <BottomSheetDialog item={modalVisible} modalVisible={setModalVisible} modalActionVisible={modalActionVisible} />
         </View >
     )
 }
@@ -140,7 +148,9 @@ const styles = StyleSheet.create({
         borderRadius: SCALE_SIZE(32),
         padding: SCALE_SIZE(8),
         marginBottom: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(16)
+        marginRight: SCALE_SIZE(16),
+        borderBottomColor: COLORS.drop_shadow,
+        borderBottomWidth: 3,
     },
     editPostIcon: {
         height: SCALE_SIZE(24),

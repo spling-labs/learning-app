@@ -20,20 +20,28 @@ export default function BottomSheetDialog(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
-
     interface shortList {
-        userImage: string,
+        userImage: any,
         userName: string
+        userSelect: string,
+        checkImage: any,
+
     }
 
     const shortList: Array<shortList> = [
         {
             userImage: IMAGES.recent,
-            userName: getTranslation('recent')
+            userName: getTranslation('recent'),
+            userSelect: 'select',
+            checkImage: IMAGES.uncheck
+
         },
         {
             userImage: IMAGES.popular,
-            userName: getTranslation('popular')
+            userName: getTranslation('popular'),
+            userSelect: 'select',
+            checkImage: IMAGES.check
+
         },
     ];
 
@@ -41,23 +49,32 @@ export default function BottomSheetDialog(props: any) {
     const actionList: Array<shortList> = [
         {
             userImage: IMAGES.bookmark,
-            userName: getTranslation('bookmark')
+            userName: getTranslation('bookmark'),
+            userSelect: '',
+            checkImage: IMAGES.uncheck
         },
         {
             userImage: IMAGES.nointerested,
-            userName: getTranslation('no_interested')
+            userName: getTranslation('no_interested'),
+            userSelect: '',
+            checkImage: IMAGES.uncheck
         },
         {
             userImage: IMAGES.report,
-            userName: getTranslation('report')
+            userName: getTranslation('report'),
+            userSelect: '',
+            checkImage: IMAGES.uncheck
         },
         {
             userImage: IMAGES.blockimahe,
-            userName: getTranslation('block_this')
+            userName: getTranslation('block_this'),
+            userSelect: '',
+            checkImage: IMAGES.uncheck
         },
     ];
 
     return (
+
         <View >
             <Modal
                 animationType="slide"
@@ -70,26 +87,42 @@ export default function BottomSheetDialog(props: any) {
                     <View style={style.content}>
                         <View style={style.lineStyle}></View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: SCALE_SIZE(16) }}>
-                            <Image style={style.headerIcon} resizeMode="contain" source={IMAGES.close} />
+                            <TouchableOpacity
+                                onPress={() => {
+                                    props.modalVisible(false)
+                                }}>
+                                <Image style={style.headerIcon} resizeMode="contain" source={IMAGES.close} />
+                            </TouchableOpacity>
                             <Text
-                                style={style.text}
                                 color={COLORS.black}
                                 fontFamily={FONT.black}
                                 size={SCALE_SIZE(16)}>
-                                {getTranslation('short_by')}
+                                {getTranslation(props.modalActionVisible)}
                             </Text>
-                            <View></View>
+                            <View style={style.headerIcon} />
                         </View>
                         <View style={{ flex: 1 }}>
                             <View >
-                                <FlatList
-                                    style={{ marginBottom: SCALE_SIZE(16), marginTop: SCALE_SIZE(16) }}
-                                    data={shortList}
-                                    keyExtractor={(item, index) => index.toString()}
-                                    renderItem={({ item }) => {
-                                        return <BottomSheetDialogItem props={props} item={item} />
-                                    }}
-                                />
+                                {
+                                    props.modalActionVisible == "actions" ?
+                                        <FlatList
+                                            style={{ marginBottom: SCALE_SIZE(16), marginTop: SCALE_SIZE(16) }}
+                                            data={actionList}
+                                            keyExtractor={(item, index) => index.toString()}
+                                            renderItem={({ item }) => {
+                                                return <BottomSheetDialogItem props={props} item={item} />
+                                            }}
+                                        /> :
+                                        <FlatList
+                                            style={{ marginBottom: SCALE_SIZE(16), marginTop: SCALE_SIZE(16) }}
+                                            data={shortList}
+                                            keyExtractor={(item, index) => index.toString()}
+                                            renderItem={({ item }) => {
+                                                return <BottomSheetDialogItem props={props} item={item} />
+                                            }}
+                                        />
+                                }
+
                             </View>
                         </View>
                     </View>
@@ -139,9 +172,9 @@ const style = StyleSheet.create({
         position: "absolute",
         bottom: 0,
         width,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        backgroundColor: "white"
+        borderTopLeftRadius: SCALE_SIZE(20),
+        borderTopRightRadius: SCALE_SIZE(20),
+        backgroundColor: COLORS.white
     },
     textStyle: {
         fontSize: 22
