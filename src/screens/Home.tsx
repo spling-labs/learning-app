@@ -27,7 +27,6 @@ export default function Home(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
-
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
         StatusBar.setBackgroundColor(COLORS.slider_unfill);

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image } from "react-native";
+import { View, StyleSheet, StatusBar, Image, ImageBackground } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -26,7 +26,9 @@ export default function GetStarted(props: any) {
     const { setI18nConfig, getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container}
+            resizeMode="cover"
+            source={IMAGES.backgroundWelcome}>
             <StatusBar barStyle={'light-content'} translucent={false} backgroundColor={COLORS.primary} />
             <View style={{ flex: 1.0 }}>
             </View>
@@ -36,13 +38,13 @@ export default function GetStarted(props: any) {
                     style={styles.description}
                     color={COLORS.white}
                     align={'center'}
-                    fontFamily={FONT.semiBold}
+                    fontFamily={FONT.black}
                     size={SCALE_SIZE(32)}>
                     {getTranslation('starting_msg')}
                 </Text>
                 <Text
                     style={{ marginTop: SCALE_SIZE(8) }}
-                    color={COLORS.white}
+                    color={COLORS.desColor}
                     align={'center'}
                     fontFamily={FONT.medium}
                     size={SCALE_SIZE(18)}>
@@ -57,7 +59,7 @@ export default function GetStarted(props: any) {
                     size={SCALE_SIZE(16)}
                     color={COLORS.primary}
                     family={FONT.bold}
-                    onPress={()=>{
+                    onPress={() => {
                         props.navigation.navigate(SCREENS.ChooseTopic.name)
                     }}
                 />
@@ -68,9 +70,12 @@ export default function GetStarted(props: any) {
                     size={SCALE_SIZE(16)}
                     color={COLORS.white}
                     family={FONT.bold}
+                    onPress={()=>{
+                        
+                    }}
                 />
             </View>
-        </View>
+        </ImageBackground>
 
     )
 }
@@ -78,7 +83,6 @@ export default function GetStarted(props: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1.0,
-        backgroundColor: COLORS.primary,
         justifyContent: 'center'
     },
     image: {
@@ -94,13 +98,13 @@ const styles = StyleSheet.create({
         marginTop: SCALE_SIZE(16),
         marginBottom: SCALE_SIZE(32),
         marginHorizontal: SCALE_SIZE(16),
-        borderBottomWidth:4,
-        borderBottomColor:COLORS.shadow_color
+        borderBottomWidth: 4,
+        borderBottomColor: COLORS.shadow_color
     },
-    btnGetStarted:{
+    btnGetStarted: {
         marginHorizontal: SCALE_SIZE(16),
-        borderBottomWidth:4,
-        borderBottomColor:COLORS.shadow_color
+        borderBottomWidth: 4,
+        borderBottomColor: COLORS.shadow_color
     }
 
 })

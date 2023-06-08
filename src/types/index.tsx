@@ -104,10 +104,12 @@ export const question: Array<Question> = [
         options: [{
             title: 'Rust',
             image: IMAGES.rush,
+            rightText: ''
         },
         {
             title: 'Solana',
             image: IMAGES.solana,
+            rightText: ''
         }]
     },
     {
@@ -121,10 +123,12 @@ export const question: Array<Question> = [
         {
             title: 'I have some experience',
             image: '',
+            rightText: ''
         },
         {
             title: 'I have a lot of experience',
             image: '',
+            rightText: ''
         }]
     },
     {
@@ -134,18 +138,22 @@ export const question: Array<Question> = [
         options: [{
             title: '10 min / day',
             image: '',
+            rightText: 'Casual'
         },
         {
             title: '30 min / day',
             image: '',
+            rightText: 'Regular'
         },
         {
             title: '45 min / day',
             image: '',
+            rightText: 'Serious'
         },
         {
             title: '60 min / day',
             image: '',
+            rightText: 'Intense'
         },
         ]
     }

@@ -33,6 +33,8 @@ export const COLORS = {
     dialog_line_coloe: '#D9D9D9',
     delete_color: "#EA5953",
     image_shadow:"#CEC7C5",
+    dialog_item_background: '#F6F6F6',
+    desColor:'#FDD5C2'
 
 }
 
@@ -121,7 +123,8 @@ export const IMAGES = {
     ic_online_bank: require('./images/ic_online_bank.png'),
     premiumsuccess: require('./images/premiumsuccess.png'),
     ic_leader_share: require('./images/ic_leader_share.png'),
-    winner: require('./images/winner.png')
-
+    winner: require('./images/winner.png'),
+    backgroundWelcome: require('./images/welcome_bg.png'),
+    successBackground: require('./images/success_bg.png')
 
 }

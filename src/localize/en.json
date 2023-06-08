@@ -45,7 +45,7 @@
     "Profile": "Profile",
     "Go Pro": "Go Pro",
     "Rust": "Rust",
-    "othermeet": "Collaborate with other’s meets",
+    "otther_meet_msg": "Collaborate with other’s meets",
     "post": "Post",
     "recent": "Recent",
     "popular": "Popular",
@@ -121,5 +121,15 @@
     "data_types": "Data Types",
     "operators": "Operators",
     "conditional_expressions": "Conditional Expressions",
-    "enroll_now": "Enroll Now"
+    "enroll_now": "Enroll Now",
+    "welcome" : "Welcome ",
+    "are_you_ready_for_battle":", Are you\nready for battle?",
+    "Lesson":"Lesson: ",
+    "new_next":"Next: ",
+    "first_messages":"10,000+ freshers are starting to\nlearn code everyday.",
+    "second_message":"Impressive! ",
+    "third_message":"It’s easy to change the goal\nanytime",
+    "awesome_doing_greate":"Awesome! doing great"
+
+
 }
