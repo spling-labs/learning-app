@@ -17,6 +17,13 @@ import Community from "./Community";
 import Profile from "./Profile";
 import Lession from "./Lession";
 import LactureDetails from "./LactureDetails";
+import AccountSettingScreen from "./accountsetting/AccountSettingScreen";
+import SubscriptionScreen from "./accountsetting/SubscriptionScreen";
+import SubscriptionPlanScreen from "./accountsetting/SubscriptionPlanScreen";
+import SubscriptionPaymentScreen from "./accountsetting/SubscriptionPaymentScreen";
+import SubscriptionCreditScreen from "./accountsetting/SubscriptionCreditScreen";
+import PremiumSuccessScreen from "./accountsetting/PremiumSuccessScreen";
+import ShareFacebookScreen from "./ShareFacebookScreen";
 
 export const SCREENS = {
     Splash: {
@@ -94,5 +101,33 @@ export const SCREENS = {
     LactureDetails: {
         name: "LactureDetails",
         component: LactureDetails
+    },
+    AccountSettingScreen: {
+        name: "AccountSettingScreen",
+        component: AccountSettingScreen
+    },
+    SubscriptionScreen: {
+        name: "SubscriptionScreen",
+        component: SubscriptionScreen
+    },
+    SubscriptionPlanScreen: {
+        name: "SubscriptionPlanScreen",
+        component: SubscriptionPlanScreen
+    },
+    SubscriptionPaymentScreen: {
+        name: "SubscriptionPaymentScreen",
+        component: SubscriptionPaymentScreen
+    },
+    SubscriptionCreditScreen: {
+        name: "SubscriptionCreditScreen",
+        component: SubscriptionCreditScreen
+    },
+    PremiumSuccessScreen: {
+        name: "PremiumSuccessScreen",
+        component: PremiumSuccessScreen
+    },
+    ShareFacebookScreen: {
+        name: "ShareFacebookScreen",
+        component: ShareFacebookScreen
     }
 }
