@@ -232,75 +232,172 @@ interface Lactures {
 export const lactures: Array<Lactures> = [
     {
         title: 'Getting Started',
-        lactures:[{
-            question : 'Who Is This Course For?',
-            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+        lactures: [{
+            question: 'Who Is This Course For?',
+            type: 'simple',
+            description: 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.\n\nFirst things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
         },
         {
-            question : 'What Is Rust?',
-            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+            question: 'What Is Rust?',
+            type: 'simple',
+            description: 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
         },
         {
-            question : 'Why Rust?',
-            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
+            question: 'Why Rust?',
+            type: 'simple',
+            description: 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
         },
         {
-            question : 'The Basic Program',
-            description : 'First things first; thank you for choosing this course! We hope learning with us will be a beneficial and pleasurable experience for you. Aside from the detailed explanation of the topic, we have quizzes and coding challenges to help the reader assess their grasp of the subject matter.',
-        },       
-    ],
+            question: 'The Basic Program',
+            type: 'program',
+            description: 'Below is the source code for a traditional Hello World program.',
+        }
+        ],
         isLock: false,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Basic Structure',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Variables',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Data Types',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Operators',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Conditional Expressions',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Loops',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Functions',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     },
     {
         title: 'Strings',
-        lactures:[],
+        lactures: [],
         isLock: true,
-        snell : '12'
+        snell: '12'
     }
 ];
+
+interface Quiz {
+    question: string,
+    answer: string,
+    correct: string,
+    options: any
+}
+
+export const quiz: Array<Quiz> = [{
+    question: 'What does HTML stand for?',
+    answer: 'Hyper text markup language',
+    correct: 'B',
+    options: [{
+        option: 'A',
+        title: 'Home text markup language',
+    },
+    {
+        option: 'B',
+        title: 'Hyper text markup language',
+    },
+    {
+        option: 'C',
+        title: 'Home tool markup language',
+    },
+    {
+        option: 'D',
+        title: 'Hyperlinks and Texting markup language',
+    }]
+},
+{
+    question: 'What does CSS stand for?',
+    answer: 'Cascading Style Sheet',
+    correct: 'A',
+    options: [{
+        option: 'A',
+        title: 'Cascading Style Sheet',
+    },
+    {
+        option: 'B',
+        title: 'Credit Style Sheet',
+    },
+    {
+        option: 'C',
+        title: 'Casecoding Style Sheet',
+    },
+    {
+        option: 'D',
+        title: 'Coding Style Sheet',
+    }]
+},
+{
+    question: 'What does CSS stand for?',
+    answer: 'Cascading Style Sheet',
+    correct: 'A',
+    options: [{
+        option: 'A',
+        title: 'Cascading Style Sheet',
+    },
+    {
+        option: 'B',
+        title: 'Credit Style Sheet',
+    },
+    {
+        option: 'C',
+        title: 'Casecoding Style Sheet',
+    },
+    {
+        option: 'D',
+        title: 'Coding Style Sheet',
+    }]
+},
+{
+    question: 'What does CSS stand for?',
+    answer: 'Cascading Style Sheet',
+    correct: 'A',
+    options: [{
+        option: 'A',
+        title: 'Cascading Style Sheet',
+    },
+    {
+        option: 'B',
+        title: 'Credit Style Sheet',
+    },
+    {
+        option: 'C',
+        title: 'Casecoding Style Sheet',
+    },
+    {
+        option: 'D',
+        title: 'Coding Style Sheet',
+    }]
+}]
+
 interface userCommunityList {
     userImage: string,
     userName: string,

@@ -12,6 +12,8 @@ import Question from "./Question";
 import CommunityListItem from "./CommunityListItem";
 import BottomSheetDialog from "./BottomSheetDialog";
 import Bubble from "./Bubble";
+import ExecutionModel from "./ExecutionModel";
+import QuizModel from "./QuizModel";
 
 export {
     Button,
@@ -27,5 +29,7 @@ export {
     Question,
     CommunityListItem,
     BottomSheetDialog,
-    Bubble
+    Bubble,
+    ExecutionModel,
+    QuizModel
 }

@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Header, Button, ProgressSlider, Question } from "../components";
+import { Text, Header, Button, ProgressSlider, Question, ExecutionModel } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -28,6 +28,7 @@ export default function LactureDetails(props: any) {
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     const [selectedQuestionIndex, setSelectedQuetionIndex] = useState<number>(0)
+    const [runCode, setRunCode] = useState<boolean>(false)
 
     const selectedQuestion = lactures[0].lactures[selectedQuestionIndex]
 
@@ -62,7 +63,12 @@ export default function LactureDetails(props: any) {
                     {getTranslation('Lesson') + (selectedQuestionIndex + 1) + "/" + lactures[0].lactures.length}
                 </Text>
                 <View style={styles.detailsView}>
-                    <Question selectedQuestion={selectedQuestion} />
+                    <Question
+                        type={1}
+                        selectedQuestion={selectedQuestion}
+                        runCode={() => {
+                            setRunCode(true)
+                        }} />
                 </View>
             </View>
             <View style={styles.bottomView}>
@@ -70,12 +76,13 @@ export default function LactureDetails(props: any) {
                 <Button
                     style={styles.btnContinue}
                     backgroundColor={COLORS.primary}
-                    title={getTranslation('new_next') +  lactures[0].lactures[selectedQuestionIndex + 1]?.question}
+                    title={lactures[0].lactures[selectedQuestionIndex + 1]?.question ? getTranslation('new_next') + lactures[0].lactures[selectedQuestionIndex + 1]?.question : getTranslation('new_next') + 'Quiz'}
                     size={SCALE_SIZE(16)}
                     color={COLORS.white}
                     family={FONT.bold}
                     onPress={() => {
                         if (selectedQuestionIndex + 1 == lactures[0].lactures.length) {
+                            props.navigation.navigate(SCREENS.StartQuiz.name)
                         }
                         else {
                             setSelectedQuetionIndex(selectedQuestionIndex + 1)
@@ -83,6 +90,11 @@ export default function LactureDetails(props: any) {
                     }}
                 />
             </View>
+            <ExecutionModel
+                isvisible={runCode}
+                onClose={() => {
+                    setRunCode(false)
+                }} />
         </>
     )
 }
@@ -116,8 +128,8 @@ const styles = StyleSheet.create({
     frameImage: {
         height: SCALE_SIZE(40),
         width: SCALE_SIZE(40),
-        marginHorizontal:SCALE_SIZE(16),
-        marginVertical:SCALE_SIZE(16)
+        marginHorizontal: SCALE_SIZE(16),
+        marginVertical: SCALE_SIZE(16)
     }
 
 })

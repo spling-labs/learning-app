@@ -17,6 +17,9 @@ import Community from "./Community";
 import Profile from "./Profile";
 import Lession from "./Lession";
 import LactureDetails from "./LactureDetails";
+import StartQuiz from "./StartQuiz";
+import Quiz from "./Quiz";
+import QuizFinish from "./QuizFinish";
 
 export const SCREENS = {
     Splash: {
@@ -94,5 +97,17 @@ export const SCREENS = {
     LactureDetails: {
         name: "LactureDetails",
         component: LactureDetails
+    },
+    StartQuiz: {
+        name: "StartQuiz",
+        component: StartQuiz
+    },
+    Quiz: {
+        name: "Quiz",
+        component: Quiz
+    },
+    QuizFinish: {
+        name: "QuizFinish",
+        component: QuizFinish
     }
 }

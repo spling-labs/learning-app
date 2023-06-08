@@ -32,7 +32,14 @@ export const COLORS = {
     dialog_transparent: 'rgba(59, 66, 74, 0.33)',
     dialog_line_coloe: '#D9D9D9',
     dialog_item_background: '#F6F6F6',
-    desColor:'#FDD5C2'
+    desColor: '#FDD5C2',
+    warning: '#F7CA45',
+    warningShadow: '#BEB184',
+    color_D5D3D3: '#D5D3D3',
+    color_F1FAEB: '#F1FAEB',
+    red: '#EA5953',
+    skipShadow: '#FADFD1',
+    skipBackground: "#FEF1EA"
 
 }
 
@@ -97,6 +104,11 @@ export const IMAGES = {
     report: require('./images/report.png'),
     blockimahe: require('./images/blockimahe.png'),
     backgroundWelcome: require('./images/welcome_bg.png'),
-    successBackground: require('./images/success_bg.png')
-
+    successBackground: require('./images/success_bg.png'),
+    unfill: require('./images/button_unfill.png'),
+    check: require('./images/check.png'),
+    quizIcon: require('./images/quiz_icon.png'),
+    wrong: require('./images/wrong.png'),
+    quizLogo: require('./images/quiz_logo.png'),
+    time:require('./images/time.png')
 }

@@ -118,7 +118,7 @@ export default function ChooseTopic(props: any) {
                     </>
                 }
             </ScrollView>
-            <Bubble title={getMessages()} />
+            <Bubble type={1} title={getMessages()} />
             <Button
                 style={style.btnContinue}
                 backgroundColor={COLORS.primary}
