@@ -35,28 +35,32 @@ export default function Courses(props: any) {
     })
 
     return (
-            <View style={styles.container}>
-                <ImageBackground style={styles.container}
-                    source={IMAGES.bgCreateProfile}
-                    resizeMode="stretch">
-                    <Text
-                        style={styles.avaibleTxtStyle}
-                        color={COLORS.black}
-                        fontFamily={FONT.black}
-                        size={SCALE_SIZE(24)}>
-                        {getTranslation('available_courses')}
-                    </Text>
+        <ImageBackground style={styles.container}
+            source={IMAGES.bgCreateProfile}
+            resizeMode='cover'>
+        </ImageBackground>
+        // <View style={styles.container}>
+        //     <ImageBackground style={styles.container}
+        //         source={IMAGES.bgCreateProfile}
+        //         resizeMode="stretch">
+        //         <Text
+        //             style={styles.avaibleTxtStyle}
+        //             color={COLORS.black}
+        //             fontFamily={FONT.black}
+        //             size={SCALE_SIZE(24)}>
+        //             {getTranslation('available_courses')}
+        //         </Text>
 
-                    <FlatList
-                        data={availableCourseList}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({ item }) => {
-                            return <AvailableCoursesItemList props={props} item={item} modal={setModalVisible} />
-                        }}
-                    />
-                </ImageBackground>
-                <AvaialbeCoursesBottomDialog item={modalVisible} modalVisible={setModalVisible} />
-            </View>
+        //         <FlatList
+        //             data={availableCourseList}
+        //             keyExtractor={(item, index) => index.toString()}
+        //             renderItem={({ item }) => {
+        //                 return <AvailableCoursesItemList props={props} item={item} modal={setModalVisible} />
+        //             }}
+        //         />
+        //     </ImageBackground>
+        //     <AvaialbeCoursesBottomDialog item={modalVisible} modalVisible={setModalVisible} />
+        // </View>
     )
 }
 

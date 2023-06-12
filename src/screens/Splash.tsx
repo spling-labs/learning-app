@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     image: {
-        width: SCALE_SIZE(200),
-        height: SCALE_SIZE(88),
+        width: 200,
+        height: 88,
         alignSelf: 'center'
     }
 })

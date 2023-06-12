@@ -30,7 +30,7 @@ export default function SignUpSuccess(props: any) {
             <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.white} />
             <ImageBackground style={styles.container}
                 source={IMAGES.backgroundWhite}
-                resizeMode="stretch">
+                resizeMode="cover">
                 <View style={styles.container} />
                 <View style={[styles.container, { justifyContent: 'center' }]}>
                     <Image style={styles.successImage} resizeMode="contain" source={IMAGES.congrates} />

@@ -28,7 +28,7 @@ export default function CongratulationScreen(props: any) {
     return (
         <ImageBackground style={styles.container}
             source={IMAGES.backgroundWhite}
-            resizeMode="stretch">
+            resizeMode="cover">
             <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.white} />
             <View style={styles.container}>
 

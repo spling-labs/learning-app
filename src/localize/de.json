@@ -1,12 +1,13 @@
 {
-    "starting_msg": "The best way to learn to\ncode for free",
-    "starting_des": "A journey of a thousand miles begins\nwith a single step",
+    "starting_msg": "The best way to learn to code for free",
+    "starting_des": "A journey of a thousand miles begins with a single step",
     "get_started": "Get Started",
     "have_account": "I Already Have an Account",
     "Continue": "Continue",
     "dont_miss_msg": "Don’t miss out the on the\ndaily learning consistency",
     "dont_miss_des": "Consistency and discipline are everything\nwhen it comes to success",
-    "learning_msg": "I’m so hungry. Let’s\nhunt some fresh snell. ",
+    "learning_msg": "I’m so hungry. Let’s",
+    "learning_msg_two":"hunt some fresh snell.",
     "start_learning": "Start Learning",
     "Questions": "Questions ",
     "correct": "😊 Correct! Superb",
@@ -148,6 +149,9 @@
     "lession_completed":"Lesson Completed",
     "excelent_job":"You Did Excellent Job!",
     "lession_message":"Bellow you can see your overall\nlesson performance",
-    "Next lesson":"Next lesson"
+    "Next lesson":"Next lesson",
+    "lession_locked":"Lesson Locked",
+    "lession_locked_msg":"Complete the previous lessons to unlock this one.",
+    "Ok":"Ok"
 
 }

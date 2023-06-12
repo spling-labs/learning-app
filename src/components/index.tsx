@@ -14,6 +14,7 @@ import BottomSheetDialog from "./BottomSheetDialog";
 import Bubble from "./Bubble";
 import ExecutionModel from "./ExecutionModel";
 import QuizModel from "./QuizModel";
+import Lock from "./Lock";
 
 export {
     Button,
@@ -31,5 +32,6 @@ export {
     BottomSheetDialog,
     Bubble,
     ExecutionModel,
-    QuizModel
+    QuizModel,
+    Lock
 }

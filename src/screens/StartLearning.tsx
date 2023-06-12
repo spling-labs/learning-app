@@ -25,8 +25,9 @@ export default function StartLearning(props: any) {
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     return (
-        <ImageBackground style={styles.container} resizeMode='stretch' source={IMAGES.bgCreateProfile}>
-            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />           
+        <ImageBackground style={styles.container} resizeMode='cover' source={IMAGES.bgCreateProfile}>
+            {/* <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />    */}
+            <StatusBar barStyle={'dark-content'} translucent={true} backgroundColor={'transparent'} />
             <View style={styles.container} />
             <View style={[styles.container, { justifyContent: 'center' }]}>
                 <Text
@@ -36,6 +37,14 @@ export default function StartLearning(props: any) {
                     align={'center'}
                     size={SCALE_SIZE(24)}>
                     {getTranslation('learning_msg')}
+                </Text>
+                <Text
+                    style={[styles.question, { marginTop: SCALE_SIZE(-6) }]}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    align={'center'}
+                    size={SCALE_SIZE(24)}>
+                    {getTranslation('learning_msg_two')}
                 </Text>
                 <Image resizeMode="contain" style={styles.image} source={IMAGES.learning_logo} />
             </View>
@@ -64,12 +73,11 @@ const styles = StyleSheet.create({
     question: {
         marginTop: SCALE_SIZE(16),
         marginHorizontal: SCALE_SIZE(16),
-        lineHeight: SCALE_SIZE(41),
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
     image: {
-        width: SCALE_SIZE(200),
-        height: SCALE_SIZE(88),
+        width: 200,
+        height: 88,
         alignSelf: 'center',
         marginTop: SCALE_SIZE(24)
     },

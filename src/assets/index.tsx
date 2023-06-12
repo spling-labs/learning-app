@@ -134,9 +134,9 @@ export const IMAGES = {
     backgroundWelcome: require('./images/welcome_bg.png'),
     successBackground: require('./images/success_bg.png'),
     unfill: require('./images/button_unfill.png'),
-    check: require('./images/check.png'),
     quizIcon: require('./images/quiz_icon.png'),
     wrong: require('./images/wrong.png'),
     quizLogo: require('./images/quiz_logo.png'),
-    time:require('./images/time.png')
+    time:require('./images/time.png'),
+    lockImage: require('./images/lecture_lock.png')
 }

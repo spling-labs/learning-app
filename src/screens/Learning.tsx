@@ -104,10 +104,10 @@ export default function Learning(props: any) {
                         {getTranslation('explaination_msg')}
                     </Text>
                 </Text>
+                <View style={{ flexDirection: 'row', marginTop: SCALE_SIZE(48) }}>
+                    <Bubble type={1} title={getTranslation('awesome_doing_greate')} />
+                </View>
             </ScrollView>
-            <View style={{ flexDirection: 'row', marginTop:SCALE_SIZE(24) }}>
-              <Bubble type={1} title={getTranslation('awesome_doing_greate')}/>
-            </View>
             <Button
                 style={styles.btnContinue}
                 backgroundColor={COLORS.primary}

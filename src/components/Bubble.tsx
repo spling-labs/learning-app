@@ -66,8 +66,9 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: SCALE_SIZE(0),
         borderBottomRightRadius: SCALE_SIZE(8),
         backgroundColor: COLORS.white,
-        elevation: 2,
         position: 'absolute',
+        borderWidth:1,
+        borderColor:COLORS.contentThree,
         bottom: SCALE_SIZE(66),
         left: SCALE_SIZE(72)
     },
