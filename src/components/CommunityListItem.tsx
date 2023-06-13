@@ -15,22 +15,54 @@ export default function CommunityListItem(props: any) {
 
     return (
         <View style={style.container}>
-            <View style={[style.flexRowStyle, { justifyContent: 'space-between' }]}>
-                <View style={style.flexRowStyle}>
-                    <Image style={style.userImageStyle} resizeMode="contain" source={IMAGES.profile} />
-                    <View style={{ marginLeft: SCALE_SIZE(8) }}>
+            <View style={[style.flexRowStyle]}>
+                <View style={[style.flexRowStyle, { flex: 1.0 }]}>
+                    <View style={style.profileImage}>
+                        <Image style={style.userImageStyle} resizeMode="cover" source={IMAGES.profile} />
+                    </View>
+                    <View style={{ marginLeft: SCALE_SIZE(8), alignSelf: 'center' }}>
                         <View style={style.flexRowStyle}>
-                            <Text color={COLORS.communityTextColor} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{props.item.userName}</Text>
-                            <Text style={style.userTextStyle} color={COLORS.primary} fontFamily={FONT.semiBold} size={SCALE_SIZE(14)}>{'Follow'}</Text>
+                            <Text
+                                color={COLORS.communityTextColor}
+                                fontFamily={FONT.bold}
+                                size={SCALE_SIZE(14)}>
+                                {props.item.userName}
+                            </Text>
+                            <Text
+                                style={style.userTextStyle}
+                                color={COLORS.primary}
+                                fontFamily={FONT.bold}
+                                size={SCALE_SIZE(14)}>
+                                {'Follow'}
+                            </Text>
                         </View>
-                        <View style={style.flexRowStyle}>
-                            <Text style={style.snellTextStyle} color={COLORS.communitysnellColor} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{props.item.userSnell}</Text>
-                            <Text style={style.levelTextStyle} color={COLORS.communitylevelColor} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'L.V 2'}</Text>
-                            <Text style={style.hrTextStyle} color={COLORS.communityHrColor} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'1h ago'}</Text>
+                        <View style={[style.flexRowStyle, { marginTop: SCALE_SIZE(4) }]}>
+                            <Text
+                                style={style.snellTextStyle}
+                                color={COLORS.warning}
+                                fontFamily={FONT.semiBold}
+                                size={SCALE_SIZE(12)}>
+                                {props.item.userSnell}
+                            </Text>
+                            <Text
+                                style={style.levelTextStyle}
+                                color={COLORS.communitylevelColor}
+                                fontFamily={FONT.semiBold}
+                                size={SCALE_SIZE(12)}>
+                                {'L.V 2'}
+                            </Text>
+                            <Text
+                                style={style.hrTextStyle}
+                                color={COLORS.communityHrColor}
+                                fontFamily={FONT.regular}
+                                size={SCALE_SIZE(12)}>
+                                {'1h ago'}
+                            </Text>
                         </View>
                     </View>
                 </View>
                 <TouchableOpacity
+                    style={{ alignSelf: 'center' }}
                     onPress={() => {
                         props.modalVisible(true)
                         props.modalActionVisible('short_by')
@@ -38,25 +70,38 @@ export default function CommunityListItem(props: any) {
                     <Image style={style.dotsImageStyle} resizeMode="contain" source={IMAGES.threedots} />
                 </TouchableOpacity>
             </View>
-            <Text color={COLORS.communityTextColor} fontFamily={FONT.semiBold} size={SCALE_SIZE(16)}>{props.item.title}</Text>
-            <Text color={COLORS.communityTextColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{props.item.discription} </Text>
-            <Text color={COLORS.communitytagColor} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{props.item.usertag}</Text>
+            <Text
+                style={{ marginTop: SCALE_SIZE(16) }}
+                color={COLORS.communityTextColor}
+                fontFamily={FONT.semiBold}
+                size={SCALE_SIZE(16)}>
+                {props.item.title}
+            </Text>
+            <Text
+                style={{ marginTop: SCALE_SIZE(4) }}
+                color={COLORS.communityTextColor}
+                fontFamily={FONT.regular}
+                size={SCALE_SIZE(14)}>
+                {props.item.discription}
+            </Text>
+            <Text
+                style={{ marginTop: SCALE_SIZE(4) }}
+                color={COLORS.communitytagColor}
+                fontFamily={FONT.regular}
+                size={SCALE_SIZE(12)}>
+                {props.item.usertag}
+            </Text>
             {
                 props.item.cummunitcationImage == "" ?
                     <View />
                     :
-                    <ImageBackground source={props.item.cummunitcationImage} imageStyle={{ borderRadius: 20 }} style={style.postImgStyle} />
+                    <ImageBackground style={style.postImgStyle} source={props.item.cummunitcationImage} resizeMode='cover'  />
 
             }
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: SCALE_SIZE(16) }}>
+            <View style={{ flexDirection: 'row', marginTop: SCALE_SIZE(16), justifyContent:'space-between'}}>
                 <View style={style.flexRowStyle}>
                     <View style={style.flexRowStyle}>
-                        {
-                            props.item.likeCount == "0" ?
-                                <Image style={style.favouriteImageStyle} resizeMode="contain" source={IMAGES.favourite} />
-                                :
-                                <Image style={[style.favouriteImageStyle]} resizeMode="contain" source={IMAGES.favouritefill} />
-                        }
+                        <Image style={[style.favouriteImageStyle]} resizeMode="contain" source={IMAGES.favourite} />
                         <Text
                             style={style.textStyle}
                             color={COLORS.communitytagColor}
@@ -66,12 +111,7 @@ export default function CommunityListItem(props: any) {
                         </Text>
                     </View>
                     <View style={style.flexRowStyle}>
-                        {
-                            props.item.msgCount == "0" ?
-                                <Image style={style.messageImageStyle} resizeMode="contain" source={IMAGES.message} />
-                                :
-                                <Image style={style.messageImageStyle} resizeMode="contain" source={IMAGES.messagefill} />
-                        }
+                        <Image style={style.messageImageStyle} resizeMode="contain" source={IMAGES.message} />
                         <Text
                             style={style.textStyle}
                             color={COLORS.communitytagColor}
@@ -82,32 +122,33 @@ export default function CommunityListItem(props: any) {
                     </View>
                 </View>
                 <Image style={style.shareImageStyle} resizeMode="contain" source={IMAGES.share} />
-            </View>
 
+            </View>
         </View>
     )
 }
 
 const style = StyleSheet.create({
     container: {
-        marginHorizontal: SCALE_SIZE(16),
+        paddingHorizontal: SCALE_SIZE(16),
         flex: 1.0,
-        marginTop: SCALE_SIZE(8)
+        paddingVertical: SCALE_SIZE(16)
     },
     postImgStyle: {
         height: SCALE_SIZE(192),
-        resizeMode: 'cover',
-        marginTop: SCALE_SIZE(8)
+        marginTop: SCALE_SIZE(8),
+        borderRadius:SCALE_SIZE(8),
+        overflow:'hidden'
     },
     userImageStyle: {
-        height: SCALE_SIZE(40),
-        width: SCALE_SIZE(40),
+        height: SCALE_SIZE(36),
+        width: SCALE_SIZE(36),
         alignSelf: 'center',
     },
     favouriteImageStyle: {
         height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
-        marginLeft: SCALE_SIZE(24)
+        marginLeft: SCALE_SIZE(16)
     },
     messageImageStyle: {
         height: SCALE_SIZE(24),
@@ -129,23 +170,22 @@ const style = StyleSheet.create({
     },
     userTextStyle: {
         alignSelf: 'center',
-        marginLeft: SCALE_SIZE(8)
+        marginLeft: SCALE_SIZE(16)
     },
     snellTextStyle: {
         alignSelf: 'center',
         backgroundColor: '#FEFAEC',
         borderRadius: SCALE_SIZE(32),
-        paddingLeft: SCALE_SIZE(8),
-        paddingRight: SCALE_SIZE(8)
+        paddingHorizontal: SCALE_SIZE(16),
+        paddingVertical: SCALE_SIZE(4)
     },
     levelTextStyle: {
         alignSelf: 'center',
         marginLeft: SCALE_SIZE(8),
         backgroundColor: '#F1FAEB',
         borderRadius: SCALE_SIZE(32),
-        paddingLeft: SCALE_SIZE(8),
-        paddingRight: SCALE_SIZE(8)
-
+        paddingHorizontal: SCALE_SIZE(16),
+        paddingVertical: SCALE_SIZE(4)
     },
     hrTextStyle: {
         alignSelf: 'center',
@@ -153,5 +193,14 @@ const style = StyleSheet.create({
     },
     flexRowStyle: {
         flexDirection: 'row'
+    },
+    profileImage: {
+        height: SCALE_SIZE(40),
+        width: SCALE_SIZE(40),
+        borderRadius: SCALE_SIZE(20),
+        backgroundColor: COLORS.white,
+        elevation: 2,
+        justifyContent: 'center',
+        alignSelf: 'center'
     }
 })

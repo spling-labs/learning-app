@@ -55,7 +55,7 @@ export default function AvaialbeCoursesBottomDialog(props: any) {
 
     return (
 
-        <View >
+        <View>
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -63,32 +63,36 @@ export default function AvaialbeCoursesBottomDialog(props: any) {
                 style={style.modalBox}
                 onRequestClose={() => props.modalVisible(false)}
             >
-                <View style={{ backgroundColor: COLORS.dialog_transparent, flex: 1.0 }}>
+                <View style={style.itemContainer}>
                     <View style={style.content}>
-                        <ScrollView style={{ flex: 1, height: Dimensions.get('screen').height - 100 }}>
+                        <ScrollView
+                            style={style.scrolled}
+                            showsVerticalScrollIndicator={false}>
                             <View>
                                 <View style={style.lineStyle} />
                                 <Text
-                                    color={COLORS.black}
+                                    style={{ marginTop: SCALE_SIZE(16) }}
+                                    color={COLORS.questionColor}
                                     fontFamily={FONT.black}
-                                    size={SCALE_SIZE(24)}>
+                                    size={SCALE_SIZE(22)}>
                                     {'Rust for Begginers'}
                                 </Text>
                                 <Text
                                     color={COLORS.contentTwo}
-                                    fontFamily={FONT.regular}
+                                    fontFamily={FONT.medium}
                                     size={SCALE_SIZE(14)}>
                                     {'66 Lessons'}
                                 </Text>
                                 <Text
-                                    color={COLORS.black}
+                                    style={{ marginTop: SCALE_SIZE(16) }}
+                                    color={COLORS.questionColor}
                                     fontFamily={FONT.black}
                                     size={SCALE_SIZE(16)}>
                                     {getTranslation('what_learn')}
                                 </Text>
                                 <Text
                                     color={COLORS.contentTwo}
-                                    fontFamily={FONT.regular}
+                                    fontFamily={FONT.medium}
                                     size={SCALE_SIZE(14)}>
                                     {getTranslation('Learn_modern')}
                                 </Text>
@@ -97,15 +101,32 @@ export default function AvaialbeCoursesBottomDialog(props: any) {
                                     style={{ marginBottom: SCALE_SIZE(16) }}
                                     data={availableList}
                                     keyExtractor={(item, index) => index.toString()}
-                                    renderItem={ItemView}
+                                    renderItem={({ item, index }) => {
+                                        return (
+                                            <View style={style.ViewStyle}>
+                                                <Image style={style.IconStyle} resizeMode="contain" source={IMAGES.ic_right} />
+                                                <View>
+                                                    <Text
+                                                        style={style.textStyle}
+                                                        color={COLORS.questionColor}
+                                                        fontFamily={FONT.bold}
+                                                        size={SCALE_SIZE(14)}>
+                                                        {item.title}
+                                                    </Text>
+                                                </View>
+                                            </View>
+                                        )
+                                    }}
                                 />
                                 <Text
+                                    style={{ marginTop: SCALE_SIZE(8) }}
                                     color={COLORS.questionColor}
                                     fontFamily={FONT.black}
                                     size={SCALE_SIZE(16)}>
                                     {getTranslation('course_summary')}
                                 </Text>
                                 <Text
+                                    style={{ marginTop: SCALE_SIZE(8) }}
                                     color={COLORS.contentColor}
                                     fontFamily={FONT.regular}
                                     size={SCALE_SIZE(14)}>
@@ -151,14 +172,17 @@ const lessonsItemView = (props: any) => {
             </Text>
             {
                 props.item.image == "" ?
-                    <Text
-                        style={style.readTextStyle}
-                        color={COLORS.questionColor}
-                        fontFamily={FONT.semiBold}
-                        align={'center'}
-                        size={SCALE_SIZE(12)}>
-                        {"Read First Lesson"}
-                    </Text>
+
+                    <View
+                        style={style.readTextStyle}>
+                        <Text
+                            style={{marginTop:-2}}
+                            color={COLORS.questionColor}
+                            fontFamily={FONT.bold}
+                            size={SCALE_SIZE(12)}>
+                            {"Read First Lesson"}
+                        </Text>
+                    </View>
                     :
                     <Image style={style.lockIconStyle} resizeMode="contain" source={props.item.image} />
 
@@ -168,22 +192,6 @@ const lessonsItemView = (props: any) => {
     )
 }
 
-const ItemView = (props: any) => {
-    return (
-        <View style={style.ViewStyle}>
-            <Image style={style.IconStyle} resizeMode="contain" source={IMAGES.ic_right} />
-            <View>
-                <Text
-                    style={style.textStyle}
-                    color={COLORS.questionColor}
-                    fontFamily={FONT.semiBold}
-                    size={SCALE_SIZE(14)}>
-                    {props.item.title}
-                </Text>
-            </View>
-        </View>
-    )
-}
 const style = StyleSheet.create({
     container: {
         borderRadius: SCALE_SIZE(16),
@@ -249,24 +257,34 @@ const style = StyleSheet.create({
         paddingHorizontal: SCALE_SIZE(16)
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(8)
+        marginLeft: SCALE_SIZE(8),
+        flex:1.0,
+        alignSelf:'center'
     },
     lessonsViewStyle: {
         backgroundColor: COLORS.color_F6F6F6,
         borderRadius: SCALE_SIZE(8),
         marginTop: SCALE_SIZE(16),
-        height: SCALE_SIZE(54),
+        paddingHorizontal:SCALE_SIZE(16),
+        paddingVertical:SCALE_SIZE(16),
         flexDirection: "row",
-        justifyContent: 'space-between',
-        alignItems: 'center'
     },
     readTextStyle: {
         backgroundColor: '#F7CA45',
         borderRadius: SCALE_SIZE(12),
-        width: SCALE_SIZE(152),
+        paddingHorizontal: SCALE_SIZE(32),
         height: SCALE_SIZE(32),
         marginRight: SCALE_SIZE(8),
         borderBottomWidth: 4,
+        paddingVertical: SCALE_SIZE(4),
         borderBottomColor: '#BEB184',
+    },
+    itemContainer: {
+        backgroundColor: COLORS.dialog_transparent,
+        flex: 1.0
+    },
+    scrolled: {
+        flex: 1,
+        height: Dimensions.get('screen').height - 128
     }
 })

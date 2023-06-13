@@ -109,7 +109,7 @@
     "share_now": "Share Now",
     "available_courses": "Available Courses",
     "what_learn": "What you will learn",
-    "Learn_modern": "Learn a modern, powerful yet safe systems programming language!",
+    "Learn_modern": "Learn a modern, powerful yet safe systems\nprogramming language!",
     "solve_problems": "Solve problems in Rust",
     "effectively_leveragea": "Effectively leverage Rust's memory safety guarantees",
     "write_applications": "Write applications and libraries",
@@ -152,6 +152,13 @@
     "Next lesson":"Next lesson",
     "lession_locked":"Lesson Locked",
     "lession_locked_msg":"Complete the previous lessons to unlock this one.",
-    "Ok":"Ok"
+    "Ok":"Ok",
+    "New Password": "New Password",
+    "Confirm Password": "Confirm Password",
+    "Save to Change":"Save to Change",
+    "Cancel": "Cancel",
+    "take picture": "take picture",
+    "Choose picture": "Choose picture",
+    "Set a new picture or view the current one": "Set a new picture or view the current one."
 
 }

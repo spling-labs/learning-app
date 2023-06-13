@@ -32,7 +32,7 @@ export const COLORS = {
     dialog_transparent: 'rgba(59, 66, 74, 0.33)',
     dialog_line_coloe: '#D9D9D9',
     delete_color: "#EA5953",
-    image_shadow:"#CEC7C5",
+    image_shadow: "#CEC7C5",
     dialog_item_background: '#F6F6F6',
     desColor: '#FDD5C2',
     warning: '#F7CA45',
@@ -41,7 +41,8 @@ export const COLORS = {
     color_F1FAEB: '#F1FAEB',
     red: '#EA5953',
     skipShadow: '#FADFD1',
-    skipBackground: "#FEF1EA"
+    skipBackground: "#FEF1EA",
+    color_E7E3E2: '#E7E3E2'
 
 }
 
@@ -137,6 +138,13 @@ export const IMAGES = {
     quizIcon: require('./images/quiz_icon.png'),
     wrong: require('./images/wrong.png'),
     quizLogo: require('./images/quiz_logo.png'),
-    time:require('./images/time.png'),
-    lockImage: require('./images/lecture_lock.png')
+    time: require('./images/time.png'),
+    lockImage: require('./images/lecture_lock.png'),
+    topic: require('./images/topic.png'),
+    completed: require('./images/completed.png'),
+    completed_unfill: require('./images/completed_unfill.png'),
+    covered: require('./images/covered.png'),
+    quiz: require('./images/quiz.png'),
+    down: require('./images/down_arrow.png'),
+    edit: require('./images/edit.png')
 }

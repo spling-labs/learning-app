@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: SCALE_SIZE(0),
         borderBottomRightRadius: SCALE_SIZE(8),
         backgroundColor: COLORS.white,
-        elevation: 2,
+        borderWidth:1,
+        borderColor:COLORS.contentThree,
         position: 'absolute',
         left: SCALE_SIZE(96 + 8),
         bottom:SCALE_SIZE(24)

@@ -32,7 +32,7 @@ export default function StartQuiz(props: any) {
 
     return (
         <ImageBackground style={styles.container} resizeMode='cover' source={IMAGES.bgCreateProfile}>
-            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />
+            <StatusBar barStyle={'dark-content'} translucent={true} backgroundColor={'transparent'} />
             <View style={styles.container} />
             <View style={[styles.container, { justifyContent: 'center' }]}>
                 <Text

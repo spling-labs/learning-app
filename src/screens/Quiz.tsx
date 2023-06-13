@@ -63,6 +63,7 @@ export default function Quiz(props: any) {
         <View style={styles.container}>
             <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.white} />
             <Header
+                type={1}
                 mask
                 mask_number={'180'}
                 title='Introduction'

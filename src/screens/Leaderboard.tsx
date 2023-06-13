@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image } from "react-native";
+import { View, StyleSheet, StatusBar, Image, FlatList } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -19,10 +19,11 @@ import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
 import { Text, Button } from "../components";
-import { useFocusEffect } from "@react-navigation/native";
-import { FlatList } from "react-native-gesture-handler";
-import InprogressListItem from "../components/InprogressListItem";
 import LeaderBordItemList from "../components/LeaderBordItemList";
+
+//PACKAGES
+import { useFocusEffect } from "@react-navigation/native";
+
 
 export default function Leaderboard(props: any) {
 
@@ -46,34 +47,54 @@ export default function Leaderboard(props: any) {
                 </Text>
                 <View style={styles.shareViewStyle}>
                     <Image style={styles.shareImageStyle} resizeMode="contain" source={IMAGES.ic_leader_share} />
-                    <Text color={COLORS.contentColor} fontFamily={FONT.regular} align={'center'} size={SCALE_SIZE(16)}>{getTranslation('share')}</Text>
+                    <Text
+                        color={COLORS.contentColor}
+                        fontFamily={FONT.regular}
+                        align={'center'}
+                        size={SCALE_SIZE(16)}>
+                        {getTranslation('share')}
+                    </Text>
                 </View>
             </View>
-
-            <View style={styles.dropdownStyle}>
+            <View style={[styles.dropdownStyle, {}]}>
                 <Text
                     style={styles.topStyle}
-                    color={COLORS.black}
+                    color={COLORS.questionColor}
                     fontFamily={FONT.black}
                     size={SCALE_SIZE(16)}>
                     {'Top 100'}
                 </Text>
-                <View style={styles.shareViewStyle}>
-                    <View style={styles.dailyStyle}>
-                        <Text style={styles.dailytxtStyle} color={COLORS.contentColor} fontFamily={FONT.black} align={'center'} size={SCALE_SIZE(16)}>{'Daily'}</Text>
-                        <Image style={[styles.dropdownImageStyle, { marginRight: SCALE_SIZE(16), marginLeft: SCALE_SIZE(16) }]} resizeMode="contain" source={IMAGES.dropdown} />
+                <View style={{ alignSelf: 'center', flexDirection: 'row', marginEnd: SCALE_SIZE(16), marginTop: SCALE_SIZE(5) }}>
+                    <View style={[styles.dailyStyle, { marginRight: SCALE_SIZE(24) }]}>
+                        <Text
+                            style={styles.dailytxtStyle}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.black}
+                            size={SCALE_SIZE(14)}>
+                            {'Daily'}
+                        </Text>
+                        <Image style={[styles.dropdownImageStyle, { marginRight: SCALE_SIZE(4), marginLeft: SCALE_SIZE(4) }]} resizeMode="contain" source={IMAGES.dropdown} />
                     </View>
                     <View style={styles.dailyStyle}>
-                        <Text style={styles.dailytxtStyle} color={COLORS.contentColor} fontFamily={FONT.black} align={'center'} size={SCALE_SIZE(16)}>{'Country'}</Text>
-                        <Image style={[styles.dropdownImageStyle, { marginLeft: SCALE_SIZE(16) }]} resizeMode="contain" source={IMAGES.dropdown} />
+                        <Text
+                            style={styles.dailytxtStyle}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.black}
+                            size={SCALE_SIZE(14)}>
+                            {'Country'}
+                        </Text>
+                        <Image style={[styles.dropdownImageStyle, { marginLeft: SCALE_SIZE(4) }]} resizeMode="contain" source={IMAGES.dropdown} />
                     </View>
                 </View>
             </View>
             <FlatList
                 data={leaderBordList}
+                showsVerticalScrollIndicator={false}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => {
-                    return <LeaderBordItemList props={props} item={item} />
+                    return (
+                        <LeaderBordItemList props={props} item={item} />
+                    )
                 }}
             />
         </View>
@@ -88,28 +109,30 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-between",
         backgroundColor: COLORS.white,
-        height: SCALE_SIZE(48),
+        paddingVertical: SCALE_SIZE(10),
+        paddingHorizontal: SCALE_SIZE(16)
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(16),
         alignSelf: 'center',
+        marginTop: SCALE_SIZE(-5)
     },
     shareViewStyle: {
         flexDirection: 'row',
         alignSelf: 'center',
-        marginTop: SCALE_SIZE(8),
         marginRight: SCALE_SIZE(16)
     },
     shareImageStyle: {
-        height: SCALE_SIZE(18),
-        width: SCALE_SIZE(16),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
         marginRight: SCALE_SIZE(8),
         alignSelf: 'center',
     },
     dropdownStyle: {
         flexDirection: 'row',
         justifyContent: "space-between",
-        marginTop: SCALE_SIZE(16)
+        marginTop: SCALE_SIZE(24),
+        marginBottom: SCALE_SIZE(8),
+        alignItems: 'center'
     },
     topStyle: {
         marginLeft: SCALE_SIZE(16),
@@ -117,18 +140,17 @@ const styles = StyleSheet.create({
         marginTop: SCALE_SIZE(8)
     },
     dailytxtStyle: {
-        alignItems: 'center',
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
     dailyStyle: {
         flexDirection: 'row',
     },
     dropdownImageStyle: {
-        height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
         alignSelf: 'center',
-        marginTop: SCALE_SIZE(8),
-        tintColor: COLORS.contentColor,
+        tintColor: COLORS.contentTwo,
+        marginTop: SCALE_SIZE(3)
     },
 
 })

@@ -25,26 +25,26 @@ export default function QuizFinish(props: any) {
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
     return (
-        <ImageBackground style={styles.container} resizeMode='stretch' source={IMAGES.bgCreateProfile}>
+        <ImageBackground style={styles.container} resizeMode='cover' source={IMAGES.bgCreateProfile}>
             <>
-                <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />
+                <StatusBar barStyle={'dark-content'} translucent={true} backgroundColor={'transparent'} />
                 <Image style={styles.successImage} resizeMode="contain" source={IMAGES.congrates} />
                 <Text
-                    style={{ marginTop: SCALE_SIZE(16), alignSelf: 'center' }}
+                    style={styles.txtOne}
                     color={COLORS.contentTwo}
                     fontFamily={FONT.medium}
                     size={SCALE_SIZE(12)}>
                     {getTranslation('lession_completed')}
                 </Text>
                 <Text
-                    style={{ marginTop: SCALE_SIZE(8), alignSelf: 'center' }}
+                    style={styles.txtTwo}
                     color={COLORS.questionColor}
                     fontFamily={FONT.black}
                     size={SCALE_SIZE(24)}>
                     {getTranslation('excelent_job')}
                 </Text>
                 <Text
-                    style={{ marginTop: SCALE_SIZE(8), alignSelf: 'center' }}
+                    style={styles.txtThree}
                     color={COLORS.contentTwo}
                     fontFamily={FONT.medium}
                     align={'center'}
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     successImage: {
-        marginTop: SCALE_SIZE(88),
+        marginTop: SCALE_SIZE(88) + StatusBar.currentHeight,
         height: SCALE_SIZE(104),
         width: SCALE_SIZE(104),
         alignSelf: 'center'
@@ -148,4 +148,17 @@ const styles = StyleSheet.create({
         right: 0,
         aspectRatio: 1.1
     },
+    txtOne: {
+        marginTop: SCALE_SIZE(16),
+        alignSelf: 'center',
+        letterSpacing: SCALE_SIZE(1.76)
+    },
+    txtTwo: {
+        marginTop: SCALE_SIZE(8),
+        alignSelf: 'center'
+    },
+    txtThree:{
+        marginTop: SCALE_SIZE(8), 
+        alignSelf: 'center' 
+    }
 })

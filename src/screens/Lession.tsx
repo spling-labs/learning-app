@@ -44,6 +44,7 @@ export default function Lession(props: any) {
         <>
             <View style={styles.container}>
                 <Header
+                    type={1}
                     mask
                     mask_number={'180'}
                     title='Introduction'
@@ -81,20 +82,20 @@ export default function Lession(props: any) {
                                 item={item}
                                 index={index}
                                 onPress={(item: any) => {
-                                    if(!item.isLock){
+                                    if (!item.isLock) {
                                         setLactureItem(item)
                                         setStartLearning(true)
                                     }
                                     else {
                                         setIsLocked(true)
-                                    }                              
+                                    }
                                 }}
                             />
                         )
                     }}
                 />
             </View>
-            <Lock isVisible={locked} onOk={()=>{ setIsLocked(false) }}/>
+            <Lock isVisible={locked} onOk={() => { setIsLocked(false) }} />
             <StartLearningModel
                 startLearning={startLearning}
                 item={lactureItem}

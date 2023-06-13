@@ -14,7 +14,7 @@ import { Text } from '../components'
 export default function Header(props: any) {
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,{elevation: props.type == 1 ? 1 : 0}]}>
             {props.onBackPress &&
                 <TouchableOpacity
                     activeOpacity={1}
@@ -28,9 +28,9 @@ export default function Header(props: any) {
             {props.title ?
                 <View style={styles.textView}>
                     <Text
-                        style={{ alignSelf: 'center', textAlign:'center' }}
+                        style={{ alignSelf: 'center', textAlign: 'center' }}
                         color={COLORS.black}
-                        align={'center'}                        
+                        align={'center'}
                         fontFamily={FONT.black}
                         size={SCALE_SIZE(16)}>
                         {props.title}
@@ -39,7 +39,7 @@ export default function Header(props: any) {
                 :
                 <View style={styles.textView} />
             }
-            {props.mask &&
+            {props.mask ?
                 <View style={styles.maskView}>
                     <Image style={styles.maskImage} resizeMode="contain" source={IMAGES.mask} />
                     <Text
@@ -49,6 +49,10 @@ export default function Header(props: any) {
                         size={SCALE_SIZE(18)}>
                         {props.mask_number}
                     </Text>
+                </View>
+                :
+                <View style={[styles.maskImage]}>
+
                 </View>
             }
         </View>

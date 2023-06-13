@@ -39,9 +39,7 @@ export default function LactureItems(props: any) {
                     {item.lactures.length + " Lessons | 12 Snell"}
                 </Text>
             </View>
-            {item.isLock &&
-                <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.lactureLock} />
-            }
+            <Image style={styles.lockImage} resizeMode="contain" source={item.isLock ? IMAGES.lactureLock : IMAGES.completed} />
         </TouchableOpacity>
     )
 
@@ -57,8 +55,8 @@ const styles = StyleSheet.create({
         borderRadius: SCALE_SIZE(8)
     },
     lactureImage: {
-        height: 27,
-        width: 32,
+        height: 37,
+        width:  37,
         alignSelf: 'center'
     },
     verticalView: {

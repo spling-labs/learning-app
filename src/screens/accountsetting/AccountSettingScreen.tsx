@@ -40,8 +40,8 @@ export default function AccountSettingScreen(props: any) {
     };
     return (
         <View style={styles.container}>
-
             <Header
+                type={1}
                 title={getTranslation('account_settings')}
                 onBackPress={() => {
                     props.navigation.goBack()

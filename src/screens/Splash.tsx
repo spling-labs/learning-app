@@ -23,8 +23,8 @@ export default function Splash(props: any) {
     useEffect(() => {
         setI18nConfig('en')
         setTimeout(() => {
-            // props.navigation.navigate(SCREENS.GetStarted.name)
-            props.navigation.navigate(SCREENS.BottomBar.name)
+            props.navigation.navigate(SCREENS.GetStarted.name)
+            // props.navigation.navigate(SCREENS.BottomBar.name)
 
         }, 2000);
     }, [])

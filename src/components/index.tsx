@@ -15,6 +15,8 @@ import Bubble from "./Bubble";
 import ExecutionModel from "./ExecutionModel";
 import QuizModel from "./QuizModel";
 import Lock from "./Lock";
+import CoveredDialog from "./CoveredDialog";
+import ImageChosse from "./ImageChosse";
 
 export {
     Button,
@@ -33,5 +35,7 @@ export {
     Bubble,
     ExecutionModel,
     QuizModel,
-    Lock
+    Lock,
+    CoveredDialog,
+    ImageChosse
 }

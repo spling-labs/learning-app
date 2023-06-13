@@ -63,7 +63,7 @@ export default function Question(props: any) {
                             </Text>
                         </TouchableOpacity>
                     </View>
-                }
+                }                
             </ScrollView>
         </View>
 
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
     },
     description: {
         lineHeight: SCALE_SIZE(25),
-        marginTop: SCALE_SIZE(8)
+        marginTop: SCALE_SIZE(8),
+        marginBottom:24
     },
     programView: {
         backgroundColor: COLORS.color_F6F6F6,
