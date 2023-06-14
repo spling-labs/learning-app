@@ -17,10 +17,9 @@ export default function CertificateListItem(props: any) {
 
     return (
         <TouchableOpacity
-            onPress={() => {
-            }}>
+            activeOpacity={1}
+            onPress={() => { }}>
             <View style={style.container}>
-
                 <View style={style.ViewStyle}>
                     {
                         props.item.certificate == 'done' ?
@@ -29,11 +28,11 @@ export default function CertificateListItem(props: any) {
                             <Image style={[style.userImageStyle, { tintColor: COLORS.communitysnellColor }]} resizeMode="contain" source={IMAGES.donecertificate} />
                     }
 
-                    <View>
+                    <View style={{ marginLeft: SCALE_SIZE(16), flex: 1.0 }}>
                         <Text
                             style={style.textStyle}
-                            color={COLORS.black}
-                            fontFamily={FONT.black}
+                            color={COLORS.questionColor}
+                            fontFamily={FONT.bold}
                             size={SCALE_SIZE(16)}>
                             {props.item.title}
                         </Text>
@@ -57,9 +56,7 @@ export default function CertificateListItem(props: any) {
                         }
 
                     </View>
-
-                </View>
-                <View style={{ marginRight: SCALE_SIZE(16) }}>
+                    <View>
                     {
                         props.item.certificate == 'done' ?
                             <View style={{ flexDirection: 'row' }}>
@@ -69,15 +66,15 @@ export default function CertificateListItem(props: any) {
                             :
                             <ProgressCircle
                                 percent={30}
-                                radius={20}
+                                radius={22}
                                 borderWidth={5}
                                 color={COLORS.green}
                                 shadowColor="#E0F8CE"
                                 bgColor={COLORS.white}
                             >
                                 <Text
-                                    color={COLORS.contentColor}
-                                    fontFamily={FONT.regular}
+                                    color={COLORS.contentTwo}
+                                    fontFamily={FONT.semiBold}
                                     size={SCALE_SIZE(10)}>
                                     {"30%"}
                                 </Text>
@@ -85,6 +82,8 @@ export default function CertificateListItem(props: any) {
                     }
 
                 </View>
+                </View>
+             
             </View>
 
         </TouchableOpacity>
@@ -95,18 +94,18 @@ export default function CertificateListItem(props: any) {
 const style = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        paddingVertical: SCALE_SIZE(16),
+        paddingHorizontal: SCALE_SIZE(16),
+
     },
     ViewStyle: {
         flexDirection: 'row',
-        alignItems: 'center',
+        alignSelf: 'center'
     },
     userImageStyle: {
-        height: SCALE_SIZE(40),
-        width: SCALE_SIZE(40),
+        height: SCALE_SIZE(36),
+        width: SCALE_SIZE(36),
         alignSelf: 'center',
-        marginLeft: SCALE_SIZE(16)
     },
     userShareStyle: {
         height: SCALE_SIZE(40),
@@ -126,13 +125,10 @@ const style = StyleSheet.create({
 
     },
     doneTextstyle: {
-        width: SCALE_SIZE(150),
-        marginLeft: SCALE_SIZE(16),
-        lineHeight: SCALE_SIZE(20)
 
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(16),
+        letterSpacing:-0.24
     },
 
 })

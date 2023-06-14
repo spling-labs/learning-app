@@ -69,7 +69,9 @@ export default function AvaialbeCoursesBottomDialog(props: any) {
                             style={style.scrolled}
                             showsVerticalScrollIndicator={false}>
                             <View>
-                                <View style={style.lineStyle} />
+                                <TouchableOpacity style={style.lineStyle} activeOpacity={1} onPress={()=>{
+                                    props.onClose()
+                                }} />
                                 <Text
                                     style={{ marginTop: SCALE_SIZE(16) }}
                                     color={COLORS.questionColor}

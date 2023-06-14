@@ -114,10 +114,12 @@ export default function CoveredDialog(props: any) {
                                                     <Image style={style.selectedImage} source={item.image} />
                                                 </View>
                                                 <Text
-                                                    style={{ marginLeft: SCALE_SIZE(16), alignSelf: 'center' }}
+                                                    style={{
+                                                        marginLeft: SCALE_SIZE(16), alignSelf: 'center', letterSpacing: -0.24
+                                                    }}
                                                     color={COLORS.questionColor}
                                                     fontFamily={FONT.bold}
-                                                    size={SCALE_SIZE(14)}>
+                                                    size={SCALE_SIZE(16)}>
                                                     {item.title}
                                                 </Text>
                                             </View>
@@ -207,7 +209,7 @@ const style = StyleSheet.create({
     devider: {
         width: SCALE_SIZE(2),
         height: SCALE_SIZE(24),
-        marginLeft: SCALE_SIZE(32),
+        marginLeft: SCALE_SIZE(30),
         backgroundColor: COLORS.contentThree,
     },
     txtStyle: {

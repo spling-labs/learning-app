@@ -40,7 +40,7 @@ export default function AccountSettingScreen(props: any) {
     };
 
     function onNavigate(item: any) {
-        if (item.Title == 'edit_profile'){
+        if (item.Title == 'edit_profile') {
             props.navigation.navigate(SCREENS.EditProfile.name)
         }
     }
@@ -53,7 +53,9 @@ export default function AccountSettingScreen(props: any) {
                 onBackPress={() => {
                     props.navigation.goBack()
                 }} />
-            <ScrollView nestedScrollEnabled={true}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                nestedScrollEnabled={true}>
                 <View>
                     <Text
                         style={styles.titleTextStyle}

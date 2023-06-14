@@ -15,9 +15,7 @@ import { FONT } from "../constants/font";
 export default function TopicChooseItem(props: any) {
 
     return (
-
         <View style={style.container}>
-
             {
                 props.item.perComplete == "add" ?
                     <TouchableOpacity
@@ -30,19 +28,16 @@ export default function TopicChooseItem(props: any) {
 
                             <Text
                                 style={style.textStyle}
-                                color={COLORS.black}
-                                fontFamily={FONT.black}
+                                color={COLORS.questionColor}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {'Add'}
                             </Text>
                         </View>
                     </TouchableOpacity>
-
                     :
                     <View style={style.ViewStyle}>
-
                         <Image style={style.IconStyle} resizeMode="contain" source={IMAGES.rush} />
-
                         <Text
                             style={style.textStyle}
                             color={COLORS.black}
@@ -52,8 +47,6 @@ export default function TopicChooseItem(props: any) {
                         </Text>
                     </View>
             }
-
-
         </View>
 
     )
@@ -62,8 +55,8 @@ export default function TopicChooseItem(props: any) {
 const style = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        paddingLeft:SCALE_SIZE(16),
+        paddingVertical:SCALE_SIZE(16)
     },
     ViewStyle: {
         flexDirection: 'row',
@@ -73,7 +66,7 @@ const style = StyleSheet.create({
         backgroundColor: COLORS.contentThree,
         borderRadius: SCALE_SIZE(32),
         paddingHorizontal: SCALE_SIZE(16),
-        paddingVertical: SCALE_SIZE(4)
+        paddingVertical: SCALE_SIZE(8)
     },
     IconStyle: {
         height: SCALE_SIZE(24),

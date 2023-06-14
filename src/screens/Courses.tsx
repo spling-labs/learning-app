@@ -30,7 +30,7 @@ export default function Courses(props: any) {
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor('transparent');
+        StatusBar.setBackgroundColor(modalVisible ? 'transparent' : COLORS.slider_unfill);
         StatusBar.setTranslucent(true);
     })
 
@@ -53,7 +53,12 @@ export default function Courses(props: any) {
                     return <AvailableCoursesItemList props={props} item={item} modal={setModalVisible} />
                 }}
             />
-            <AvaialbeCoursesBottomDialog item={modalVisible} modalVisible={setModalVisible} />
+            <AvaialbeCoursesBottomDialog
+                item={modalVisible}
+                modalVisible={setModalVisible}
+                onClose={()=>{
+                    setModalVisible(false)
+                }} />
         </ImageBackground>
     )
 }

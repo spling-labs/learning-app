@@ -11,14 +11,14 @@ export default function AchievementUserItem(props: any) {
 
     return (
         <TouchableOpacity
+            activeOpacity={1}
             onPress={() => {
             }}>
             <View style={style.container}>
-
                 <View style={style.mainViewStyle}>
-                    <ImageBackground style={style.logoImageStyle}>
+                    <View style={style.logoImageStyle}>
                         <Image style={style.userImageStyle} resizeMode="contain" source={IMAGES.user_witout_back} />
-                    </ImageBackground>
+                    </View>
                     {
                         props.item.title == 'lock' &&
                         <View style={style.imageViewStyel}>
@@ -35,13 +35,12 @@ export default function AchievementUserItem(props: any) {
 
 const style = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        alignSelf: 'center',
     },
     mainViewStyle: {
         marginRight: SCALE_SIZE(8),
         height: SCALE_SIZE(74),
         alignSelf: 'center',
-        alignItems: 'center'
     },
     userImageStyle: {
         width: SCALE_SIZE(58),
@@ -52,6 +51,7 @@ const style = StyleSheet.create({
         height: SCALE_SIZE(12),
         width: SCALE_SIZE(12),
         tintColor: '#141B34',
+        alignSelf:'center'
     },
     logoImageStyle: {
         height: SCALE_SIZE(64),
@@ -67,14 +67,14 @@ const style = StyleSheet.create({
         position: 'absolute',
         marginTop: SCALE_SIZE(48),
         marginRight: SCALE_SIZE(12),
-        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: COLORS.white,
         borderRadius: 150 / 2,
         height: SCALE_SIZE(20),
         width: SCALE_SIZE(20),
         borderColor: COLORS.black,
-        borderWidth: SCALE_SIZE(1)
+        borderWidth: SCALE_SIZE(1),
+        alignSelf:'center'
     }
 
 })

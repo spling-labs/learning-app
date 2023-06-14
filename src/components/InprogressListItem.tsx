@@ -20,45 +20,44 @@ export default function InprogressListItem(props: any) {
             onPress={() => {
             }}>
             <View style={style.container}>
-
                 <View style={style.ViewStyle}>
                     <View>
                         <Text
                             style={style.textStyle}
-                            color={COLORS.black}
-                            fontFamily={FONT.black}
+                            color={COLORS.questionColor}
+                            fontFamily={FONT.bold}
                             size={SCALE_SIZE(16)}>
                             {props.item.title}
                         </Text>
                         <Text
                             style={style.textStyle}
-                            color={COLORS.contentColor}
-                            fontFamily={FONT.regular}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.medium}
                             size={SCALE_SIZE(12)}>
                             {props.item.perComplete}
                         </Text>
                     </View>
 
                 </View>
-                <View style={{ marginRight: SCALE_SIZE(16) }}>
+                <View>
                     <ProgressCircle
                         percent={30}
-                        radius={20}
+                        radius={22}
                         borderWidth={5}
                         color={COLORS.green}
                         shadowColor="#E0F8CE"
                         bgColor={COLORS.white}
                     >
                         <Text
-                            color={COLORS.contentColor}
-                            fontFamily={FONT.regular}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.semiBold}
+                            align={'center'}
                             size={SCALE_SIZE(10)}>
                             {"30%"}
                         </Text>
                     </ProgressCircle>
                 </View>
             </View>
-
         </TouchableOpacity>
 
     )
@@ -67,26 +66,25 @@ export default function InprogressListItem(props: any) {
 const style = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        paddingVertical: SCALE_SIZE(16),
+        paddingHorizontal: SCALE_SIZE(16),
     },
     ViewStyle: {
         flexDirection: 'row',
         alignItems: 'center',
+        flex: 1.0
     },
     IconStyle: {
         height: SCALE_SIZE(16),
         width: SCALE_SIZE(16),
-        marginLeft: SCALE_SIZE(16),
     },
     arrowStyle: {
         height: SCALE_SIZE(8),
         width: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(8),
 
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(16),
+        letterSpacing:-0.24
     },
 
 })

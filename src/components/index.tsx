@@ -17,6 +17,12 @@ import QuizModel from "./QuizModel";
 import Lock from "./Lock";
 import CoveredDialog from "./CoveredDialog";
 import ImageChosse from "./ImageChosse";
+import TopicChooseItem from "./TopicChoose";
+import DailyLearningDialog from "./DailyLearningDialog";
+import InprogressListItem from "./InprogressListItem";
+import AchievementUserItem from "./AchievementUserItem";
+import CertificateListItem from "./CertificatesListItem";
+import TopicChooseDialog from "./TopicChooseDialog";
 
 export {
     Button,
@@ -37,5 +43,11 @@ export {
     QuizModel,
     Lock,
     CoveredDialog,
-    ImageChosse
+    ImageChosse,
+    TopicChooseItem,
+    TopicChooseDialog,
+    DailyLearningDialog,
+    InprogressListItem,
+    AchievementUserItem,
+    CertificateListItem
 }
