@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import { View, StyleSheet, StatusBar, Image, ImageBackground, SafeAreaView, TouchableOpacity } from "react-native";
 
 //ASSETS
@@ -87,7 +87,7 @@ export default function CreateProfile(props: any) {
                         </TouchableOpacity>
                         <TouchableOpacity
                             activeOpacity={1}
-                            style={[styles.btnSolflare,{backgroundColor:COLORS.color_53ADF0, borderBottomColor:COLORS.color_398DCC}]}>
+                            style={[styles.btnSolflare, { backgroundColor: COLORS.color_53ADF0, borderBottomColor: COLORS.color_398DCC }]}>
                             <Image style={styles.imgPhantom} resizeMode="contain" source={IMAGES.grow} />
                             <Text
                                 style={styles.txtBtnText}
@@ -100,6 +100,15 @@ export default function CreateProfile(props: any) {
                         </TouchableOpacity>
                     </View>
                 </>
+                <Text
+                    style={{ marginBottom: SCALE_SIZE(24) }}
+                    color={COLORS.contentTwo}
+                    align={'center'}
+                    fontFamily={FONT.medium}
+                    size={SCALE_SIZE(16)}>
+                    {'Agree with terms & Conditions'}
+                </Text>
+
             </ImageBackground>
 
         </SafeAreaView>

@@ -32,8 +32,8 @@ export default function ShareFacebookScreen(props: any) {
 
     return (
         <View style={styles.container}>
-
             <Header
+                type={1}
                 title={getTranslation('share_on_facebook')}
                 onBackPress={() => {
                     props.navigation.goBack()

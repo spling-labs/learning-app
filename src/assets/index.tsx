@@ -41,7 +41,8 @@ export const COLORS = {
     red: '#EA5953',
     skipShadow: '#FADFD1',
     skipBackground: "#FEF1EA",
-    green_bck_color: "#F1FAEB"
+    green_bck_color: "#F1FAEB",
+    color_E7E3E2: '#E7E3E2'
 
 }
 
@@ -144,6 +145,13 @@ export const IMAGES = {
     user_witout_back: require('./images/user_witout_back.png'),
     donecertificate: require('./images/donecertificate.png'),
     completeeye: require('./images/completeeye.png'),
-    compleshare: require('./images/compleshare.png')
-
+    compleshare: require('./images/compleshare.png'),
+    lockImage: require('./images/lecture_lock.png'),
+    topic: require('./images/topic.png'),
+    completed: require('./images/completed.png'),
+    completed_unfill: require('./images/completed_unfill.png'),
+    covered: require('./images/covered.png'),
+    quiz: require('./images/quiz.png'),
+    down: require('./images/down_arrow.png'),
+    edit: require('./images/edit.png')
 }

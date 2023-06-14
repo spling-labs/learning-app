@@ -48,7 +48,7 @@ export default function Community(props: any) {
             <View style={styles.headerRowStyle}>
                 <View>
                     <Text
-                        color={COLORS.black}
+                        color={COLORS.questionColor}
                         fontFamily={FONT.black}
                         size={SCALE_SIZE(24)}>
                         {getTranslation('Community')}
@@ -72,11 +72,13 @@ export default function Community(props: any) {
                 </View>
             </View>
             <View style={styles.viewStyle} />
+            
             <View style={{ flex: 1 }}>
                 <View >
                     <FlatList
                         data={userCommunityList}
                         keyExtractor={(item, index) => index.toString()}
+                        showsVerticalScrollIndicator={false}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
                             return <CommunityListItem props={props} item={item} modalVisible={setModalVisible} modalActionVisible={setModalActionVisible} />
@@ -91,18 +93,15 @@ export default function Community(props: any) {
                 }}>
                 <View style={{ flexDirection: 'row', }}>
                     <Image style={styles.editPostIcon} resizeMode="contain" source={IMAGES.editpost} />
-
                     <Text
                         style={styles.postTextStyle}
                         color={COLORS.white}
-                        fontFamily={FONT.black}
+                        fontFamily={FONT.bold}
                         size={SCALE_SIZE(16)}>
                         {getTranslation('post')}
                     </Text>
                 </View>
-
             </TouchableOpacity>
-
             <BottomSheetDialog item={modalVisible} modalVisible={setModalVisible} modalActionVisible={modalActionVisible} />
         </View >
     )
@@ -128,37 +127,35 @@ const styles = StyleSheet.create({
     headerIcon: {
         height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
-        marginLeft: SCALE_SIZE(16)
+        marginLeft: SCALE_SIZE(20)
     },
     headerImageStyle: {
         flexDirection: 'row',
         alignSelf: 'center'
     },
     viewStyle: {
-        marginBottom: SCALE_SIZE(16),
         height: SCALE_SIZE(3),
         width: '100%',
         backgroundColor: COLORS.contentThree,
     },
     postBackGroundStyle: {
         position: 'absolute',
-        bottom: 0,
+        bottom: 16,
         right: 5,
         backgroundColor: COLORS.primary,
-        borderRadius: SCALE_SIZE(32),
-        padding: SCALE_SIZE(8),
-        marginBottom: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(16),
+        paddingHorizontal:SCALE_SIZE(32),
+        paddingVertical:SCALE_SIZE(16),
+        borderRadius: SCALE_SIZE(32),              
         borderBottomColor: COLORS.drop_shadow,
-        borderBottomWidth: 3,
+        borderBottomWidth: 4,
     },
     editPostIcon: {
-        height: SCALE_SIZE(24),
-        width: SCALE_SIZE(24),
-        marginLeft: SCALE_SIZE(8)
+        height: SCALE_SIZE(16),
+        width: SCALE_SIZE(16),        
+        alignSelf:'center'
     },
     postTextStyle: {
-        marginRight: SCALE_SIZE(8),
-        marginLeft: SCALE_SIZE(8)
+        marginLeft: SCALE_SIZE(8),
+        marginTop:SCALE_SIZE(-3)
     }
 })

@@ -29,7 +29,7 @@ export default function GetStarted(props: any) {
         <ImageBackground style={styles.container}
             resizeMode="cover"
             source={IMAGES.backgroundWelcome}>
-            <StatusBar barStyle={'light-content'} translucent={false} backgroundColor={COLORS.primary} />
+            <StatusBar barStyle={'light-content'} translucent={true} backgroundColor={'transparent'} />
             <View style={{ flex: 1.0 }}>
             </View>
             <View style={[styles.container, { justifyContent: 'center' }]}>
@@ -39,11 +39,12 @@ export default function GetStarted(props: any) {
                     color={COLORS.white}
                     align={'center'}
                     fontFamily={FONT.black}
+                    numberOfLines={2}
                     size={SCALE_SIZE(32)}>
                     {getTranslation('starting_msg')}
                 </Text>
                 <Text
-                    style={{ marginTop: SCALE_SIZE(8) }}
+                    style={{ marginTop: SCALE_SIZE(8), marginHorizontal:SCALE_SIZE(32) }}
                     color={COLORS.desColor}
                     align={'center'}
                     fontFamily={FONT.medium}
@@ -86,8 +87,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     image: {
-        width: SCALE_SIZE(200),
-        height: SCALE_SIZE(88),
+        width: 200,
+        height: 88,
         alignSelf: 'center'
     },
     description: {

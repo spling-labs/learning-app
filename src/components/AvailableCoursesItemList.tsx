@@ -15,38 +15,33 @@ import { FONT } from "../constants/font";
 export default function AvailableCoursesItemList(props: any) {
 
     return (
-        <TouchableOpacity
+        <TouchableOpacity style={style.programmingStyle}
+            activeOpacity={1}
             onPress={() => {
                 props.modal(true)
             }}>
-            <View style={style.programmingStyle}>
-                <View >
-                    <ImageBackground style={style.logoImageStyle} source={IMAGES.background} />
-                    {
-                        props.item.new == "New" ?
-                            <Text
-                                style={style.cornerTextStyle}
-                                color={COLORS.white}
-                                align={'center'}
-                                fontFamily={FONT.regular}
-                                size={SCALE_SIZE(12)}>
-                                {'New'}
-                            </Text>
-                            :
-                            <View></View>
-                    }
-
-                </View>
-                <View style={{ marginLeft: SCALE_SIZE(8) }}>
-                    <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(16)}>{props.item.userName}</Text>
-                    <Text color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(16)}>{props.item.programName}</Text>
-                    <Text color={COLORS.questionColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{props.item.snellItem}</Text>
-                </View>
-
-            </View>
-        </TouchableOpacity >
-
-
+            <View style={style.logoImageStyle} />
+            <View style={{ marginLeft: SCALE_SIZE(16), alignSelf: 'center' }}>
+                <Text
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    size={SCALE_SIZE(16)}>
+                    {props.item.userName}
+                </Text>
+                <Text
+                    color={COLORS.contentTwo}
+                    fontFamily={FONT.regular}
+                    size={SCALE_SIZE(14)}>
+                    {props.item.programName}
+                </Text>
+                <Text
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.regular}
+                    size={SCALE_SIZE(14)}>
+                    {props.item.snellItem}
+                </Text>
+            </View>           
+        </TouchableOpacity>
     )
 }
 
@@ -54,10 +49,10 @@ const style = StyleSheet.create({
     programmingStyle: {
         flexDirection: 'row',
         backgroundColor: COLORS.white,
-        paddingBottom: SCALE_SIZE(8),
+        paddingHorizontal: SCALE_SIZE(16),
+        paddingVertical: SCALE_SIZE(16),
         borderRadius: SCALE_SIZE(16),
         paddingLeft: SCALE_SIZE(16),
-        paddingTop: SCALE_SIZE(8),
         borderBottomWidth: 4,
         marginTop: SCALE_SIZE(16),
         borderColor: COLORS.contentThree,
@@ -78,10 +73,10 @@ const style = StyleSheet.create({
         height: SCALE_SIZE(64),
         width: SCALE_SIZE(64),
         alignSelf: 'center',
-        borderRadius: 150 / 2,
+        borderRadius: 64 / 2,
         overflow: "hidden",
         borderBottomWidth: 4,
         borderBottomColor: COLORS.image_shadow,
-        backgroundColor: COLORS.contentThree,
+        backgroundColor: COLORS.color_E7E3E2,
     },
 })

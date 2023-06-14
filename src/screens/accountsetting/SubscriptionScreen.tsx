@@ -35,8 +35,8 @@ export default function SubscriptionScreen(props: any) {
 
     return (
         <View style={styles.container}>
-
             <Header
+                type={1}
                 title={getTranslation('subscription')}
                 onBackPress={() => {
                     props.navigation.goBack()

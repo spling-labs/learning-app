@@ -14,13 +14,13 @@ export default function Input(props: any) {
     return (
         <View style={[styles.container, props.style]}>
             <TextInput
+                {...props}
                 style={styles.inputStyles}
                 numberOfLines={props.numberOfLines}
                 placeholder={props.placeholder}
                 value={props.value}
                 placeholderTextColor={COLORS.contentTwo}
-                onChangeText={text => props.onChangeText(text)}
-                keyboardType={props.keyboardType}>
+                onChangeText={text => props.onChangeText(text)}>
             </TextInput>
         </View>
     )

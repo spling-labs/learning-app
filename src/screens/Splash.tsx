@@ -23,8 +23,8 @@ export default function Splash(props: any) {
     useEffect(() => {
         setI18nConfig('en')
         setTimeout(() => {
-            // props.navigation.navigate(SCREENS.GetStarted.name)
-            props.navigation.navigate(SCREENS.BottomBar.name)
+            props.navigation.navigate(SCREENS.GetStarted.name)
+            // props.navigation.navigate(SCREENS.BottomBar.name)
 
         }, 2000);
     }, [])
@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     image: {
-        width: SCALE_SIZE(200),
-        height: SCALE_SIZE(88),
+        width: 200,
+        height: 88,
         alignSelf: 'center'
     }
 })

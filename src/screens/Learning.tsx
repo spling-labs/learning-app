@@ -60,7 +60,7 @@ export default function Learning(props: any) {
                 {getTranslation('Questions') + (selectedQuestionIndex + 1) + "/" + learningQuestion.length}
             </Text>
             <ScrollView
-                style={[styles.container, { marginBottom: SCALE_SIZE(16) }]}
+                style={[styles.container, { marginBottom: SCALE_SIZE(0) }]}
                 showsVerticalScrollIndicator={false}>
                 <Text
                     style={styles.question}
@@ -83,30 +83,30 @@ export default function Learning(props: any) {
                         )
                     })
                 }
-                <Text
-                    style={styles.correctTxt}
-                    color={COLORS.questionColor}
-                    fontFamily={FONT.black}
-                    size={SCALE_SIZE(16)}>
-                    {getTranslation('correct')}
-                </Text>
-                <Text
-                    style={styles.hintText}
-                    color={COLORS.questionColor}
-                    fontFamily={FONT.bold}
-                    size={SCALE_SIZE(16)}>
-                    {getTranslation('explanation')}
-                    <Text
-                        style={[styles.hintText, { marginLeft: SCALE_SIZE(16) }]}
-                        color={COLORS.contentColor}
-                        fontFamily={FONT.regular}
-                        size={SCALE_SIZE(16)}>
-                        {getTranslation('explaination_msg')}
-                    </Text>
-                </Text>
             </ScrollView>
-            <View style={{ flexDirection: 'row', marginTop:SCALE_SIZE(24) }}>
-              <Bubble type={1} title={getTranslation('awesome_doing_greate')}/>
+            <Text
+                style={styles.correctTxt}
+                color={COLORS.questionColor}
+                fontFamily={FONT.black}
+                size={SCALE_SIZE(16)}>
+                {getTranslation('correct')}
+            </Text>
+            <Text
+                style={styles.hintText}
+                color={COLORS.questionColor}
+                fontFamily={FONT.bold}
+                size={SCALE_SIZE(16)}>
+                {getTranslation('explanation')}
+                <Text
+                    style={[styles.hintText, { marginLeft: SCALE_SIZE(16) }]}
+                    color={COLORS.contentColor}
+                    fontFamily={FONT.regular}
+                    size={SCALE_SIZE(16)}>
+                    {getTranslation('explaination_msg')}
+                </Text>
+            </Text>
+            <View style={{ flexDirection: 'row', marginTop: SCALE_SIZE(48) }}>
+                <Bubble type={1} title={getTranslation('awesome_doing_greate')} />
             </View>
             <Button
                 style={styles.btnContinue}
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     },
     correctTxt: {
         marginHorizontal: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(24)
+        marginTop: SCALE_SIZE(16)
     },
     hintText: {
         marginTop: SCALE_SIZE(8),

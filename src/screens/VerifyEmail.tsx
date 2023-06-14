@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button} from "../components";
+import { Text, Button } from "../components";
 
 export default function VerifyEmail(props: any) {
 
@@ -27,10 +27,10 @@ export default function VerifyEmail(props: any) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.slider_unfill} />
+            <StatusBar barStyle={'dark-content'} translucent={true} backgroundColor={'transparent'} />
             <ImageBackground style={styles.container}
                 source={IMAGES.bgCreateProfile}
-                resizeMode="stretch">
+                resizeMode="cover">
                 <View style={styles.container}></View>
                 <View style={[styles.container, { justifyContent: 'center' }]}>
                     <Image style={styles.emailImage} resizeMode="contain" source={IMAGES.email} />
@@ -42,7 +42,7 @@ export default function VerifyEmail(props: any) {
                         size={SCALE_SIZE(32)}>
                         {getTranslation('check_your_mail')}
                     </Text>
-                    <View style={styles.roundedView}>
+                    {/* <View style={styles.roundedView}>
                         <Text
                             color={COLORS.contentTwo}
                             align={'center'}
@@ -51,9 +51,26 @@ export default function VerifyEmail(props: any) {
                             {getTranslation('email_message')}
                         </Text>
                     </View>
-                    <Image style={styles.learningImage} resizeMode="contain" source={IMAGES.learning} />
+                    <Image style={styles.learningImage} resizeMode="contain" source={IMAGES.learning} /> */}
                 </View>
-                <View style={[styles.container,{justifyContent:'flex-end'}]}>
+                <View style={[styles.container, { justifyContent: 'flex-end' }]}>
+                    <View style={{
+                        flexDirection: 'row',
+                        marginHorizontal: SCALE_SIZE(16),
+                        marginBottom: SCALE_SIZE(32)
+                    }}>
+                        <Image style={styles.newImage} resizeMode="contain" source={IMAGES.learning} />
+                        <View style={styles.descriptionItem}>
+                            <Text
+                                style={{ lineHeight: 19 }}
+                                color={COLORS.contentTwo}
+                                align={'center'}
+                                fontFamily={FONT.medium}
+                                size={SCALE_SIZE(16)}>
+                                {getTranslation('email_message')}
+                            </Text>
+                        </View>
+                    </View>
                     <Button
                         style={styles.btnContinue}
                         backgroundColor={COLORS.primary}
@@ -73,8 +90,9 @@ export default function VerifyEmail(props: any) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1.0
-    },   
+        flex: 1.0,
+        flexDirection: 'column',
+    },
     emailImage: {
         height: SCALE_SIZE(144),
         width: SCALE_SIZE(184),
@@ -108,5 +126,22 @@ const styles = StyleSheet.create({
         marginBottom: SCALE_SIZE(16),
         borderBottomWidth: 4,
         borderBottomColor: COLORS.drop_shadow
+    },
+    newImage: {
+        width: 96,
+        height: 56
+    },
+    descriptionItem: {
+        paddingHorizontal: SCALE_SIZE(16),
+        paddingVertical: SCALE_SIZE(16),
+        borderTopLeftRadius: SCALE_SIZE(8),
+        borderTopRightRadius: SCALE_SIZE(8),
+        borderBottomLeftRadius: SCALE_SIZE(0),
+        borderBottomRightRadius: SCALE_SIZE(8),
+        position: 'absolute',
+        borderWidth: 1,
+        borderColor: '#E3C0AC',
+        bottom: SCALE_SIZE(80),
+        left: SCALE_SIZE(88)
     },
 })

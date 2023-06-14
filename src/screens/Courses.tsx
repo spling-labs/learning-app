@@ -30,33 +30,31 @@ export default function Courses(props: any) {
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor(COLORS.slider_unfill);
-        StatusBar.setTranslucent(false);
+        StatusBar.setBackgroundColor('transparent');
+        StatusBar.setTranslucent(true);
     })
 
     return (
-            <View style={styles.container}>
-                <ImageBackground style={styles.container}
-                    source={IMAGES.bgCreateProfile}
-                    resizeMode="stretch">
-                    <Text
-                        style={styles.avaibleTxtStyle}
-                        color={COLORS.black}
-                        fontFamily={FONT.black}
-                        size={SCALE_SIZE(24)}>
-                        {getTranslation('available_courses')}
-                    </Text>
-
-                    <FlatList
-                        data={availableCourseList}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({ item }) => {
-                            return <AvailableCoursesItemList props={props} item={item} modal={setModalVisible} />
-                        }}
-                    />
-                </ImageBackground>
-                <AvaialbeCoursesBottomDialog item={modalVisible} modalVisible={setModalVisible} />
-            </View>
+        <ImageBackground style={styles.container}
+            source={IMAGES.bgCreateProfile}
+            resizeMode='stretch'>
+            <Text
+                style={styles.avaibleTxtStyle}
+                color={COLORS.black}
+                fontFamily={FONT.black}
+                size={SCALE_SIZE(24)}>
+                {getTranslation('available_courses')}
+            </Text>
+            <FlatList
+                data={availableCourseList}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => {
+                    return <AvailableCoursesItemList props={props} item={item} modal={setModalVisible} />
+                }}
+            />
+            <AvaialbeCoursesBottomDialog item={modalVisible} modalVisible={setModalVisible} />
+        </ImageBackground>
     )
 }
 
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
         flex: 1.0
     },
     avaibleTxtStyle: {
-        marginTop: SCALE_SIZE(16),
+        marginTop: StatusBar.currentHeight + SCALE_SIZE(8),
         marginLeft: SCALE_SIZE(16)
     }
 })

@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Header, LactureItems, StartLearningModel } from "../components";
+import { Text, Header, LactureItems, StartLearningModel, Lock } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -29,6 +29,7 @@ export default function Lession(props: any) {
 
     const [startLearning, setStartLearning] = useState<boolean>(false)
     const [lactureItem, setLactureItem] = useState<any>(null)
+    const [locked, setIsLocked] = useState<boolean>(false)
 
     useFocusEffect(() => {
         if (Platform.OS == 'android') {
@@ -43,6 +44,7 @@ export default function Lession(props: any) {
         <>
             <View style={styles.container}>
                 <Header
+                    type={1}
                     mask
                     mask_number={'180'}
                     title='Introduction'
@@ -80,14 +82,20 @@ export default function Lession(props: any) {
                                 item={item}
                                 index={index}
                                 onPress={(item: any) => {
-                                    setLactureItem(item)
-                                    setStartLearning(true)
+                                    if (!item.isLock) {
+                                        setLactureItem(item)
+                                        setStartLearning(true)
+                                    }
+                                    else {
+                                        setIsLocked(true)
+                                    }
                                 }}
                             />
                         )
                     }}
                 />
             </View>
+            <Lock isVisible={locked} onOk={() => { setIsLocked(false) }} />
             <StartLearningModel
                 startLearning={startLearning}
                 item={lactureItem}

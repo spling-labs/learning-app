@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { View, StyleSheet, StatusBar, Image, SafeAreaView, FlatList, Platform } from "react-native";
+import { View, StyleSheet, StatusBar, Image, SafeAreaView, FlatList, Platform, TouchableOpacity, Alert } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Header, Button, ProgressSlider, Question, ExecutionModel } from "../components";
+import { Text, Header, Button, ProgressSlider, Question, ExecutionModel, CoveredDialog } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -29,13 +29,14 @@ export default function LactureDetails(props: any) {
 
     const [selectedQuestionIndex, setSelectedQuetionIndex] = useState<number>(0)
     const [runCode, setRunCode] = useState<boolean>(false)
+    const [openCoveredOption, setOpenCoveredOption] = useState<boolean>(false)
 
     const selectedQuestion = lactures[0].lactures[selectedQuestionIndex]
 
     useFocusEffect(() => {
         if (Platform.OS == 'android') {
             StatusBar.setBarStyle('dark-content');
-            StatusBar.setBackgroundColor(COLORS.white);
+            StatusBar.setBackgroundColor(runCode ? 'rgba(59, 66, 74, 0.33)' : COLORS.white);
             StatusBar.setTranslucent(false);
         }
     })
@@ -44,6 +45,7 @@ export default function LactureDetails(props: any) {
         <>
             <View style={styles.container}>
                 <Header
+                    type={1}
                     mask
                     mask_number={'180'}
                     title='Introduction'
@@ -72,7 +74,16 @@ export default function LactureDetails(props: any) {
                 </View>
             </View>
             <View style={styles.bottomView}>
-                <Image style={styles.frameImage} resizeMode="contain" source={IMAGES.frame} />
+                <TouchableOpacity
+                    style={{
+                        height: SCALE_SIZE(70),
+                        width: SCALE_SIZE(70),
+                    }}
+                    onPress={() => {
+                        setOpenCoveredOption(true)
+                    }}>
+                    <Image style={styles.frameImage} resizeMode="contain" source={IMAGES.frame} />
+                </TouchableOpacity>
                 <Button
                     style={styles.btnContinue}
                     backgroundColor={COLORS.primary}
@@ -95,6 +106,12 @@ export default function LactureDetails(props: any) {
                 onClose={() => {
                     setRunCode(false)
                 }} />
+            <CoveredDialog
+                isVisible={openCoveredOption}
+                onClosed={() => {
+                    setOpenCoveredOption(false)
+                }}
+            />
         </>
     )
 }
@@ -113,7 +130,7 @@ const styles = StyleSheet.create({
     },
     detailsView: {
         marginTop: SCALE_SIZE(16),
-        flex: 1.0
+        flex: 1.0,
     },
     btnContinue: {
         marginHorizontal: SCALE_SIZE(16),
