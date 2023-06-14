@@ -23,6 +23,7 @@ import InprogressListItem from "./InprogressListItem";
 import AchievementUserItem from "./AchievementUserItem";
 import CertificateListItem from "./CertificatesListItem";
 import TopicChooseDialog from "./TopicChooseDialog";
+import SubcriptionList from "./SubscriptionItem";
 
 export {
     Button,
@@ -49,5 +50,6 @@ export {
     DailyLearningDialog,
     InprogressListItem,
     AchievementUserItem,
-    CertificateListItem
+    CertificateListItem,
+    SubcriptionList
 }

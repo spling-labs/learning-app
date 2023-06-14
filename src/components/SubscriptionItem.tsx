@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native";
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -20,23 +20,22 @@ export default function SubcriptionList(props: any) {
         <View style={style.container}>
             <View style={style.ViewStyle}>
                 <Image style={style.IconStyle} resizeMode="contain" source={IMAGES.ic_right} />
-                <View>
-                    <Text
-                        style={style.textStyle}
-                        color={COLORS.questionColor}
-                        fontFamily={FONT.semiBold}
-                        size={SCALE_SIZE(16)}>
-                        {props.item.title}
-                    </Text>
-                    <Text
-                        style={style.textStyle}
-                        color={COLORS.contentColor}
-                        fontFamily={FONT.regular}
-                        size={SCALE_SIZE(14)}>
-                        {props.item.disc}
-                    </Text>
-                </View>
+                <Text
+                    style={style.textStyle}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.bold}
+                    size={SCALE_SIZE(16)}>
+                    {props.item.title}
+                </Text>
+
             </View>
+            <Text
+                style={style.dicTextStyle}
+                color={COLORS.contentColor}
+                fontFamily={FONT.medium}
+                size={SCALE_SIZE(14)}>
+                {props.item.disc}
+            </Text>
         </View>
 
     )
@@ -44,19 +43,28 @@ export default function SubcriptionList(props: any) {
 
 const style = StyleSheet.create({
     container: {
-        flexDirection: 'row',
+        flex: 1.0
     },
     ViewStyle: {
         flexDirection: 'row',
-        marginTop: SCALE_SIZE(16)
+        marginTop: SCALE_SIZE(16),
+        marginHorizontal: SCALE_SIZE(24)
     },
     IconStyle: {
-        height: SCALE_SIZE(16),
+        height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
-        marginTop: SCALE_SIZE(8)
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(8),
+        marginLeft: SCALE_SIZE(4),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+        alignSelf: 'center'
+    },
+    dicTextStyle: {
+        marginLeft: SCALE_SIZE(54),
+        marginRight: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
     },
 
 })

@@ -45,7 +45,7 @@ export default function SubscriptionPaymentScreen(props: any) {
             <Text
                 style={styles.titleTextStyle}
                 color={COLORS.contentColor}
-                fontFamily={FONT.black}
+                fontFamily={FONT.bold}
                 size={SCALE_SIZE(12)}>
                 {'2 of 3'}
             </Text>
@@ -61,15 +61,14 @@ export default function SubscriptionPaymentScreen(props: any) {
                 align={'center'}
                 size={SCALE_SIZE(24)}>
                 {getTranslation('setup_payment')}
-
             </Text>
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <View style={styles.secureTxtStyle}>
                 <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.lactureLock} />
-                <Text style={styles.upgradeessages} color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>
+                <Text style={styles.upgradeessages} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>
                     {getTranslation('secure_payent')}
                 </Text>
             </View>
-            <View style={{ flex: 1.0 }}>
+            <View style={{ flex: 1.0, marginTop: SCALE_SIZE(40) }}>
                 <TouchableOpacity
                     onPress={() => {
                     }}>
@@ -80,12 +79,12 @@ export default function SubscriptionPaymentScreen(props: any) {
                             <Text
                                 style={styles.textStyle}
                                 color={COLORS.white}
-                                fontFamily={FONT.semiBold}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {getTranslation('credit_card')}
                             </Text>
                         </View>
-                        <Image style={[styles.arrowStyle, { tintColor: COLORS.white }]} resizeMode="contain" source={IMAGES.ic_arrow} />
+                        <Image style={[styles.arrowStyle, { tintColor: COLORS.white }]} resizeMode="center" source={IMAGES.ic_arrow} />
                     </View>
 
                 </TouchableOpacity>
@@ -98,13 +97,13 @@ export default function SubscriptionPaymentScreen(props: any) {
                             <Image style={styles.IconStyle} resizeMode="contain" source={IMAGES.ic_paypal} />
                             <Text
                                 style={styles.textStyle}
-                                color={COLORS.black}
-                                fontFamily={FONT.semiBold}
+                                color={COLORS.questionColor}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {getTranslation('paypal')}
                             </Text>
                         </View>
-                        <Image style={styles.arrowStyle} resizeMode="contain" source={IMAGES.ic_arrow} />
+                        <Image style={styles.arrowStyle} resizeMode="center" source={IMAGES.ic_arrow} />
                     </View>
 
                 </TouchableOpacity>
@@ -117,13 +116,13 @@ export default function SubscriptionPaymentScreen(props: any) {
                             <Image style={styles.IconStyle} resizeMode="contain" source={IMAGES.ic_online_bank} />
                             <Text
                                 style={styles.textStyle}
-                                color={COLORS.black}
-                                fontFamily={FONT.semiBold}
+                                color={COLORS.questionColor}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {getTranslation('online_banking')}
                             </Text>
                         </View>
-                        <Image style={styles.arrowStyle} resizeMode="contain" source={IMAGES.ic_arrow} />
+                        <Image style={styles.arrowStyle} resizeMode="center" source={IMAGES.ic_arrow} />
                     </View>
                 </TouchableOpacity>
             </View>
@@ -157,8 +156,10 @@ const styles = StyleSheet.create({
         flex: 1.0,
     },
     titleTextStyle: {
-        marginTop: SCALE_SIZE(16),
-        alignSelf: 'center'
+        marginTop: SCALE_SIZE(24),
+        alignSelf: 'center',
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(16)
     },
     listStyle: {
         marginTop: SCALE_SIZE(24),
@@ -172,53 +173,60 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginBottom: SCALE_SIZE(8)
+        marginVertical: SCALE_SIZE(8)
     },
     progressSlider: {
-        marginHorizontal: SCALE_SIZE(64),
+        marginHorizontal: SCALE_SIZE(72),
         marginTop: SCALE_SIZE(8)
     },
     battleMessages: {
-        marginTop: SCALE_SIZE(16),
-        lineHeight: SCALE_SIZE(38),
-        marginHorizontal: SCALE_SIZE(24)
+        marginTop: SCALE_SIZE(24),
+        lineHeight: SCALE_SIZE(32),
+        marginHorizontal: SCALE_SIZE(32),
+        letterSpacing: -0.24
     },
     upgradeessages: {
-        marginBottom: SCALE_SIZE(24),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
     },
     lockImage: {
         height: SCALE_SIZE(16),
         width: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(5),
-        marginRight: SCALE_SIZE(8)
+        marginRight: SCALE_SIZE(8),
+        tintColor: COLORS.contentColor
     },
     ViewStyle: {
         flexDirection: 'row',
-        height: SCALE_SIZE(32),
-        alignItems: 'center'
+        alignItems: 'center',
+        flex: 1.0
     },
     maincontainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        height: SCALE_SIZE(48),
         backgroundColor: COLORS.white,
         borderRadius: SCALE_SIZE(8),
         marginBottom: SCALE_SIZE(16),
         marginHorizontal: SCALE_SIZE(16)
     },
     IconStyle: {
-        height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),
-        marginLeft: SCALE_SIZE(16),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
+        marginHorizontal: SCALE_SIZE(16),
+        marginVertical: SCALE_SIZE(16)
     },
     arrowStyle: {
-        height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(8),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
+        marginRight: SCALE_SIZE(16),
 
     },
     textStyle: {
-        marginLeft: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
     },
+    secureTxtStyle: {
+        flexDirection: 'row',
+        alignSelf: 'center',
+        marginTop: SCALE_SIZE(8)
+    }
 })
