@@ -20,11 +20,12 @@ export default function AccountSettingItem(props: any) {
 
     return (
         <TouchableOpacity
+            activeOpacity={1}
             onPress={() => {
-                props.props.navigation.navigate(SCREENS.SubscriptionScreen.name)
+                props.onPress(props.item)
+                // props.props.navigation.navigate(SCREENS.SubscriptionScreen.name)
             }}>
             <View style={style.container}>
-
                 <View style={style.ViewStyle}>
                     <Image style={style.IconStyle} resizeMode="contain" source={props.item.Image} />
                     {
@@ -32,7 +33,7 @@ export default function AccountSettingItem(props: any) {
                             <Text
                                 style={style.textStyle}
                                 color={COLORS.communitysnellColor}
-                                fontFamily={FONT.semiBold}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {getTranslation(props.item.Title)}
                             </Text>
@@ -41,7 +42,7 @@ export default function AccountSettingItem(props: any) {
                                 <Text
                                     style={style.textStyle}
                                     color={COLORS.delete_color}
-                                    fontFamily={FONT.semiBold}
+                                    fontFamily={FONT.bold}
                                     size={SCALE_SIZE(16)}>
                                     {getTranslation(props.item.Title)}
                                 </Text>
@@ -49,14 +50,13 @@ export default function AccountSettingItem(props: any) {
                                 <Text
                                     style={style.textStyle}
                                     color={COLORS.questionColor}
-                                    fontFamily={FONT.semiBold}
+                                    fontFamily={FONT.bold}
                                     size={SCALE_SIZE(16)}>
                                     {getTranslation(props.item.Title)}
                                 </Text>
                     }
+                    <Image style={style.arrowStyle} resizeMode="center" source={IMAGES.ic_arrow} />
                 </View>
-                <Image style={style.arrowStyle} resizeMode="contain" source={IMAGES.ic_arrow} />
-
             </View>
         </TouchableOpacity>
 
@@ -71,22 +71,24 @@ const style = StyleSheet.create({
     },
     ViewStyle: {
         flexDirection: 'row',
-        height: SCALE_SIZE(32),
-        alignItems: 'center'
+        paddingVertical: SCALE_SIZE(8),
+        paddingHorizontal: SCALE_SIZE(16),
+        justifyContent:'center'
     },
     IconStyle: {
-        height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),
-        marginLeft: SCALE_SIZE(16),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
+        alignSelf: 'center'
     },
     arrowStyle: {
-        height: SCALE_SIZE(8),
-        width: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(8),
+        height: SCALE_SIZE(24),
+        width: SCALE_SIZE(24),
 
     },
     textStyle: {
         marginLeft: SCALE_SIZE(16),
+        flex: 1.0,
+        letterSpacing:-0.24
     },
 
 })
