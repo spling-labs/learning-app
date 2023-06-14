@@ -17,6 +17,7 @@ import QuizModel from "./QuizModel";
 import Lock from "./Lock";
 import CoveredDialog from "./CoveredDialog";
 import ImageChosse from "./ImageChosse";
+import SubcriptionList from "./SubscriptionItem";
 
 export {
     Button,
@@ -37,5 +38,6 @@ export {
     QuizModel,
     Lock,
     CoveredDialog,
-    ImageChosse
+    ImageChosse,
+    SubcriptionList
 }

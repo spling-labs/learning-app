@@ -40,15 +40,12 @@ export default function PremiumSuccessScreen(props: any) {
 
             <View style={{ justifyContent: 'center', flex: 1.0 }}>
                 <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.premiumsuccess} />
-                <Text style={styles.upgradeessages} color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(24)}>
-                    {getTranslation('welcome_to_our')}
-                </Text>
-                <Text style={styles.upgradeessages} color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(24)}>
-                    {getTranslation('premium_family')}
+                <Text style={styles.upgradeessages} color={COLORS.questionColor} fontFamily={FONT.black} size={SCALE_SIZE(24)}>
+                    {'Welcome to our premium family'}
                 </Text>
             </View>
 
-            <Text style={styles.goHomeStyle} color={COLORS.questionColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>
+            <Text style={styles.goHomeStyle} color={COLORS.contentTwo} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>
                 {getTranslation('go_to_home')}
             </Text>
         </ImageBackground>
@@ -64,16 +61,20 @@ const styles = StyleSheet.create({
     lockImage: {
         height: SCALE_SIZE(48),
         width: SCALE_SIZE(48),
-        marginTop: SCALE_SIZE(5),
-        marginRight: SCALE_SIZE(8),
         alignSelf: 'center'
     },
     upgradeessages: {
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginHorizontal: SCALE_SIZE(64),
+        lineHeight: SCALE_SIZE(32),
+        letterSpacing: -0.24,
+        marginTop: SCALE_SIZE(16)
     },
     goHomeStyle: {
         alignSelf: 'center',
-        marginBottom: SCALE_SIZE(32)
+        marginBottom: SCALE_SIZE(64),
+        lineHeight: SCALE_SIZE(20),
+        letterSpacing: -0.24
     },
 
 })

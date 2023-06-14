@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet, StatusBar, FlatList } from "react-native";
 
 //ASSETS
-import { COLORS, IMAGES } from "../../assets";
+import { COLORS } from "../../assets";
 
 //TYPES
-import { LocalizationContextType, accountList, contactList, dangerList, notificationList, shareList, subcriptionList } from "../../types";
+import { LocalizationContextType, subcriptionList } from "../../types";
 
 //SCREENS
 import { SCREENS } from "..";
@@ -18,10 +18,9 @@ import { FONT } from "../../constants/font";
 import { LocalizationContext } from "../../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button, Header } from "../../components";
+import { Text, Button, Header, SubcriptionList } from "../../components";
+
 import { useFocusEffect } from "@react-navigation/native";
-import AccountSettingItem from "../../components/AccountSettingItem";
-import SubcriptionList from "../../components/SubscriptionItem";
 
 export default function SubscriptionScreen(props: any) {
 
@@ -44,8 +43,8 @@ export default function SubscriptionScreen(props: any) {
 
             <Text
                 style={styles.titleTextStyle}
-                color={COLORS.black}
-                fontFamily={FONT.black}
+                color={COLORS.questionColor}
+                fontFamily={FONT.bold}
                 size={SCALE_SIZE(24)}>
                 {getTranslation('get_unlimited')}
             </Text>
@@ -87,15 +86,15 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white
     },
     titleTextStyle: {
-        marginTop: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(34),
+        marginTop: SCALE_SIZE(40),
         marginLeft: SCALE_SIZE(24),
         marginRight: SCALE_SIZE(64)
 
     },
     listStyle: {
-        marginTop: SCALE_SIZE(24),
-        marginHorizontal: SCALE_SIZE(24)
-
+        marginTop: SCALE_SIZE(40),
     },
     btnContinue: {
         marginHorizontal: SCALE_SIZE(16),
@@ -104,6 +103,6 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginBottom: SCALE_SIZE(8)
+        marginVertical: SCALE_SIZE(8)
     }
 })

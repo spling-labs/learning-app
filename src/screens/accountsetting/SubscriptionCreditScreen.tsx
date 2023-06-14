@@ -1,11 +1,11 @@
-import React, { useEffect, useContext, useState } from "react";
-import { View, StyleSheet, StatusBar, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
+import React, { useContext, useState } from "react";
+import { View, StyleSheet, StatusBar, Image, ScrollView } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../../assets";
 
 //TYPES
-import { LocalizationContextType, accountList, contactList, dangerList, notificationList, shareList, subcriptionList } from "../../types";
+import { LocalizationContextType } from "../../types";
 
 //SCREENS
 import { SCREENS } from "..";
@@ -20,8 +20,7 @@ import { LocalizationContext } from "../../context/LocalizationProvider";
 //COMPONENT
 import { Text, Button, Header, ProgressSlider, Input } from "../../components";
 import { useFocusEffect } from "@react-navigation/native";
-import AccountSettingItem from "../../components/AccountSettingItem";
-import SubcriptionList from "../../components/SubscriptionItem";
+
 
 export default function SubscriptionCreditScreen(props: any) {
 
@@ -50,7 +49,7 @@ export default function SubscriptionCreditScreen(props: any) {
             <Text
                 style={styles.titleTextStyle}
                 color={COLORS.contentColor}
-                fontFamily={FONT.black}
+                fontFamily={FONT.bold}
                 size={SCALE_SIZE(12)}>
                 {'3 of 3'}
             </Text>
@@ -68,19 +67,19 @@ export default function SubscriptionCreditScreen(props: any) {
                 {getTranslation('setup_payment')}
 
             </Text>
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <View style={styles.secureTxtStyle}>
                 <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.lactureLock} />
-                <Text style={styles.upgradeessages} color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>
+                <Text style={styles.upgradeessages} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>
                     {getTranslation('secure_payent')}
                 </Text>
             </View>
             <ScrollView>
-                <View style={{ flex: 1.0 }}>
+                <View style={{ flex: 1.0, marginTop: SCALE_SIZE(48) }}>
                     <View>
                         <Text
                             style={styles.nameStyle}
                             color={COLORS.questionColor}
-                            fontFamily={FONT.regular}
+                            fontFamily={FONT.medium}
                             size={SCALE_SIZE(14)}>
                             {getTranslation('Name')}
                         </Text>
@@ -97,9 +96,9 @@ export default function SubscriptionCreditScreen(props: any) {
                     </View>
                     <View>
                         <Text
-                            style={styles.nameStyle}
+                            style={styles.cardStyle}
                             color={COLORS.questionColor}
-                            fontFamily={FONT.regular}
+                            fontFamily={FONT.medium}
                             size={SCALE_SIZE(14)}>
                             {getTranslation('card_number')}
                         </Text>
@@ -114,13 +113,13 @@ export default function SubscriptionCreditScreen(props: any) {
                             }}
                         />
                     </View>
-                    <View style={{ flexDirection: 'row', marginBottom: SCALE_SIZE(16) }}>
+                    <View style={{ flexDirection: 'row' }}>
 
                         <View>
                             <Text
                                 style={styles.expireStyle}
                                 color={COLORS.questionColor}
-                                fontFamily={FONT.regular}
+                                fontFamily={FONT.medium}
                                 size={SCALE_SIZE(14)}>
                                 {getTranslation('expiry_date')}
                             </Text>
@@ -139,7 +138,7 @@ export default function SubscriptionCreditScreen(props: any) {
                             <Text
                                 style={styles.securityStyle}
                                 color={COLORS.questionColor}
-                                fontFamily={FONT.regular}
+                                fontFamily={FONT.medium}
                                 size={SCALE_SIZE(14)}>
                                 {getTranslation('security_code')}
                             </Text>
@@ -188,27 +187,31 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white
     },
     titleTextStyle: {
-        marginTop: SCALE_SIZE(16),
-        alignSelf: 'center'
-
+        marginTop: SCALE_SIZE(24),
+        alignSelf: 'center',
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(16)
     },
     progressSlider: {
-        marginHorizontal: SCALE_SIZE(64),
+        marginHorizontal: SCALE_SIZE(72),
         marginTop: SCALE_SIZE(8)
     },
     battleMessages: {
-        marginTop: SCALE_SIZE(16),
-        lineHeight: SCALE_SIZE(38),
-        marginHorizontal: SCALE_SIZE(24)
+        marginTop: SCALE_SIZE(24),
+        lineHeight: SCALE_SIZE(32),
+        marginHorizontal: SCALE_SIZE(40),
+        letterSpacing: -0.24
     },
     upgradeessages: {
-        marginBottom: SCALE_SIZE(24),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
+
     },
     lockImage: {
         height: SCALE_SIZE(16),
         width: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(5),
-        marginRight: SCALE_SIZE(8)
+        marginRight: SCALE_SIZE(8),
+        tintColor: COLORS.contentColor
     },
     listStyle: {
         marginTop: SCALE_SIZE(24),
@@ -222,11 +225,18 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginBottom: SCALE_SIZE(8)
+        marginVertical: SCALE_SIZE(8)
     },
     nameStyle: {
-        marginTop: SCALE_SIZE(16),
         marginHorizontal: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
+    },
+    cardStyle: {
+        marginHorizontal: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        marginTop: SCALE_SIZE(16),
+        lineHeight: SCALE_SIZE(20)
     },
     input: {
         marginTop: SCALE_SIZE(8),
@@ -236,6 +246,8 @@ const styles = StyleSheet.create({
     expireStyle: {
         marginTop: SCALE_SIZE(16),
         marginHorizontal: SCALE_SIZE(16),
+        lineHeight: SCALE_SIZE(20),
+        letterSpacing: -0.24
     },
     expireinput: {
         marginTop: SCALE_SIZE(8),
@@ -245,10 +257,17 @@ const styles = StyleSheet.create({
     securityStyle: {
         marginTop: SCALE_SIZE(16),
         marginHorizontal: SCALE_SIZE(16),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
     },
     securityinput: {
         marginTop: SCALE_SIZE(8),
         marginLeft: SCALE_SIZE(16),
         width: SCALE_SIZE(175)
     },
+    secureTxtStyle: {
+        flexDirection: 'row',
+        alignSelf: 'center',
+        marginTop: SCALE_SIZE(8)
+    }
 })

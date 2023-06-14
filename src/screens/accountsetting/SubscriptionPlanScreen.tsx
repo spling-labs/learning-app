@@ -85,35 +85,57 @@ export default function SubscriptionPlanScreen(props: any) {
                     props.navigation.goBack()
                 }} />
 
-            <Text style={styles.titleTextStyle} color={COLORS.contentColor} fontFamily={FONT.black} size={SCALE_SIZE(12)}>{'1 of 3'}</Text>
-            <ProgressSlider type={2} style={styles.progressSlider} fillCount={1} totalCount={3} />
-            <Text style={styles.battleMessages} color={COLORS.questionColor} fontFamily={FONT.black} align={'center'} size={SCALE_SIZE(24)}>{getTranslation('choose_plan')}</Text>
-            <Text style={styles.upgradeessages} color={COLORS.contentColor} fontFamily={FONT.regular} align={'center'} size={SCALE_SIZE(14)}>{getTranslation('upgrade')}</Text>
-            <View style={{ flex: 1 }}>
+            <Text
+                style={styles.titleTextStyle}
+                color={COLORS.contentColor}
+                fontFamily={FONT.bold}
+                size={SCALE_SIZE(12)}>
+                {'1 of 3'}
+            </Text>
+            <ProgressSlider
+                type={2}
+                style={styles.progressSlider}
+                fillCount={1}
+                totalCount={3} />
+            <Text
+                style={styles.battleMessages}
+                color={COLORS.questionColor}
+                fontFamily={FONT.black}
+                align={'center'}
+                size={SCALE_SIZE(24)}>
+                {getTranslation('choose_plan')}
+            </Text>
+            <Text
+                style={styles.upgradeessages}
+                color={COLORS.contentColor}
+                fontFamily={FONT.medium}
+                align={'center'}
+                size={SCALE_SIZE(14)}>
+                {getTranslation('upgrade')}
+            </Text>
+            <View style={{ flex: 1, marginTop: SCALE_SIZE(54) }}>
                 <ScrollView>
                     <View>
                         <TouchableOpacity onPress={() => yearlySelect()}>
                             <View style={[yearlyBackgroundStyle(), { marginTop: SCALE_SIZE(8) }]}>
                                 <Image style={yearlyImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                                 <View >
-                                    <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{getTranslation('year')}</Text>
-                                    <Text color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{getTranslation('yeardis')}</Text>
-                                    <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{'$30.99/year $60.99/year'}</Text>
+                                    <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('year')}</Text>
+                                    <Text style={styles.txtStyle} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('yeardis')}</Text>
+                                    <Text style={styles.rateTxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{'$30.99/year $60.99/year'}</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <View style={styles.offTextStyle}>
-                            <Text color={COLORS.white} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{getTranslation('txtOff')}</Text>
-                        </View>
+                        <Text style={styles.offTextStyle} color={COLORS.white} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{getTranslation('txtOff')}</Text>
                     </View>
 
                     <TouchableOpacity onPress={() => monthlySelect()}>
                         <View style={[monthlyBackgroundStyle(), { marginTop: SCALE_SIZE(16), marginBottom: SCALE_SIZE(16) }]}>
                             <Image style={monthlyImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                             <View >
-                                <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{getTranslation('month')}</Text>
-                                <Text color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{getTranslation('monthdis')}</Text>
-                                <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{'$30.99/year'}</Text>
+                                <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('month')}</Text>
+                                <Text style={styles.txtStyle} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('monthdis')}</Text>
+                                <Text style={styles.rateTxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{'$30.99/year'}</Text>
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -122,10 +144,10 @@ export default function SubscriptionPlanScreen(props: any) {
                         <View style={lifetimeBackgroundStyle()}>
                             <Image style={lifetimeImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                             <View >
-                                <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{getTranslation('lifetime')}</Text>
-                                <Text color={COLORS.contentColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis')}</Text>
-                                <Text color={COLORS.questionColor} fontFamily={FONT.regular} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis1')}</Text>
-                                <Text color={COLORS.black} fontFamily={FONT.black} size={SCALE_SIZE(14)}>{'$200'}</Text>
+                                <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('lifetime')}</Text>
+                                <Text style={styles.txtStyle} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis')}</Text>
+                                <Text style={styles.txtStyle} color={COLORS.questionColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis1')}</Text>
+                                <Text style={styles.rateTxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{'$200'}</Text>
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -157,16 +179,22 @@ const styles = StyleSheet.create({
     },
     titleTextStyle: {
         marginTop: SCALE_SIZE(16),
-        alignSelf: 'center'
+        alignSelf: 'center',
+        lineHeight: SCALE_SIZE(16),
+        letterSpacing: -0.24
     },
     battleMessages: {
-        marginTop: SCALE_SIZE(16),
-        lineHeight: SCALE_SIZE(38),
+        marginTop: SCALE_SIZE(24),
+        lineHeight: SCALE_SIZE(32),
+        letterSpacing: -0.24,
         marginHorizontal: SCALE_SIZE(40)
     },
     upgradeessages: {
-        marginBottom: SCALE_SIZE(24),
-        marginHorizontal: SCALE_SIZE(40)
+        marginTop: SCALE_SIZE(8),
+        marginHorizontal: SCALE_SIZE(32),
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+        alignSelf: 'center'
     },
     btnContinue: {
         marginHorizontal: SCALE_SIZE(16),
@@ -175,17 +203,17 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginBottom: SCALE_SIZE(8)
+        marginVertical: SCALE_SIZE(8)
     },
     progressSlider: {
-        marginHorizontal: SCALE_SIZE(64),
+        marginHorizontal: SCALE_SIZE(72),
         marginTop: SCALE_SIZE(8)
     },
     planViewStyle: {
         flexDirection: 'row',
         marginHorizontal: SCALE_SIZE(16),
         backgroundColor: COLORS.white,
-        borderRadius: SCALE_SIZE(12),
+        borderRadius: SCALE_SIZE(8),
         padding: SCALE_SIZE(16),
         borderColor: COLORS.white,
         borderWidth: SCALE_SIZE(3)
@@ -193,15 +221,13 @@ const styles = StyleSheet.create({
     rightPostIcon: {
         height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
-        marginRight: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(4)
-
+        marginRight: SCALE_SIZE(10),
     },
     selectPlanViewStyle: {
         flexDirection: 'row',
         marginHorizontal: SCALE_SIZE(16),
         backgroundColor: COLORS.slider_unfill,
-        borderRadius: SCALE_SIZE(12),
+        borderRadius: SCALE_SIZE(8),
         padding: SCALE_SIZE(16),
         borderColor: COLORS.primary,
         borderWidth: SCALE_SIZE(3)
@@ -209,8 +235,7 @@ const styles = StyleSheet.create({
     selectRightPostIcon: {
         height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
-        marginRight: SCALE_SIZE(16),
-        marginTop: SCALE_SIZE(4),
+        marginRight: SCALE_SIZE(8),
         tintColor: COLORS.primary
 
     },
@@ -218,8 +243,24 @@ const styles = StyleSheet.create({
         position: 'absolute',
         backgroundColor: COLORS.primary,
         borderRadius: SCALE_SIZE(32),
-        paddingLeft: SCALE_SIZE(8),
-        paddingRight: SCALE_SIZE(8),
-        marginLeft: SCALE_SIZE(Dimensions.get('screen').width - 150)
+        paddingVertical: SCALE_SIZE(4),
+        paddingHorizontal: SCALE_SIZE(8),
+        lineHeight: SCALE_SIZE(20),
+        letterSpacing: -0.24,
+        marginLeft: SCALE_SIZE(Dimensions.get('screen').width - 140)
+    },
+    titletxtStyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+    },
+    txtStyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+        marginTop: SCALE_SIZE(2)
+    },
+    rateTxtStyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+        marginTop: SCALE_SIZE(8)
     }
 })
