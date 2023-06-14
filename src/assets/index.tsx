@@ -27,12 +27,11 @@ export const COLORS = {
     communityTextColor: '#1A1D28',
     communitytagColor: '#797B82',
     communitysnellColor: '#F7CA45',
-    communitylevelColor: '#77C93C',
     communityHrColor: '#5C6064',
     dialog_transparent: 'rgba(59, 66, 74, 0.33)',
     dialog_line_coloe: '#D9D9D9',
     delete_color: "#EA5953",
-    image_shadow:"#CEC7C5",
+    image_shadow: "#CEC7C5",
     dialog_item_background: '#F6F6F6',
     desColor: '#FDD5C2',
     warning: '#F7CA45',
@@ -41,7 +40,8 @@ export const COLORS = {
     color_F1FAEB: '#F1FAEB',
     red: '#EA5953',
     skipShadow: '#FADFD1',
-    skipBackground: "#FEF1EA"
+    skipBackground: "#FEF1EA",
+    green_bck_color: "#F1FAEB"
 
 }
 
@@ -134,9 +134,16 @@ export const IMAGES = {
     backgroundWelcome: require('./images/welcome_bg.png'),
     successBackground: require('./images/success_bg.png'),
     unfill: require('./images/button_unfill.png'),
-    check: require('./images/check.png'),
     quizIcon: require('./images/quiz_icon.png'),
     wrong: require('./images/wrong.png'),
     quizLogo: require('./images/quiz_logo.png'),
-    time:require('./images/time.png')
+    time: require('./images/time.png'),
+    ic_add: require('./images/ic_add.png'),
+    ic_alarm: require('./images/ic_alarm.png'),
+    user_ache: require('./images/user_ache.png'),
+    user_witout_back: require('./images/user_witout_back.png'),
+    donecertificate: require('./images/donecertificate.png'),
+    completeeye: require('./images/completeeye.png'),
+    compleshare: require('./images/compleshare.png')
+
 }

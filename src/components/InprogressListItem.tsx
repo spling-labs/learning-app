@@ -11,7 +11,7 @@ import { SCALE_SIZE } from "../constants/uttils";
 import Text from "./Text";
 import { FONT } from "../constants/font";
 
-import CircularProgress from "./CircularProgress";
+import ProgressCircle from 'react-native-progress-circle'
 
 export default function InprogressListItem(props: any) {
 
@@ -40,18 +40,25 @@ export default function InprogressListItem(props: any) {
                     </View>
 
                 </View>
-                <CircularProgress
-                    percent={30}
-                    radius={24}
-                    bgRingWidth={3}
-                    progressRingWidth={3}
-                    ringColor={COLORS.primary}
-                    ringBgColor={COLORS.slider_unfill}
-                    textFontSize={SCALE_SIZE(16)}
-                    textFontColor={COLORS.contentColor}
-                    startDegrees={0}
-                />
+                <View style={{ marginRight: SCALE_SIZE(16) }}>
+                    <ProgressCircle
+                        percent={30}
+                        radius={20}
+                        borderWidth={5}
+                        color={COLORS.green}
+                        shadowColor="#E0F8CE"
+                        bgColor={COLORS.white}
+                    >
+                        <Text
+                            color={COLORS.contentColor}
+                            fontFamily={FONT.regular}
+                            size={SCALE_SIZE(10)}>
+                            {"30%"}
+                        </Text>
+                    </ProgressCircle>
+                </View>
             </View>
+
         </TouchableOpacity>
 
     )
@@ -66,7 +73,6 @@ const style = StyleSheet.create({
     ViewStyle: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: SCALE_SIZE(16)
     },
     IconStyle: {
         height: SCALE_SIZE(16),

@@ -554,7 +554,8 @@ export const subcriptionList: Array<subcriptionList> = [
 
 interface inProList {
     title: string,
-    perComplete: string
+    perComplete: string,
+    certificate: string
 
 }
 
@@ -562,14 +563,19 @@ export const inProList: Array<inProList> = [
     {
         title: 'Basic Rust',
         perComplete: '30% Done',
+        certificate: 'done'
     },
     {
         title: 'Basic Rust',
-        perComplete: '30% Done'
+        perComplete: '30% Done',
+        certificate: 'notdone'
+
     },
     {
         title: 'Basic Rust',
-        perComplete: '30% Done'
+        perComplete: '30% Done',
+        certificate: 'notdone'
+
     }
 ];
 
@@ -703,6 +709,46 @@ export const availableList: Array<availableList> = [
     }
 ];
 
+interface topicChooseList {
+    title: string,
+    perComplete: string
+
+}
+
+export const topicChooseList: Array<topicChooseList> = [
+    {
+        title: 'Rust',
+        perComplete: '30% Done',
+    },
+    {
+        title: 'Solana',
+        perComplete: '30% Done'
+    },
+    {
+        title: 'Add',
+        perComplete: 'add'
+    }
+];
+
+interface achevementList {
+    title: string,
+
+}
+
+export const achevementList: Array<achevementList> = [
+    {
+        title: 'unlock',
+    },
+    {
+        title: 'lock',
+    },
+    {
+        title: 'lock',
+    },
+    {
+        title: 'lock',
+    }
+];
 
 
 
