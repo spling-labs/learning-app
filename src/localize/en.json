@@ -149,5 +149,18 @@
     "lession_completed": "Lesson Completed",
     "excelent_job": "You Did Excellent Job!",
     "lession_message": "Bellow you can see your overall\nlesson performance",
-    "Next lesson": "Next lesson"
+    "Next lesson": "Next lesson",
+    "certificates": "Certificates",
+    "topics_chosen": "Topics you chosen",
+    "daily_goal": "Daily learning goal",
+    "lession_locked": "Lesson Locked",
+    "lession_locked_msg": "Complete the previous lessons to unlock this one.",
+    "Ok": "Ok",
+    "New Password": "New Password",
+    "Confirm Password": "Confirm Password",
+    "Save to Change": "Save to Change",
+    "Cancel": "Cancel",
+    "take picture": "take picture",
+    "Choose picture": "Choose picture",
+    "Set a new picture or view the current one": "Set a new picture or view the current one."
 }

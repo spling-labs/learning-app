@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, StyleSheet, StatusBar, Image, TouchableOpacity, ScrollView } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
 
 //TYPES
-import { LocalizationContextType, inProList } from "../types";
+import { LocalizationContextType, achevementList, inProList, topicChooseList } from "../types";
 
 //SCREENS
 import { SCREENS } from ".";
@@ -18,15 +18,21 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, Button } from "../components";
+import { Text } from "../components";
 import { useFocusEffect } from "@react-navigation/native";
 import { FlatList } from "react-native-gesture-handler";
-import AccountSettingItem from "../components/AccountSettingItem";
 import InprogressListItem from "../components/InprogressListItem";
+import TopicChooseItem from "../components/TopicChoose";
+import DailyLearningDialog from "../components/DailyLearningDialog";
+import AchievementUserItem from "../components/AchievementUserItem";
+import CertificateListItem from "../components/CertificatesListItem";
+import TopicChooseDialog from "../components/TopicChooseDialog";
 
 export default function Profile(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
+    const [modalVisible, setModalVisible] = useState(false);
+    const [topicModalVisible, setTopicModalVisible] = useState(false);
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
@@ -71,22 +77,37 @@ export default function Profile(props: any) {
                     </View>
                     <View style={styles.snellViewStyle}>
                         <Text style={styles.snellTextStyle} color={COLORS.primary} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'12,340 Snell'}</Text>
-                        <Text style={styles.levelTextStyle} color={COLORS.communitylevelColor} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'4 Days Days streak'}</Text>
+                        <Text style={styles.levelTextStyle} color={COLORS.green} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'4 Days Days streak'}</Text>
                     </View>
 
                     <Text
                         style={styles.attachStyle}
                         color={COLORS.contentColor}
-                        fontFamily={FONT.black}
+                        fontFamily={FONT.regular}
                         size={SCALE_SIZE(10)}>
                         {getTranslation('achievements')}
                     </Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <FlatList
+                            style={{ marginTop: SCALE_SIZE(16), marginLeft: SCALE_SIZE(8) }}
+                            data={achevementList}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({ item }) => {
+                                return <AchievementUserItem props={props} item={item} />
+                            }}
+                        />
+                        <Image style={[styles.arrowImageStyle, { marginLeft: SCALE_SIZE(8) }]} resizeMode="contain" source={IMAGES.ic_arrow} />
+
+                    </View>
+
                 </View>
                 <Text
                     style={styles.inProgressStyle}
                     color={COLORS.questionColor}
                     fontFamily={FONT.black}
-                    size={SCALE_SIZE(24)}>
+                    size={SCALE_SIZE(20)}>
                     {getTranslation('in_progress')}
                 </Text>
                 <FlatList
@@ -99,7 +120,78 @@ export default function Profile(props: any) {
                         return <InprogressListItem props={props} item={item} />
                     }}
                 />
+                <Text
+                    style={styles.certificateStyle}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    size={SCALE_SIZE(20)}>
+                    {getTranslation('certificates')}
+                </Text>
+                <FlatList
+                    style={styles.listStyle}
+                    data={inProList}
+                    scrollEnabled={false}
+                    keyExtractor={(item, index) => index.toString()}
+                    ItemSeparatorComponent={ItemSeparatorView}
+                    renderItem={({ item }) => {
+                        return <CertificateListItem props={props} item={item} />
+                    }}
+                />
+                <Text
+                    style={styles.certificateStyle}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    size={SCALE_SIZE(20)}>
+                    {getTranslation('topics_chosen')}
+                </Text>
+                <FlatList
+                    style={styles.listStyle}
+                    data={topicChooseList}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => {
+                        return <TopicChooseItem props={props} item={item} topicSetModal={setTopicModalVisible} topicModalVisible={topicModalVisible} />
+                    }}
+                />
+                <Text
+                    style={styles.certificateStyle}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    size={SCALE_SIZE(20)}>
+                    {getTranslation('daily_goal')}
+                </Text>
+
+                <TouchableOpacity
+                    onPress={() => {
+                        setModalVisible(true)
+                    }}>
+                    <View style={[styles.listStyle, { flexDirection: 'row', justifyContent: 'space-between' }]}>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Image style={styles.alamrImageStyle} resizeMode="contain" source={IMAGES.ic_alarm} />
+                            <View style={{ marginLeft: SCALE_SIZE(16) }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Text
+                                        color={COLORS.questionColor}
+                                        fontFamily={FONT.black}
+                                        size={SCALE_SIZE(16)}>
+                                        {'30 Min Daily'}
+                                    </Text>
+                                    <Text style={styles.activityTextStyle} color={COLORS.green} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'Activate'}</Text>
+                                </View>
+                                <Text color={COLORS.contentTwo} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'Serious Learner'}</Text>
+                            </View>
+                        </View>
+                        <Image style={styles.arrowImageStyle} resizeMode="contain" source={IMAGES.ic_arrow} />
+
+                    </View>
+                </TouchableOpacity>
+
             </ScrollView>
+
+            <DailyLearningDialog item={modalVisible} modalVisible={setModalVisible} />
+            <TopicChooseDialog topicModalVisible={topicModalVisible} topicSetModal={setTopicModalVisible} />
+
         </View>
     )
 }
@@ -142,6 +234,18 @@ const styles = StyleSheet.create({
         width: SCALE_SIZE(48),
         alignSelf: 'center',
     },
+    alamrImageStyle: {
+        height: SCALE_SIZE(32),
+        width: SCALE_SIZE(32),
+        marginLeft: SCALE_SIZE(16),
+        alignSelf: 'center'
+    },
+    arrowImageStyle: {
+        height: SCALE_SIZE(16),
+        width: SCALE_SIZE(16),
+        alignSelf: 'center',
+        marginRight: SCALE_SIZE(8)
+    },
     userTextStyle: {
         alignSelf: 'center',
         marginLeft: SCALE_SIZE(8)
@@ -154,15 +258,22 @@ const styles = StyleSheet.create({
         paddingRight: SCALE_SIZE(8),
         padding: SCALE_SIZE(6),
     },
+    activityTextStyle: {
+        alignSelf: 'center',
+        marginLeft: SCALE_SIZE(8),
+        backgroundColor: COLORS.green_bck_color,
+        borderRadius: SCALE_SIZE(32),
+        paddingHorizontal: SCALE_SIZE(8),
+        paddingVertical: SCALE_SIZE(2)
+    },
     levelTextStyle: {
         alignSelf: 'center',
         marginLeft: SCALE_SIZE(8),
-        backgroundColor: '#F1FAEB',
+        backgroundColor: COLORS.green_bck_color,
         borderRadius: SCALE_SIZE(32),
         padding: SCALE_SIZE(6),
         paddingLeft: SCALE_SIZE(8),
         paddingRight: SCALE_SIZE(8),
-
     },
     hrTextStyle: {
         alignSelf: 'center',
@@ -180,14 +291,16 @@ const styles = StyleSheet.create({
         marginTop: SCALE_SIZE(16),
         marginLeft: SCALE_SIZE(16)
     },
+    certificateStyle: {
+        marginLeft: SCALE_SIZE(16)
+    },
     listStyle: {
         marginTop: SCALE_SIZE(8),
-        marginBottom: SCALE_SIZE(16),
+        marginBottom: SCALE_SIZE(8),
         backgroundColor: COLORS.white,
         borderRadius: SCALE_SIZE(12),
         marginHorizontal: SCALE_SIZE(16),
-        paddingBottom: SCALE_SIZE(8),
-        paddingTop: SCALE_SIZE(4),
+        paddingVertical: SCALE_SIZE(16),
         borderWidth: SCALE_SIZE(1),
         borderColor: COLORS.contentThree,
     },

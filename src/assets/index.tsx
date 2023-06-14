@@ -27,7 +27,6 @@ export const COLORS = {
     communityTextColor: '#1A1D28',
     communitytagColor: '#797B82',
     communitysnellColor: '#F7CA45',
-    communitylevelColor: '#77C93C',
     communityHrColor: '#5C6064',
     dialog_transparent: 'rgba(59, 66, 74, 0.33)',
     dialog_line_coloe: '#D9D9D9',
@@ -42,6 +41,7 @@ export const COLORS = {
     red: '#EA5953',
     skipShadow: '#FADFD1',
     skipBackground: "#FEF1EA",
+    green_bck_color: "#F1FAEB",
     color_E7E3E2: '#E7E3E2'
 
 }
@@ -139,6 +139,13 @@ export const IMAGES = {
     wrong: require('./images/wrong.png'),
     quizLogo: require('./images/quiz_logo.png'),
     time: require('./images/time.png'),
+    ic_add: require('./images/ic_add.png'),
+    ic_alarm: require('./images/ic_alarm.png'),
+    user_ache: require('./images/user_ache.png'),
+    user_witout_back: require('./images/user_witout_back.png'),
+    donecertificate: require('./images/donecertificate.png'),
+    completeeye: require('./images/completeeye.png'),
+    compleshare: require('./images/compleshare.png'),
     lockImage: require('./images/lecture_lock.png'),
     topic: require('./images/topic.png'),
     completed: require('./images/completed.png'),
