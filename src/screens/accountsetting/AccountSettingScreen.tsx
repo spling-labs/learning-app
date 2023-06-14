@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
+import { View, StyleSheet, StatusBar, Image, TouchableOpacity, FlatList, ScrollView, Alert } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../../assets";
@@ -38,6 +38,13 @@ export default function AccountSettingScreen(props: any) {
             <View style={styles.viewStyle} />
         );
     };
+
+    function onNavigate(item: any) {
+        if (item.Title == 'edit_profile'){
+            props.navigation.navigate(SCREENS.EditProfile.name)
+        }
+    }
+
     return (
         <View style={styles.container}>
             <Header
@@ -62,7 +69,14 @@ export default function AccountSettingScreen(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <AccountSettingItem props={props} item={item} />
+                            return (
+                                <AccountSettingItem
+                                    props={props}
+                                    item={item}
+                                    onPress={(item: any) => {
+                                        onNavigate(item)
+                                    }} />
+                            )
                         }}
                     />
                     <Text
