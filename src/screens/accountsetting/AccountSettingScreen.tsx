@@ -43,6 +43,9 @@ export default function AccountSettingScreen(props: any) {
         if (item.Title == 'edit_profile') {
             props.navigation.navigate(SCREENS.EditProfile.name)
         }
+        else if(item.Title == 'get_pro'){
+            props.navigation.navigate(SCREENS.SubscriptionScreen.name)
+        }
     }
 
     return (

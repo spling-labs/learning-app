@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginVertical: SCALE_SIZE(8)
+        marginBottom: SCALE_SIZE(24),
+        marginTop:SCALE_SIZE(8)
     }
 })

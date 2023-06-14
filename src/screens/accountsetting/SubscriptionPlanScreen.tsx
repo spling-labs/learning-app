@@ -5,7 +5,7 @@ import { View, StyleSheet, StatusBar, Image, TouchableOpacity, FlatList, ScrollV
 import { COLORS, IMAGES } from "../../assets";
 
 //TYPES
-import { LocalizationContextType, accountList, contactList, dangerList, notificationList, shareList, subcriptionList } from "../../types";
+import { LocalizationContextType } from "../../types";
 
 //SCREENS
 import { SCREENS } from "..";
@@ -19,9 +19,9 @@ import { LocalizationContext } from "../../context/LocalizationProvider";
 
 //COMPONENT
 import { Text, Button, Header, ProgressSlider } from "../../components";
+
+//PACAKGES
 import { useFocusEffect } from "@react-navigation/native";
-import AccountSettingItem from "../../components/AccountSettingItem";
-import SubcriptionList from "../../components/SubscriptionItem";
 
 export default function SubscriptionPlanScreen(props: any) {
 
@@ -113,24 +113,48 @@ export default function SubscriptionPlanScreen(props: any) {
                 size={SCALE_SIZE(14)}>
                 {getTranslation('upgrade')}
             </Text>
-            <View style={{ flex: 1, marginTop: SCALE_SIZE(54) }}>
-                <ScrollView>
+            <View style={{ flex: 1, marginTop: SCALE_SIZE(20) }}>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}>
                     <View>
                         <TouchableOpacity onPress={() => yearlySelect()}>
-                            <View style={[yearlyBackgroundStyle(), { marginTop: SCALE_SIZE(8) }]}>
+                            <View style={[yearlyBackgroundStyle()]}>
                                 <Image style={yearlyImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                                 <View >
-                                    <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('year')}</Text>
-                                    <Text style={styles.txtStyle} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('yeardis')}</Text>
-                                    <Text style={styles.rateTxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{'$30.99/year $60.99/year'}</Text>
+                                    <Text
+                                        style={styles.titletxtStyle}
+                                        color={COLORS.questionColor}
+                                        fontFamily={FONT.bold}
+                                        size={SCALE_SIZE(16)}>
+                                        {getTranslation('year')}
+                                    </Text>
+                                    <Text
+                                        style={styles.txtStyle}
+                                        color={COLORS.contentColor}
+                                        fontFamily={FONT.medium}
+                                        size={SCALE_SIZE(14)}>
+                                        {getTranslation('yeardis')}
+                                    </Text>
+                                    <Text
+                                        style={styles.rateTxtStyle}
+                                        color={COLORS.questionColor}
+                                        fontFamily={FONT.bold}
+                                        size={SCALE_SIZE(14)}>
+                                        {'$30.99/year $60.99/year'}
+                                    </Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <Text style={styles.offTextStyle} color={COLORS.white} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{getTranslation('txtOff')}</Text>
+                        <Text style={styles.offTextStyle}
+                            color={COLORS.white}
+                            fontFamily={FONT.bold}
+                            size={SCALE_SIZE(14)}>
+                            {getTranslation('txtOff')}
+                        </Text>
                     </View>
 
                     <TouchableOpacity onPress={() => monthlySelect()}>
-                        <View style={[monthlyBackgroundStyle(), { marginTop: SCALE_SIZE(16), marginBottom: SCALE_SIZE(16) }]}>
+                        <View style={[monthlyBackgroundStyle(), { marginVertical: SCALE_SIZE(16) }]}>
                             <Image style={monthlyImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                             <View >
                                 <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('month')}</Text>
@@ -141,11 +165,23 @@ export default function SubscriptionPlanScreen(props: any) {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => lifetimeSelect()}>
-                        <View style={lifetimeBackgroundStyle()}>
+                        <View style={[lifetimeBackgroundStyle(), { marginTop: SCALE_SIZE(0) }]}>
                             <Image style={lifetimeImageStyle()} resizeMode="contain" source={IMAGES.ic_circle_right} />
                             <View >
-                                <Text style={styles.titletxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>{getTranslation('lifetime')}</Text>
-                                <Text style={styles.txtStyle} color={COLORS.contentColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis')}</Text>
+                                <Text
+                                    style={styles.titletxtStyle}
+                                    color={COLORS.questionColor}
+                                    fontFamily={FONT.bold}
+                                    size={SCALE_SIZE(16)}>
+                                    {getTranslation('lifetime')}
+                                </Text>
+                                <Text
+                                    style={styles.txtStyle}
+                                    color={COLORS.contentColor}
+                                    fontFamily={FONT.medium}
+                                    size={SCALE_SIZE(14)}>
+                                    {getTranslation('lifetimedis')}
+                                </Text>
                                 <Text style={styles.txtStyle} color={COLORS.questionColor} fontFamily={FONT.medium} size={SCALE_SIZE(14)}>{getTranslation('lifetimedis1')}</Text>
                                 <Text style={styles.rateTxtStyle} color={COLORS.questionColor} fontFamily={FONT.bold} size={SCALE_SIZE(14)}>{'$200'}</Text>
                             </View>
@@ -154,7 +190,9 @@ export default function SubscriptionPlanScreen(props: any) {
                 </ScrollView>
             </View>
             <View>
-                <Button style={styles.btnContinue} backgroundColor={COLORS.primary} title={getTranslation('Continue')} size={SCALE_SIZE(16)}
+                <Button
+                    style={styles.btnContinue}
+                    backgroundColor={COLORS.primary} title={getTranslation('Continue')} size={SCALE_SIZE(16)}
                     color={COLORS.white}
                     family={FONT.bold}
                     onPress={() => {
@@ -203,7 +241,8 @@ const styles = StyleSheet.create({
     },
     bottomTextStyle: {
         alignSelf: 'center',
-        marginVertical: SCALE_SIZE(8)
+        marginBottom: SCALE_SIZE(24),
+        marginTop: SCALE_SIZE(8)
     },
     progressSlider: {
         marginHorizontal: SCALE_SIZE(72),
@@ -216,7 +255,9 @@ const styles = StyleSheet.create({
         borderRadius: SCALE_SIZE(8),
         padding: SCALE_SIZE(16),
         borderColor: COLORS.white,
-        borderWidth: SCALE_SIZE(3)
+        borderWidth: SCALE_SIZE(3),
+        marginTop: SCALE_SIZE(20)
+
     },
     rightPostIcon: {
         height: SCALE_SIZE(24),
@@ -230,7 +271,8 @@ const styles = StyleSheet.create({
         borderRadius: SCALE_SIZE(8),
         padding: SCALE_SIZE(16),
         borderColor: COLORS.primary,
-        borderWidth: SCALE_SIZE(3)
+        borderWidth: SCALE_SIZE(3),
+        marginTop: SCALE_SIZE(20)
     },
     selectRightPostIcon: {
         height: SCALE_SIZE(24),
@@ -247,7 +289,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: SCALE_SIZE(8),
         lineHeight: SCALE_SIZE(20),
         letterSpacing: -0.24,
-        marginLeft: SCALE_SIZE(Dimensions.get('screen').width - 140)
+        right: SCALE_SIZE(32),
+        overflow: 'hidden',
+        top: 5
     },
     titletxtStyle: {
         letterSpacing: -0.24,
