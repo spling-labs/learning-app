@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { View, StyleSheet, StatusBar, Image, SafeAreaView, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
 
 //ASSETS
@@ -18,7 +18,7 @@ import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 
 //COMPONENT
-import { Text, HomeItems } from "../components";
+import { Text, HomeItems, MyCourseDialog } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -26,6 +26,7 @@ import { useFocusEffect } from "@react-navigation/native";
 export default function Home(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
+    const [modalVisible, setModalVisible] = useState(false);
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
@@ -79,22 +80,28 @@ export default function Home(props: any) {
                     </View>
                 </View>
                 <View style={styles.devider} />
-                <View style={styles.rustView}>
-                    <Text
-                        style={{ alignSelf: 'center' }}
-                        color={COLORS.black}
-                        fontFamily={FONT.black}
-                        size={SCALE_SIZE(16)}>
-                        {getTranslation('Rust')}
-                    </Text>
-                    <Text
-                        style={{ alignSelf: 'center' }}
-                        color={COLORS.contentTwo}
-                        fontFamily={FONT.medium}
-                        size={SCALE_SIZE(12)}>
-                        {'05 Sections | 0% Done'}
-                    </Text>
-                </View>
+                <TouchableOpacity
+                    onPress={() => {
+                        setModalVisible(true)
+                    }}>
+                    <View style={styles.rustView}>
+                        <Text
+                            style={{ alignSelf: 'center' }}
+                            color={COLORS.black}
+                            fontFamily={FONT.black}
+                            size={SCALE_SIZE(16)}>
+                            {getTranslation('Rust')}
+                        </Text>
+                        <Text
+                            style={{ alignSelf: 'center' }}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.medium}
+                            size={SCALE_SIZE(12)}>
+                            {'05 Sections | 0% Done'}
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+
                 <ScrollView style={[styles.container]}
                     showsVerticalScrollIndicator={false}>
                     <>
@@ -112,6 +119,8 @@ export default function Home(props: any) {
                         <View style={{ height: 16 }} />
                     </>
                 </ScrollView>
+
+                <MyCourseDialog modalVisible={modalVisible} setModal={setModalVisible} />
             </ImageBackground>
         </SafeAreaView>
     )

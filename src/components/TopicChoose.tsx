@@ -76,12 +76,7 @@ const style = StyleSheet.create({
         height: SCALE_SIZE(16),
         width: SCALE_SIZE(16),
     },
-    arrowStyle: {
-        height: SCALE_SIZE(8),
-        width: SCALE_SIZE(16),
-        marginRight: SCALE_SIZE(8),
-
-    },
+   
     textStyle: {
         marginLeft: SCALE_SIZE(8),
     },

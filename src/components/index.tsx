@@ -24,6 +24,7 @@ import AchievementUserItem from "./AchievementUserItem";
 import CertificateListItem from "./CertificatesListItem";
 import TopicChooseDialog from "./TopicChooseDialog";
 import SubcriptionList from "./SubscriptionItem";
+import MyCourseDialog from "./MyCourseDialog";
 
 export {
     Button,
@@ -51,5 +52,6 @@ export {
     InprogressListItem,
     AchievementUserItem,
     CertificateListItem,
-    SubcriptionList
+    SubcriptionList,
+    MyCourseDialog
 }

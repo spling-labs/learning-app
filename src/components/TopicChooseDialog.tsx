@@ -178,6 +178,8 @@ const style = StyleSheet.create({
         width: '100%',
         borderRadius: SCALE_SIZE(20),
         marginTop: SCALE_SIZE(24),
+        marginHorizontal: SCALE_SIZE(16),
+        marginBottom: SCALE_SIZE(16),
         flexDirection: 'row'
     },
     titleTextStyle: {

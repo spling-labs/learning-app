@@ -174,10 +174,12 @@
     "All": "All",
     "Reminder": "Reminder",
     "Promotional": "Promotional",
-    "Most recent":"Most recent",
-    "Rate Us":"Rate Us",
-    "Your feedback is important":"Your feedback is important!",
-    "feedback_msg":"Let us know how was your experience with\nour platform till now?",
-    "Not Good":"Not Good",
-    "Submit":"Submit"
+    "Most recent": "Most recent",
+    "Rate Us": "Rate Us",
+    "Your feedback is important": "Your feedback is important!",
+    "feedback_msg": "Let us know how was your experience with\nour platform till now?",
+    "Not Good": "Not Good",
+    "Submit": "Submit",
+    "save": "Save",
+    "my_course": "My Courses"
 }

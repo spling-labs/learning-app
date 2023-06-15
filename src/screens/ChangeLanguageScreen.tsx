@@ -12,7 +12,7 @@ import { SCALE_SIZE } from "../constants/uttils";
 import { FONT } from "../constants/font";
 
 //COMPONENT
-import { Text, Header } from "../components";
+import { Text, Header, Button } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
@@ -81,6 +81,16 @@ export default function ChangeLanguageScreen(props: any) {
                     )
                 }}
             />
+            <Button
+                style={styles.btnContinue}
+                backgroundColor={COLORS.primary}
+                title={getTranslation('save')}
+                size={SCALE_SIZE(16)}
+                color={COLORS.white}
+                family={FONT.bold}
+                onPress={() => {
+                }}
+            />
 
         </View>
     )
@@ -132,5 +142,13 @@ const styles = StyleSheet.create({
         height: SCALE_SIZE(24),
         width: SCALE_SIZE(24),
         alignSelf: 'center'
+    },
+    btnContinue: {
+        marginBottom: SCALE_SIZE(24),
+        marginHorizontal: SCALE_SIZE(16),
+        borderBottomWidth: 4,
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20),
+        borderBottomColor: COLORS.drop_shadow
     },
 })
