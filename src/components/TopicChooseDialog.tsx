@@ -91,6 +91,7 @@ export default function TopicChooseDialog(props: any) {
                                 <Image style={style.headerIcon} resizeMode="contain" source={IMAGES.close} />
                             </TouchableOpacity>
                             <Text
+                                style={style.titleTextStyle}
                                 color={COLORS.questionColor}
                                 fontFamily={FONT.black}
                                 size={SCALE_SIZE(16)}>
@@ -104,7 +105,7 @@ export default function TopicChooseDialog(props: any) {
                                     data={actionList}
                                     showsVerticalScrollIndicator={false}
                                     numColumns={3}
-                                    style={{ flex: 1, height: '100%', width: '100%', borderRadius: 20, marginTop: 12, flexDirection: 'row' }}
+                                    style={style.flatStyle}
                                     keyExtractor={(item, index) => index.toString()}
                                     renderItem={({ item }) => {
                                         return <TopicChooseDialogItem props={props} item={item} />
@@ -170,7 +171,17 @@ const style = StyleSheet.create({
         borderTopRightRadius: SCALE_SIZE(20),
         backgroundColor: COLORS.white
     },
-    textStyle: {
-        fontSize: 22
+
+    flatStyle: {
+        flex: 1,
+        height: '100%',
+        width: '100%',
+        borderRadius: SCALE_SIZE(20),
+        marginTop: SCALE_SIZE(24),
+        flexDirection: 'row'
+    },
+    titleTextStyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
     }
 })

@@ -28,6 +28,10 @@ import SubscriptionCreditScreen from "./accountsetting/SubscriptionCreditScreen"
 import PremiumSuccessScreen from "./accountsetting/PremiumSuccessScreen";
 import ShareFacebookScreen from "./ShareFacebookScreen";
 import EditProfile from "./EditProfille";
+import ChangeLanguageScreen from "./ChangeLanguageScreen";
+import PrivacyPolicyScreen from "./PrivacyPolicyScreen";
+import TearmOfuseScreen from "./TearmOfuseScreen";
+import AboutUsScreen from "./AboutUsScreen";
 
 export const SCREENS = {
     Splash: {
@@ -149,5 +153,21 @@ export const SCREENS = {
     EditProfile: {
         name: "EditProfile",
         component: EditProfile
+    },
+    ChangeLanguageScreen: {
+        name: "ChangeLanguageScreen",
+        component: ChangeLanguageScreen
+    },
+    PrivacyPolicyScreen: {
+        name: "PrivacyPolicyScreen",
+        component: PrivacyPolicyScreen
+    },
+    TearmOfuseScreen: {
+        name: "TearmOfuseScreen",
+        component: TearmOfuseScreen
+    },
+    AboutUsScreen: {
+        name: "AboutUsScreen",
+        component: AboutUsScreen
     }
 }

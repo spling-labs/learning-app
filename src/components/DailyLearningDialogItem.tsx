@@ -21,20 +21,28 @@ export default function DialyLearningDialogItem(props: any) {
                     <View style={{ marginLeft: SCALE_SIZE(16) }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Text
+                                style={style.titleTextstyle}
                                 color={COLORS.questionColor}
-                                fontFamily={FONT.black}
+                                fontFamily={FONT.bold}
                                 size={SCALE_SIZE(16)}>
                                 {props.item.title}
                             </Text>
                             {
-                                props.item.userSelect == "unSelect" ?
-                                    <View></View>
-                                    :
-                                    <Text style={style.activityTextStyle} color={COLORS.green} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{'Activate'}</Text>
-
+                                props.item.userSelect == "select" &&
+                                <Text
+                                    style={style.activityTextStyle}
+                                    color={COLORS.green}
+                                    fontFamily={FONT.regular}
+                                    size={SCALE_SIZE(12)}>{'Activate'}</Text>
                             }
                         </View>
-                        <Text color={COLORS.contentTwo} fontFamily={FONT.regular} size={SCALE_SIZE(12)}>{props.item.disc}</Text>
+                        <Text
+                            style={style.subTitleTextstyle}
+                            color={COLORS.contentTwo}
+                            fontFamily={FONT.medium}
+                            size={SCALE_SIZE(12)}>
+                            {props.item.disc}
+                        </Text>
                     </View>
                 </View>
                 <Image style={style.arrowImageStyle} resizeMode="contain" source={props.item.checkImage} />
@@ -73,10 +81,17 @@ const style = StyleSheet.create({
         paddingVertical: SCALE_SIZE(2)
     },
     arrowImageStyle: {
-        height: SCALE_SIZE(24),
-        width: SCALE_SIZE(24),
+        height: SCALE_SIZE(32),
+        width: SCALE_SIZE(32),
         alignSelf: 'center',
         marginRight: SCALE_SIZE(8)
     },
-
+    titleTextstyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
+    },
+    subTitleTextstyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(16)
+    }
 })

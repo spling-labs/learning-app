@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -12,7 +12,6 @@ import Text from "./Text";
 import { FONT } from "../constants/font";
 import { LocalizationContext } from "../context/LocalizationProvider";
 import { LocalizationContextType } from "../types";
-import { SCREENS } from "../screens";
 
 export default function AccountSettingItem(props: any) {
 
@@ -73,7 +72,7 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         paddingVertical: SCALE_SIZE(8),
         paddingHorizontal: SCALE_SIZE(16),
-        justifyContent:'center'
+        justifyContent: 'center'
     },
     IconStyle: {
         height: SCALE_SIZE(24),
@@ -88,7 +87,7 @@ const style = StyleSheet.create({
     textStyle: {
         marginLeft: SCALE_SIZE(16),
         flex: 1.0,
-        letterSpacing:-0.24
+        letterSpacing: -0.24
     },
 
 })
