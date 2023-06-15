@@ -119,7 +119,7 @@ export default function TearmOfuseScreen(props: any) {
                 </Text>
             </View>
 
-            <View style={{ flexDirection: 'row', marginTop: SCALE_SIZE(48) }}>
+            <View style={{ flexDirection: 'row', marginTop: SCALE_SIZE(48), marginHorizontal: SCALE_SIZE(16) }}>
                 <Button
                     style={styles.btnContinue}
                     backgroundColor={COLORS.contentThree}
@@ -173,15 +173,15 @@ const styles = StyleSheet.create({
         lineHeight: SCALE_SIZE(24)
     },
     btnContinue: {
-        marginHorizontal: SCALE_SIZE(8),
         borderBottomWidth: 4,
         flex: 1.0,
+        marginRight: SCALE_SIZE(8),
         borderBottomColor: '#C3C3C3'
     },
     acceptBtnContinue: {
-        marginHorizontal: SCALE_SIZE(16),
         borderBottomWidth: 4,
         flex: 1.0,
+        marginLeft: SCALE_SIZE(8),
         borderBottomColor: COLORS.drop_shadow
     },
 })

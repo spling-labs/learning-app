@@ -12,51 +12,29 @@ import { FONT } from "../constants/font";
 import Text from "./Text";
 import { LocalizationContext } from "../context/LocalizationProvider";
 import { LocalizationContextType } from "../types";
-import DailyLearningDialogItem from "./DailyLearningDialogItem";
 
 const { width, height } = Dimensions.get("window");
 
-export default function DailyLearningDialog(props: any) {
+export default function MyCourseDialog(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
-
     interface shortList {
-        alarmImage: any,
         title: string
-        disc: string,
-        userSelect: string,
-        checkImage: any,
-
     }
     const actionList: Array<shortList> = [
         {
-            alarmImage: IMAGES.ic_alarm,
-            title: '10 Min Daily',
-            disc: 'Lite learner',
-            userSelect: 'unSelect',
-            checkImage: IMAGES.ic_circle_right
+            title: 'Rust'
         },
         {
-            alarmImage: IMAGES.ic_alarm,
-            title: '30 Min Daily',
-            disc: 'Serious Learner',
-            userSelect: 'select',
-            checkImage: IMAGES.check
+            title: 'Rust'
         },
         {
-            alarmImage: IMAGES.ic_alarm,
-            title: '60 Min Daily',
-            disc: 'Super Hard',
-            userSelect: 'unSelect',
-            checkImage: IMAGES.ic_circle_right
+            title: 'Rust'
         },
         {
-            alarmImage: IMAGES.ic_alarm,
-            title: '90 Min Daily',
-            disc: 'Extra Dedicated',
-            userSelect: 'unSelect',
-            checkImage: IMAGES.ic_circle_right
-        },
+            title: 'Rust'
+
+        }
     ];
 
     return (
@@ -65,37 +43,53 @@ export default function DailyLearningDialog(props: any) {
             <Modal
                 animationType="slide"
                 transparent={true}
-                visible={props.item}
+                visible={props.modalVisible}
                 style={style.modalBox}
-                onRequestClose={() => props.modalVisible(false)}
+                onRequestClose={() => props.setModal(false)}
             >
                 <View style={{ backgroundColor: COLORS.dialog_transparent, flex: 1.0 }}>
                     <View style={style.content}>
-                        <View style={style.lineStyle}></View>
+                        <TouchableOpacity
+                            activeOpacity={1}
+                            style={style.lineStyle}
+                            onPress={() =>
+                                props.setModal(false)
+                            }>
+                        </TouchableOpacity>
                         <View style={style.topHeaderStyle}>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    props.modalVisible(false)
-                                }}>
-                                <Image style={style.headerIcon} resizeMode="contain" source={IMAGES.close} />
-                            </TouchableOpacity>
                             <Text
                                 style={style.titleTextStyle}
                                 color={COLORS.questionColor}
                                 fontFamily={FONT.black}
                                 size={SCALE_SIZE(16)}>
-                                {getTranslation('daily_goal')}
+                                {getTranslation('my_course')}
                             </Text>
-                            <View style={style.headerIcon} />
                         </View>
                         <View style={{ flex: 1 }}>
                             <View >
                                 <FlatList
-                                    style={{ marginBottom: SCALE_SIZE(16), marginTop: SCALE_SIZE(24) }}
                                     data={actionList}
+                                    horizontal
+                                    showsHorizontalScrollIndicator={false}
+                                    style={style.flatStyle}
                                     keyExtractor={(item, index) => index.toString()}
                                     renderItem={({ item }) => {
-                                        return <DailyLearningDialogItem props={props} item={item} />
+                                        return (
+                                            <View style={style.itemViewStyle}>
+                                                <View style={style.imageViewStyle}>
+                                                    <Image style={style.alamrImageStyle} resizeMode="contain" source={IMAGES.rush} />
+                                                </View>
+
+                                                <Text
+                                                    style={style.textStyle}
+                                                    color={COLORS.questionColor}
+                                                    fontFamily={FONT.black}
+                                                    size={SCALE_SIZE(16)}>
+                                                    {item.title}
+                                                </Text>
+
+                                            </View>
+                                        )
                                     }}
                                 />
 
@@ -115,8 +109,6 @@ const style = StyleSheet.create({
         justifyContent: 'center',
     },
     topHeaderStyle: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         marginTop: SCALE_SIZE(16),
     },
     headerIcon: {
@@ -158,11 +150,53 @@ const style = StyleSheet.create({
         borderTopRightRadius: SCALE_SIZE(20),
         backgroundColor: COLORS.white
     },
-    textStyle: {
-        fontSize: 22
+
+    flatStyle: {
+        flex: 1,
+        height: '100%',
+        width: '100%',
+        borderRadius: SCALE_SIZE(20),
+        marginTop: SCALE_SIZE(24),
+        marginLeft: SCALE_SIZE(16),
+        marginBottom: SCALE_SIZE(16),
+        flexDirection: 'row'
     },
     titleTextStyle: {
         letterSpacing: -0.24,
-        lineHeight: SCALE_SIZE(20)
-    }
+        lineHeight: SCALE_SIZE(20),
+        marginLeft: SCALE_SIZE(16)
+    },
+    itemViewStyle: {
+        backgroundColor: '#FFE7DA',
+        borderRadius: SCALE_SIZE(12),
+        borderWidth: SCALE_SIZE(1),
+        borderColor: COLORS.contentThree,
+        marginRight: SCALE_SIZE(24),
+        borderBottomColor: COLORS.contentThree,
+        borderBottomWidth: 4
+    },
+    textStyle: {
+        marginTop: SCALE_SIZE(-8),
+        marginBottom: SCALE_SIZE(16),
+        alignSelf: 'center',
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(24)
+    },
+    imageViewStyle: {
+        height: SCALE_SIZE(64),
+        width: SCALE_SIZE(64),
+        borderRadius: 64 / 2,
+        backgroundColor: COLORS.color_E7E3E2,
+        marginHorizontal: SCALE_SIZE(24),
+        marginVertical: SCALE_SIZE(16),
+        borderColor: COLORS.contentThree,
+        borderBottomColor: COLORS.image_shadow,
+        borderBottomWidth: 4,
+        justifyContent: 'center'
+    },
+    alamrImageStyle: {
+        height: SCALE_SIZE(40),
+        width: SCALE_SIZE(40),
+        alignSelf: 'center',
+    },
 })
