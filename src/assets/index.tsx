@@ -153,5 +153,9 @@ export const IMAGES = {
     covered: require('./images/covered.png'),
     quiz: require('./images/quiz.png'),
     down: require('./images/down_arrow.png'),
-    edit: require('./images/edit.png')
+    edit: require('./images/edit.png'),
+    notification: require('./images/new_noti.png'),
+    timerx: require('./images/new_timer.png'),
+    star: require('./images/star_fill.png'),
+    starUnfill: require('./images/star_unfill.png')
 }

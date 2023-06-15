@@ -46,6 +46,13 @@ export default function AccountSettingScreen(props: any) {
         else if(item.Title == 'get_pro'){
             props.navigation.navigate(SCREENS.SubscriptionScreen.name)
         }
+        else if(item.Title == 'push_notification'){
+            props.navigation.navigate(SCREENS.Notification.name)
+        }
+        else if(item.Title == 'rate_us'){
+            props.navigation.navigate(SCREENS.Rate.name)
+
+        }
     }
 
     return (
@@ -98,7 +105,10 @@ export default function AccountSettingScreen(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <AccountSettingItem props={props} item={item} />
+                            return <AccountSettingItem props={props} item={item}
+                            onPress={(item: any) => {
+                                onNavigate(item)
+                            }} />
                         }}
                     />
                     <Text
@@ -115,7 +125,10 @@ export default function AccountSettingScreen(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <AccountSettingItem props={props} item={item} />
+                            return <AccountSettingItem props={props} item={item}
+                            onPress={(item: any) => {
+                                onNavigate(item)
+                            }} />
                         }}
                     />
                     <Text
@@ -132,7 +145,10 @@ export default function AccountSettingScreen(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <AccountSettingItem props={props} item={item} />
+                            return <AccountSettingItem props={props} item={item}
+                            onPress={(item: any) => {
+                                onNavigate(item)
+                            }} />
                         }}
                     />
                     <Text
@@ -149,7 +165,10 @@ export default function AccountSettingScreen(props: any) {
                         keyExtractor={(item, index) => index.toString()}
                         ItemSeparatorComponent={ItemSeparatorView}
                         renderItem={({ item }) => {
-                            return <AccountSettingItem props={props} item={item} />
+                            return <AccountSettingItem props={props} item={item}
+                            onPress={(item: any) => {
+                                onNavigate(item)
+                            }} />
                         }}
                     />
                 </View>

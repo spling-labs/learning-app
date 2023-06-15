@@ -35,6 +35,7 @@ const style = StyleSheet.create({
         borderRadius: SCALE_SIZE(16),
         paddingVertical: SCALE_SIZE(16),
         justifyContent: 'center',
+        paddingHorizontal: SCALE_SIZE(48)
     },
     text: {
         alignSelf: 'center',

@@ -28,6 +28,8 @@ import SubscriptionCreditScreen from "./accountsetting/SubscriptionCreditScreen"
 import PremiumSuccessScreen from "./accountsetting/PremiumSuccessScreen";
 import ShareFacebookScreen from "./ShareFacebookScreen";
 import EditProfile from "./EditProfille";
+import Notification from "./Notification";
+import Rate from "./Rate";
 
 export const SCREENS = {
     Splash: {
@@ -149,5 +151,14 @@ export const SCREENS = {
     EditProfile: {
         name: "EditProfile",
         component: EditProfile
-    }
+    },
+    Notification:{
+        name : "Notification",
+        component: Notification
+    },
+    Rate:{
+        name : "Rate",
+        component: Rate
+    },
+    
 }

@@ -40,14 +40,23 @@ export default function PremiumSuccessScreen(props: any) {
 
             <View style={{ justifyContent: 'center', flex: 1.0 }}>
                 <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.premiumsuccess} />
-                <Text style={styles.upgradeessages} color={COLORS.questionColor} fontFamily={FONT.black} size={SCALE_SIZE(24)}>
-                    {'Welcome to our premium family'}
+                <Text style={styles.upgradeessages}
+                    color={COLORS.questionColor}
+                    fontFamily={FONT.black}
+                    align={'center'}
+                    size={SCALE_SIZE(24)}>
+                    {'Welcome to our\npremium family'}
                 </Text>
             </View>
-
-            <Text style={styles.goHomeStyle} color={COLORS.contentTwo} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>
-                {getTranslation('go_to_home')}
-            </Text>
+            <TouchableOpacity style={{ alignSelf: 'center' }}
+                activeOpacity={1}
+                onPress={() => {    
+                    props.navigation.navigate(SCREENS.BottomBar.name)
+                }}>
+                <Text style={styles.goHomeStyle} color={COLORS.contentTwo} fontFamily={FONT.bold} size={SCALE_SIZE(16)}>
+                    {getTranslation('go_to_home')}
+                </Text>
+            </TouchableOpacity>
         </ImageBackground>
 
 

@@ -28,7 +28,7 @@ export default function Header(props: any) {
             {props.title ?
                 <View style={styles.textView}>
                     <Text
-                        style={{ alignSelf: 'center', textAlign: 'center' }}
+                        style={{ alignSelf: 'center', textAlign: 'center', marginTop:SCALE_SIZE(-3) }}
                         color={COLORS.black}
                         align={'center'}
                         fontFamily={FONT.black}

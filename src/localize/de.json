@@ -162,5 +162,16 @@
     "Cancel": "Cancel",
     "take picture": "take picture",
     "Choose picture": "Choose picture",
-    "Set a new picture or view the current one": "Set a new picture or view the current one."
+    "Set a new picture or view the current one": "Set a new picture or view the current one.",
+
+    "Notification" : "Notification",
+    "All": "All",
+    "Reminder": "Reminder",
+    "Promotional": "Promotional",
+    "Most recent":"Most recent",
+    "Rate Us":"Rate Us",
+    "Your feedback is important":"Your feedback is important!",
+    "feedback_msg":"Let us know how was your experience with\nour platform till now?",
+    "Not Good":"Not Good",
+    "Submit":"Submit"
 }
