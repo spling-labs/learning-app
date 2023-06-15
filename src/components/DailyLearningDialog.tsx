@@ -122,9 +122,7 @@ const style = StyleSheet.create({
     headerIcon: {
         height: SCALE_SIZE(16),
         width: SCALE_SIZE(16),
-        justifyContent: 'center',
         alignSelf: 'center',
-        marginTop: SCALE_SIZE(8),
         marginLeft: SCALE_SIZE(24)
     },
     lineStyle: {

@@ -60,9 +60,10 @@ const style = StyleSheet.create({
     listStyle: {
         flexDirection: 'row',
         marginBottom: SCALE_SIZE(8),
-        backgroundColor: COLORS.color_F6F6F6,
+        backgroundColor: COLORS.contentThree,
         borderRadius: SCALE_SIZE(32),
         paddingVertical: SCALE_SIZE(6),
+        paddingHorizontal:SCALE_SIZE(8),
         marginRight:SCALE_SIZE(8),
     },
     alamrImageStyle: {
@@ -74,10 +75,10 @@ const style = StyleSheet.create({
     activityTextStyle: {
         alignSelf: 'center',
         marginLeft: SCALE_SIZE(8),
-        backgroundColor: COLORS.green_bck_color,
+        backgroundColor: COLORS.green_bck_color,        
         borderRadius: SCALE_SIZE(32),
         paddingHorizontal: SCALE_SIZE(8),
-        paddingVertical: SCALE_SIZE(2)
+        paddingVertical: SCALE_SIZE(2),        
     },
     arrowImageStyle: {
         height: SCALE_SIZE(32),

@@ -70,8 +70,13 @@ export default function MyCourseDialog(props: any) {
                                 <FlatList
                                     data={actionList}
                                     horizontal
-                                    showsHorizontalScrollIndicator={false}
+                                    showsHorizontalScrollIndicator={false}                                    
                                     style={style.flatStyle}
+                                    ListHeaderComponent={()=>{
+                                        return(
+                                            <View style={{width:SCALE_SIZE(16)}}/>
+                                        )
+                                    }}
                                     keyExtractor={(item, index) => index.toString()}
                                     renderItem={({ item }) => {
                                         return (
@@ -79,7 +84,6 @@ export default function MyCourseDialog(props: any) {
                                                 <View style={style.imageViewStyle}>
                                                     <Image style={style.alamrImageStyle} resizeMode="contain" source={IMAGES.rush} />
                                                 </View>
-
                                                 <Text
                                                     style={style.textStyle}
                                                     color={COLORS.questionColor}
@@ -87,7 +91,6 @@ export default function MyCourseDialog(props: any) {
                                                     size={SCALE_SIZE(16)}>
                                                     {item.title}
                                                 </Text>
-
                                             </View>
                                         )
                                     }}
@@ -156,8 +159,7 @@ const style = StyleSheet.create({
         height: '100%',
         width: '100%',
         borderRadius: SCALE_SIZE(20),
-        marginTop: SCALE_SIZE(24),
-        marginLeft: SCALE_SIZE(16),
+        marginTop: SCALE_SIZE(16),       
         marginBottom: SCALE_SIZE(16),
         flexDirection: 'row'
     },
@@ -171,7 +173,7 @@ const style = StyleSheet.create({
         borderRadius: SCALE_SIZE(12),
         borderWidth: SCALE_SIZE(1),
         borderColor: COLORS.contentThree,
-        marginRight: SCALE_SIZE(24),
+        marginRight: SCALE_SIZE(16),
         borderBottomColor: COLORS.contentThree,
         borderBottomWidth: 4
     },

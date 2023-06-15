@@ -32,7 +32,7 @@ export default function Community(props: any) {
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor(COLORS.white);
+        StatusBar.setBackgroundColor(modalVisible && modalActionVisible ? 'rgba(59, 66, 74, 0.33)' : COLORS.white);
         StatusBar.setTranslucent(false);
     })
 
@@ -72,7 +72,7 @@ export default function Community(props: any) {
                 </View>
             </View>
             <View style={styles.viewStyle} />
-            
+
             <View style={{ flex: 1 }}>
                 <View >
                     <FlatList
@@ -143,19 +143,19 @@ const styles = StyleSheet.create({
         bottom: 16,
         right: 5,
         backgroundColor: COLORS.primary,
-        paddingHorizontal:SCALE_SIZE(32),
-        paddingVertical:SCALE_SIZE(16),
-        borderRadius: SCALE_SIZE(32),              
+        paddingHorizontal: SCALE_SIZE(32),
+        paddingVertical: SCALE_SIZE(16),
+        borderRadius: SCALE_SIZE(32),
         borderBottomColor: COLORS.drop_shadow,
         borderBottomWidth: 4,
     },
     editPostIcon: {
         height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),        
-        alignSelf:'center'
+        width: SCALE_SIZE(16),
+        alignSelf: 'center'
     },
     postTextStyle: {
         marginLeft: SCALE_SIZE(8),
-        marginTop:SCALE_SIZE(-3)
+        marginTop: SCALE_SIZE(-3)
     }
 })

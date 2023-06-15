@@ -134,10 +134,8 @@ const style = StyleSheet.create({
     },
     headerIcon: {
         height: SCALE_SIZE(16),
-        width: SCALE_SIZE(16),
-        justifyContent: 'center',
-        alignSelf: 'center',
-        marginTop: SCALE_SIZE(8),
+        width: SCALE_SIZE(16),       
+        alignSelf: 'center',        
         marginLeft: SCALE_SIZE(24)
     },
     lineStyle: {
@@ -184,6 +182,7 @@ const style = StyleSheet.create({
     },
     titleTextStyle: {
         letterSpacing: -0.24,
-        lineHeight: SCALE_SIZE(20)
+        lineHeight: SCALE_SIZE(20),
+        alignSelf:'center'
     }
 })

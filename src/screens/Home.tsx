@@ -30,7 +30,7 @@ export default function Home(props: any) {
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor(COLORS.slider_unfill);
+        StatusBar.setBackgroundColor(modalVisible ? 'rgba(59, 66, 74, 0.33)' : COLORS.slider_unfill);
         StatusBar.setTranslucent(false);
     })
 
@@ -40,14 +40,21 @@ export default function Home(props: any) {
                 source={IMAGES.backgroundHome}
                 resizeMode="cover">
                 <View style={styles.headerView}>
-                    <Text
-                        style={{ alignSelf: 'center' }}
-                        color={COLORS.black}
-                        fontFamily={FONT.black}
-                        size={SCALE_SIZE(16)}>
-                        {getTranslation('Rust')}
-                    </Text>
-                    <Image style={styles.imgDropDown} source={IMAGES.dropdown} />
+                    <TouchableOpacity
+                        activeOpacity={1}
+                        style={{ flexDirection: 'row' }}
+                        onPress={() => {
+                            setModalVisible(true)
+                        }}>
+                        <Text
+                            style={{ alignSelf: 'center' }}
+                            color={COLORS.black}
+                            fontFamily={FONT.black}
+                            size={SCALE_SIZE(16)}>
+                            {getTranslation('Rust')}
+                        </Text>
+                        <Image style={styles.imgDropDown} source={IMAGES.dropdown} />
+                    </TouchableOpacity>
                     <View style={styles.innerView}>
                         <View style={[styles.maskView, { backgroundColor: COLORS.white }]}>
                             <Image style={styles.maskIcon} resizeMode="contain" source={IMAGES.leaderboardFill} />
@@ -81,8 +88,9 @@ export default function Home(props: any) {
                 </View>
                 <View style={styles.devider} />
                 <TouchableOpacity
+                    activeOpacity={1}
                     onPress={() => {
-                        setModalVisible(true)
+
                     }}>
                     <View style={styles.rustView}>
                         <Text
@@ -119,8 +127,9 @@ export default function Home(props: any) {
                         <View style={{ height: 16 }} />
                     </>
                 </ScrollView>
-
-                <MyCourseDialog modalVisible={modalVisible} setModal={setModalVisible} />
+                <MyCourseDialog
+                    modalVisible={modalVisible}
+                    setModal={setModalVisible} />
             </ImageBackground>
         </SafeAreaView>
     )
