@@ -30,6 +30,10 @@ import ShareFacebookScreen from "./ShareFacebookScreen";
 import EditProfile from "./EditProfille";
 import Notification from "./Notification";
 import Rate from "./Rate";
+import ChangeLanguageScreen from "./ChangeLanguageScreen";
+import PrivacyPolicyScreen from "./PrivacyPolicyScreen";
+import TearmOfuseScreen from "./TearmOfuseScreen";
+import AboutUsScreen from "./AboutUsScreen";
 
 export const SCREENS = {
     Splash: {
@@ -161,4 +165,20 @@ export const SCREENS = {
         component: Rate
     },
     
+    ChangeLanguageScreen: {
+        name: "ChangeLanguageScreen",
+        component: ChangeLanguageScreen
+    },
+    PrivacyPolicyScreen: {
+        name: "PrivacyPolicyScreen",
+        component: PrivacyPolicyScreen
+    },
+    TearmOfuseScreen: {
+        name: "TearmOfuseScreen",
+        component: TearmOfuseScreen
+    },
+    AboutUsScreen: {
+        name: "AboutUsScreen",
+        component: AboutUsScreen
+    }
 }

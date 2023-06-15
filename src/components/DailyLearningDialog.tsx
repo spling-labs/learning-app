@@ -80,6 +80,7 @@ export default function DailyLearningDialog(props: any) {
                                 <Image style={style.headerIcon} resizeMode="contain" source={IMAGES.close} />
                             </TouchableOpacity>
                             <Text
+                                style={style.titleTextStyle}
                                 color={COLORS.questionColor}
                                 fontFamily={FONT.black}
                                 size={SCALE_SIZE(16)}>
@@ -90,7 +91,7 @@ export default function DailyLearningDialog(props: any) {
                         <View style={{ flex: 1 }}>
                             <View >
                                 <FlatList
-                                    style={{ marginBottom: SCALE_SIZE(16), marginTop: SCALE_SIZE(16) }}
+                                    style={{ marginBottom: SCALE_SIZE(40), marginTop: SCALE_SIZE(24) }}
                                     data={actionList}
                                     keyExtractor={(item, index) => index.toString()}
                                     renderItem={({ item }) => {
@@ -159,5 +160,9 @@ const style = StyleSheet.create({
     },
     textStyle: {
         fontSize: 22
+    },
+    titleTextStyle: {
+        letterSpacing: -0.24,
+        lineHeight: SCALE_SIZE(20)
     }
 })

@@ -750,5 +750,36 @@ export const achevementList: Array<achevementList> = [
     }
 ];
 
+interface languageList {
+    title: string,
+    select: string
+}
+
+export const languageList: Array<languageList> = [
+    {
+        title: 'English',
+        select: 'selected'
+    },
+    {
+        title: 'Francais',
+        select: 'unSelected'
+    },
+    {
+        title: 'Deutsch',
+        select: 'unSelected'
+    },
+    {
+        title: 'Nederland',
+        select: 'unSelected'
+    },
+    {
+        title: 'Norsk',
+        select: 'unSelected'
+    },
+    {
+        title: 'Filipino',
+        select: 'unSelected'
+    }
+];
 
 
