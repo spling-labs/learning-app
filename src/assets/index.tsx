@@ -157,5 +157,6 @@ export const IMAGES = {
     notification: require('./images/new_noti.png'),
     timerx: require('./images/new_timer.png'),
     star: require('./images/star_fill.png'),
-    starUnfill: require('./images/star_unfill.png')
+    starUnfill: require('./images/star_unfill.png'),
+    eye: require('./images/eye.png')
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, FlatList } from "react-native";
+import { View, StyleSheet, StatusBar, Image, FlatList, Share, TouchableOpacity } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -35,6 +35,24 @@ export default function Leaderboard(props: any) {
         StatusBar.setTranslucent(false);
     })
 
+   async function onShare() {
+        try {
+            const result = await Share.share({
+                message:'Hii',
+            });
+            if (result.action === Share.sharedAction) {
+                if (result.activityType) {
+                    
+                } else {
+                    
+                }
+            } else if (result.action === Share.dismissedAction) {
+                
+            }
+        } catch (error) {
+        }
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.headerStyle}>
@@ -45,7 +63,12 @@ export default function Leaderboard(props: any) {
                     size={SCALE_SIZE(24)}>
                     {getTranslation('Leaderboard')}
                 </Text>
-                <View style={styles.shareViewStyle}>
+                <TouchableOpacity
+                    style={styles.shareViewStyle}
+                    activeOpacity={1}
+                    onPress={() => {
+                        onShare()
+                    }}>
                     <Image style={styles.shareImageStyle} resizeMode="contain" source={IMAGES.ic_leader_share} />
                     <Text
                         color={COLORS.contentColor}
@@ -54,7 +77,7 @@ export default function Leaderboard(props: any) {
                         size={SCALE_SIZE(16)}>
                         {getTranslation('share')}
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
             <View style={[styles.dropdownStyle, {}]}>
                 <Text
@@ -119,7 +142,7 @@ const styles = StyleSheet.create({
     shareViewStyle: {
         flexDirection: 'row',
         alignSelf: 'center',
-        marginRight: SCALE_SIZE(16)
+        marginRight: SCALE_SIZE(0)
     },
     shareImageStyle: {
         height: SCALE_SIZE(24),

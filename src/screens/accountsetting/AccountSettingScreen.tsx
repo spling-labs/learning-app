@@ -26,11 +26,11 @@ export default function AccountSettingScreen(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
 
-    useFocusEffect(() => {
-        StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor(COLORS.white);
-        StatusBar.setTranslucent(false);
-    })
+    // useFocusEffect(() => {
+    //     StatusBar.setBarStyle('dark-content');
+    //     StatusBar.setBackgroundColor(COLORS.white);
+    //     StatusBar.setTranslucent(false);
+    // })
 
     const ItemSeparatorView = () => {
         return (
@@ -43,28 +43,33 @@ export default function AccountSettingScreen(props: any) {
 
         if (item.Title == 'edit_profile') {
             props.navigation.navigate(SCREENS.EditProfile.name)
-        } else if (item.Title == 'get_pro') {
+        }
+        else if (item.Title == 'get_pro') {
             props.navigation.navigate(SCREENS.SubscriptionScreen.name)
-        } else if (item.Title == 'language_change') {
+        }
+        else if (item.Title == 'language_change') {
             props.navigation.navigate(SCREENS.ChangeLanguageScreen.name)
-        } else if (item.Title == 'privacy_policy') {
+        }
+        else if (item.Title == 'privacy_policy') {
             props.navigation.navigate(SCREENS.PrivacyPolicyScreen.name)
-        } else if (item.Title == 'terms_and_conditions') {
+        }
+        else if (item.Title == 'terms_and_conditions') {
             props.navigation.navigate(SCREENS.TearmOfuseScreen.name)
-        } else if (item.Title == 'help') {
+        }
+        else if (item.Title == 'help') {
             props.navigation.navigate(SCREENS.AboutUsScreen.name)
         }
-        else if(item.Title == 'push_notification'){
+        else if (item.Title == 'push_notification') {
             props.navigation.navigate(SCREENS.Notification.name)
         }
-        else if(item.Title == 'rate_us'){
+        else if (item.Title == 'rate_us') {
             props.navigation.navigate(SCREENS.Rate.name)
-
         }
     }
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle={'dark-content'} translucent={false} backgroundColor={COLORS.white} />
             <Header
                 type={1}
                 title={getTranslation('account_settings')}

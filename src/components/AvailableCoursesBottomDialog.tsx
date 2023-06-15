@@ -149,7 +149,7 @@ export default function AvaialbeCoursesBottomDialog(props: any) {
                                     color={COLORS.white}
                                     family={FONT.bold}
                                     onPress={() => {
-
+                                        props.onEnrollNowPress()
                                     }}
                                 />
                             </View>

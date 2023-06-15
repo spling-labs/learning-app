@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { View, StyleSheet, StatusBar, Image, SafeAreaView, ImageBackground, ScrollView } from "react-native";
+import { View, StyleSheet, StatusBar, Image, SafeAreaView, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -68,7 +68,14 @@ export default function Home(props: any) {
                                 {'12,00'}
                             </Text>
                         </View>
-                        <Image style={[styles.imgDropDown, { marginTop: SCALE_SIZE(0) }]} resizeMode="contain" source={IMAGES.noti} />
+                        <TouchableOpacity
+                            activeOpacity={1}
+                            style={{ alignSelf: 'center' }}
+                            onPress={() => {
+                                props.navigation.navigate(SCREENS.Notification.name)
+                            }}>
+                            <Image style={[styles.imgDropDown, { marginTop: SCALE_SIZE(0) }]} resizeMode="contain" source={IMAGES.noti} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={styles.devider} />

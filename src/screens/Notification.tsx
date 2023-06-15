@@ -93,8 +93,8 @@ export default function Notification(props: any) {
                 <>
                     {notification.map((item, index) => {
                         return (
-                            <>
-                                <View key={index} style={styles.itemContainer}>
+                            <View key={index}>
+                                <View style={styles.itemContainer}>
                                     <Image style={styles.itemImage} resizeMode='contain' source={IMAGES.notification} />
                                     <View style={styles.itemView}>
                                         <View style={{ flexDirection: 'row', }}>
@@ -124,7 +124,7 @@ export default function Notification(props: any) {
                                     </View>
                                 </View>
                                 <View style={styles.devider}/>
-                            </>
+                            </View>
                         )
                     })}
                 </>

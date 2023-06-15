@@ -32,7 +32,6 @@ export default function LeaderBordItemList(props: any) {
     }
 
     const containerSelect = () => {
-        props.props.navigation.navigate(SCREENS.ShareFacebookScreen.name)
 
     }
 

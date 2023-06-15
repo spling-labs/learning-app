@@ -56,6 +56,9 @@ export default function Courses(props: any) {
             <AvaialbeCoursesBottomDialog
                 item={modalVisible}
                 modalVisible={setModalVisible}
+                onEnrollNowPress={()=>{
+                    setModalVisible(false)
+                }}
                 onClose={()=>{
                     setModalVisible(false)
                 }} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { View, StyleSheet, StatusBar, Image, ScrollView, TouchableOpacity } from "react-native";
+import { View, StyleSheet, StatusBar, Image, ScrollView, TouchableOpacity, Alert } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
@@ -34,6 +34,9 @@ export default function EditProfile(props: any) {
     const [confirmPassword, setConfirmPassword] = useState<string>('')
     const [imagePicker, setImagePicker] = useState<boolean>(false)
     const [images, setImages] = useState<string>('')
+    const [isNewPassword, setIsNewPassword] = useState<boolean>(false)
+    const [isConfirmPassword, setIsConfirmPassword] = useState<boolean>(false)
+
 
     function onCaptureImage() {
         ImagePicker.openCamera({
@@ -118,11 +121,15 @@ export default function EditProfile(props: any) {
                     {getTranslation('New Password')}
                 </Text>
                 <Input
-                    style={[styles.input, { marginTop: SCALE_SIZE(8) }]}
+                    style={[styles.input, { marginTop: SCALE_SIZE(8), flex: 1.0 }]}
                     numberOfLines={1}
+                    isHide
                     placeholder={getTranslation('New Password')}
-                    secureTextEntry={true}
+                    secureTextEntry={isNewPassword ? false : true}
                     value={password}
+                    onPress={()=>{
+                        setIsNewPassword(!isNewPassword)
+                    }}
                     onChangeText={(text: string) => {
                         setPassword(text)
                     }}
@@ -135,11 +142,15 @@ export default function EditProfile(props: any) {
                     {getTranslation('Confirm Password')}
                 </Text>
                 <Input
-                    style={[styles.input, { marginTop: SCALE_SIZE(8) }]}
+                    style={[styles.input, { marginTop: SCALE_SIZE(8), flex: 1.0 }]}
+                    isHide
                     numberOfLines={1}
                     placeholder={getTranslation('Confirm Password')}
                     value={confirmPassword}
-                    secureTextEntry={true}
+                    secureTextEntry={isConfirmPassword ? false : true}
+                    onPress={()=>{
+                        setIsConfirmPassword(!isConfirmPassword)
+                    }}
                     onChangeText={(text: string) => {
                         setConfirmPassword(text)
                     }}
