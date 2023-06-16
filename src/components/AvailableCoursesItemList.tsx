@@ -21,6 +21,18 @@ export default function AvailableCoursesItemList(props: any) {
                 props.modal(true)
             }}>
             <View style={style.logoImageStyle} />
+            {props.item.new == 'New' &&
+                <View style={style.newContainer}>
+                    <Text
+                        style={{ marginTop: -2 }}
+                        color={COLORS.white}
+                        fontFamily={FONT.semiBold}
+                        size={SCALE_SIZE(12)}>
+                        {'New'}
+                    </Text>
+                </View>
+            }
+
             <View style={{ marginLeft: SCALE_SIZE(16), alignSelf: 'center' }}>
                 <Text
                     color={COLORS.questionColor}
@@ -40,7 +52,7 @@ export default function AvailableCoursesItemList(props: any) {
                     size={SCALE_SIZE(14)}>
                     {props.item.snellItem}
                 </Text>
-            </View>           
+            </View>
         </TouchableOpacity>
     )
 }
@@ -79,4 +91,14 @@ const style = StyleSheet.create({
         borderBottomColor: COLORS.image_shadow,
         backgroundColor: COLORS.color_E7E3E2,
     },
+    newContainer: {
+        paddingHorizontal: SCALE_SIZE(8),
+        paddingVertical: SCALE_SIZE(2),
+        backgroundColor: '#FF9900',
+        borderRadius: SCALE_SIZE(23),
+        position: 'absolute',
+        alignSelf: 'center',
+        left: SCALE_SIZE(27),
+        bottom: SCALE_SIZE(16)
+    }
 })

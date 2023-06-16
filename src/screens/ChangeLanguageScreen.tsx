@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
-import { View, StyleSheet, StatusBar, Image, FlatList, TextInput } from "react-native";
+import { View, StyleSheet, StatusBar, Image, FlatList, TextInput, TouchableWithoutFeedback, Alert } from "react-native";
 
 //ASSETS
 import { COLORS, IMAGES } from "../assets";
 
 //TYPES
 import { LocalizationContextType, languageList } from "../types";
+
+//CONTEXT
+import { LocalizationContext } from "../context/LocalizationProvider";
 
 //CONSTANTS
 import { SCALE_SIZE } from "../constants/uttils";
@@ -16,12 +19,14 @@ import { Text, Header, Button } from "../components";
 
 //PACKAGES
 import { useFocusEffect } from "@react-navigation/native";
-import { LocalizationContext } from "../context/LocalizationProvider";
+import Ripple from 'react-native-material-ripple';
 
 export default function ChangeLanguageScreen(props: any) {
 
     const { getTranslation } = useContext(LocalizationContext) as LocalizationContextType;
     const [search, setSearch] = useState<string>('')
+
+    const [selectedIndex, setSelectedIndex] = useState<number>(0)
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
@@ -64,7 +69,12 @@ export default function ChangeLanguageScreen(props: any) {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item, index }) => {
                     return (
-                        <View style={styles.itemViewStyle}>
+                        <Ripple
+                            style={styles.itemViewStyle}
+                            rippleOpacity={0.3}
+                            onPress={() => {
+                               setSelectedIndex(index)
+                            }}>
                             <Text
                                 style={styles.textStyle}
                                 color={COLORS.questionColor}
@@ -73,11 +83,11 @@ export default function ChangeLanguageScreen(props: any) {
                                 {item.title}
                             </Text>
                             {
-                                item.select == "selected" &&
+                                selectedIndex == index &&
                                 <Image style={styles.IconStyle} resizeMode="center" source={IMAGES.check} />
                             }
 
-                        </View>
+                        </Ripple>
                     )
                 }}
             />

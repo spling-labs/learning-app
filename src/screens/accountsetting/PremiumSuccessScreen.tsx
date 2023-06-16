@@ -29,15 +29,14 @@ export default function PremiumSuccessScreen(props: any) {
 
     useFocusEffect(() => {
         StatusBar.setBarStyle('dark-content');
-        StatusBar.setBackgroundColor(COLORS.slider_unfill);
-        StatusBar.setTranslucent(false);
+        StatusBar.setBackgroundColor('transparent');
+        StatusBar.setTranslucent(true);
     })
 
     return (
         <ImageBackground style={styles.container}
             source={IMAGES.bgCreateProfile}
-            resizeMode="stretch">
-
+            resizeMode="cover">
             <View style={{ justifyContent: 'center', flex: 1.0 }}>
                 <Image style={styles.lockImage} resizeMode="contain" source={IMAGES.premiumsuccess} />
                 <Text style={styles.upgradeessages}
